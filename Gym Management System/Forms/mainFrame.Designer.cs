@@ -195,9 +195,9 @@
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(477, 226);
+            this.pictureBox2.Location = new System.Drawing.Point(431, 136);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(118, 96);
+            this.pictureBox2.Size = new System.Drawing.Size(268, 199);
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 

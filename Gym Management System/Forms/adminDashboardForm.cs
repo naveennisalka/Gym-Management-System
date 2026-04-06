@@ -17,6 +17,8 @@ namespace Gym_Management_System
             InitializeComponent();
         }
 
+
+
         private void formAdmindashboardLoad(object sender, EventArgs e)
         {
             this.ControlBox = false;

@@ -60,6 +60,8 @@ namespace Gym_Management_System
                     //    mainForm.adminToolStripMenuItem.Enabled = false;
                     //    mainForm.userManagementToolStripMenuItem.Enabled = false;
                     //}
+                    //adminDashboardForm.lblname.text = _name;
+                    //adminDashboardForm.lblrole.text = _role;
 
                     mainForm.ShowDialog(); 
 
