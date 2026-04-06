@@ -62,7 +62,8 @@ namespace Gym_Management_System
                     //}
                     //adminDashboardForm.lblname.text = _name;
                     //adminDashboardForm.lblrole.text = _role;
-
+                    mainForm.lblUserName.Text = _name;
+                    mainForm.lblRole.Text = _role;
                     mainForm.ShowDialog(); 
 
                 }

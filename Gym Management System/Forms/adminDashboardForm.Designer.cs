@@ -54,7 +54,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.lblrole = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -63,14 +62,13 @@
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Poppins", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(48, 23);
+            this.label1.Location = new System.Drawing.Point(29, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 62);
             this.label1.TabIndex = 0;
@@ -82,7 +80,7 @@
             this.lblname.AutoSize = true;
             this.lblname.BackColor = System.Drawing.Color.Transparent;
             this.lblname.Font = new System.Drawing.Font("Poppins SemiBold", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblname.Location = new System.Drawing.Point(154, 23);
+            this.lblname.Location = new System.Drawing.Point(135, 23);
             this.lblname.Name = "lblname";
             this.lblname.Size = new System.Drawing.Size(106, 62);
             this.lblname.TabIndex = 1;
@@ -95,7 +93,7 @@
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Location = new System.Drawing.Point(32, 130);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 147);
             this.panel1.TabIndex = 2;
@@ -114,7 +112,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Poppins Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 84);
+            this.label3.Location = new System.Drawing.Point(3, 95);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(113, 52);
             this.label3.TabIndex = 8;
@@ -127,7 +125,7 @@
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.panel2.Location = new System.Drawing.Point(209, 3);
+            this.panel2.Location = new System.Drawing.Point(238, 130);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(406, 147);
             this.panel2.TabIndex = 3;
@@ -168,7 +166,7 @@
             this.panel3.Controls.Add(this.label11);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.panel3.Location = new System.Drawing.Point(1033, 3);
+            this.panel3.Location = new System.Drawing.Point(444, 343);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(200, 142);
             this.panel3.TabIndex = 4;
@@ -200,7 +198,7 @@
             this.panel4.Controls.Add(this.label10);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.panel4.Location = new System.Drawing.Point(621, 3);
+            this.panel4.Location = new System.Drawing.Point(32, 343);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(200, 142);
             this.panel4.TabIndex = 5;
@@ -231,7 +229,7 @@
             this.panel5.Controls.Add(this.label12);
             this.panel5.Controls.Add(this.label5);
             this.panel5.Cursor = System.Windows.Forms.Cursors.Default;
-            this.panel5.Location = new System.Drawing.Point(827, 3);
+            this.panel5.Location = new System.Drawing.Point(238, 343);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(200, 142);
             this.panel5.TabIndex = 5;
@@ -240,7 +238,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(116, 0);
+            this.label12.Location = new System.Drawing.Point(116, -1);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(84, 84);
             this.label12.TabIndex = 14;
@@ -262,7 +260,7 @@
             this.panel6.Controls.Add(this.label16);
             this.panel6.Controls.Add(this.label14);
             this.panel6.Cursor = System.Windows.Forms.Cursors.Default;
-            this.panel6.Location = new System.Drawing.Point(3, 156);
+            this.panel6.Location = new System.Drawing.Point(32, 283);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(612, 54);
             this.panel6.TabIndex = 6;
@@ -295,7 +293,7 @@
             this.panel7.Controls.Add(this.label17);
             this.panel7.Controls.Add(this.label15);
             this.panel7.Cursor = System.Windows.Forms.Cursors.Default;
-            this.panel7.Location = new System.Drawing.Point(621, 156);
+            this.panel7.Location = new System.Drawing.Point(32, 496);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(612, 54);
             this.panel7.TabIndex = 7;
@@ -330,7 +328,7 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1436, 102);
+            this.panel8.Size = new System.Drawing.Size(1113, 102);
             this.panel8.TabIndex = 8;
             // 
             // lblrole
@@ -339,35 +337,26 @@
             this.lblrole.AutoSize = true;
             this.lblrole.BackColor = System.Drawing.Color.Transparent;
             this.lblrole.Font = new System.Drawing.Font("Poppins SemiBold", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblrole.Location = new System.Drawing.Point(1302, 23);
+            this.lblrole.Location = new System.Drawing.Point(945, 23);
             this.lblrole.Name = "lblrole";
             this.lblrole.Size = new System.Drawing.Size(106, 62);
             this.lblrole.TabIndex = 2;
             this.lblrole.Text = "User";
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.panel1);
-            this.flowLayoutPanel1.Controls.Add(this.panel2);
-            this.flowLayoutPanel1.Controls.Add(this.panel4);
-            this.flowLayoutPanel1.Controls.Add(this.panel5);
-            this.flowLayoutPanel1.Controls.Add(this.panel3);
-            this.flowLayoutPanel1.Controls.Add(this.panel6);
-            this.flowLayoutPanel1.Controls.Add(this.panel7);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 102);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1436, 549);
-            this.flowLayoutPanel1.TabIndex = 9;
             // 
             // adminDashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1436, 651);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.ClientSize = new System.Drawing.Size(1113, 651);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel8);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel6);
             this.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -391,7 +380,6 @@
             this.panel7.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -422,7 +410,6 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         public System.Windows.Forms.Label lblname;
         public System.Windows.Forms.Label lblrole;
     }
