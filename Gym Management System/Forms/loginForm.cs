@@ -36,7 +36,7 @@ namespace Gym_Management_System
             {
                 string _name = "", _role = "";
                 con.Open();
-                cmd = new SqlCommand("SELECT * FROM Users WHERE username = @Username AND password = @Password", con);
+                cmd = new SqlCommand("SELECT * FROM Users WHERE email = @Username AND password = @Password", con);
                 cmd.Parameters.AddWithValue("@Username", txtUser.Text);
                 cmd.Parameters.AddWithValue("@Password", txtPwd.Text);
                 reader = cmd.ExecuteReader();

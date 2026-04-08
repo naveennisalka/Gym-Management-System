@@ -101,6 +101,12 @@
     <Compile Include="Forms\splashForm.Designer.cs">
       <DependentUpon>splashForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\userRegistrationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\userRegistrationForm.Designer.cs">
+      <DependentUpon>userRegistrationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Forms\storeForm.cs">
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MembersForm.resx">
       <DependentUpon>MembersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\userRegistrationForm.resx">
+      <DependentUpon>userRegistrationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

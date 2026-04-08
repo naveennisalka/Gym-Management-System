@@ -38,11 +38,11 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlTitle = new System.Windows.Forms.Panel();
+            this.lblUserName = new System.Windows.Forms.Label();
+            this.lblRole = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panelDesctop = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.lblRole = new System.Windows.Forms.Label();
-            this.lblUserName = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -65,7 +65,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(100);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(210, 662);
+            this.panel1.Size = new System.Drawing.Size(210, 713);
             this.panel1.TabIndex = 0;
             // 
             // btnLogout
@@ -76,7 +76,7 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(0, 602);
+            this.btnLogout.Location = new System.Drawing.Point(0, 653);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnLogout.Size = new System.Drawing.Size(210, 60);
@@ -186,56 +186,14 @@
             this.pnlTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitle.Location = new System.Drawing.Point(210, 0);
             this.pnlTitle.Name = "pnlTitle";
-            this.pnlTitle.Size = new System.Drawing.Size(1074, 95);
+            this.pnlTitle.Size = new System.Drawing.Size(1074, 65);
             this.pnlTitle.TabIndex = 2;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(956, 9);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(78, 76);
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            // 
-            // panelDesctop
-            // 
-            this.panelDesctop.Controls.Add(this.pictureBox2);
-            this.panelDesctop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesctop.Location = new System.Drawing.Point(210, 95);
-            this.panelDesctop.Name = "panelDesctop";
-            this.panelDesctop.Size = new System.Drawing.Size(1074, 567);
-            this.panelDesctop.TabIndex = 3;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(431, 130);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(268, 199);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
-            // lblRole
-            // 
-            this.lblRole.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblRole.ForeColor = System.Drawing.Color.Gray;
-            this.lblRole.Location = new System.Drawing.Point(665, 21);
-            this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(271, 26);
-            this.lblRole.TabIndex = 3;
-            this.lblRole.Text = "lblRole";
-            this.lblRole.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblUserName
             // 
             this.lblUserName.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblUserName.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserName.Location = new System.Drawing.Point(665, 47);
+            this.lblUserName.Location = new System.Drawing.Point(677, 32);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(271, 26);
             this.lblUserName.TabIndex = 4;
@@ -243,11 +201,53 @@
             this.lblUserName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblUserName.Click += new System.EventHandler(this.lblUserName_Click);
             // 
+            // lblRole
+            // 
+            this.lblRole.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblRole.ForeColor = System.Drawing.Color.Gray;
+            this.lblRole.Location = new System.Drawing.Point(665, 6);
+            this.lblRole.Name = "lblRole";
+            this.lblRole.Size = new System.Drawing.Size(271, 26);
+            this.lblRole.TabIndex = 3;
+            this.lblRole.Text = "lblRole";
+            this.lblRole.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.Location = new System.Drawing.Point(966, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(62, 58);
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
+            // 
+            // panelDesctop
+            // 
+            this.panelDesctop.Controls.Add(this.pictureBox2);
+            this.panelDesctop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesctop.Location = new System.Drawing.Point(210, 65);
+            this.panelDesctop.Name = "panelDesctop";
+            this.panelDesctop.Size = new System.Drawing.Size(1074, 648);
+            this.panelDesctop.TabIndex = 3;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(431, 171);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(268, 199);
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
             // mainFrame
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1284, 662);
+            this.ClientSize = new System.Drawing.Size(1284, 713);
             this.Controls.Add(this.panelDesctop);
             this.Controls.Add(this.pnlTitle);
             this.Controls.Add(this.panel1);
