@@ -15,6 +15,7 @@ namespace Gym_Management_System
         public adminDashboardForm()
         {
             InitializeComponent();
+            lblgreeting.Text = GetGreeting();
         }
 
 
@@ -57,6 +58,32 @@ namespace Gym_Management_System
         private void label10_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void lblgreeting_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private string GetGreeting() {
+
+            int hour = DateTime.Now.Hour;
+            if (hour >= 5 && hour < 12)
+            {
+                return "Good Morning";
+            }
+            else if (hour >= 12 && hour < 17)
+            {
+                return "Good Afternoon"; // Optional, but keeps it natural
+            }
+            else if (hour >= 17 && hour < 21)
+            {
+                return "Good Evening";
+            }
+            else
+            {
+                return "Good Night";
+            }
         }
     }
 }

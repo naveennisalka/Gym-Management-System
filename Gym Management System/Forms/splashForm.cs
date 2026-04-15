@@ -36,20 +36,25 @@ namespace Gym_Management_System
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            startPoint += 2;
+            startPoint += 10;
             progressBar1.Value = startPoint;
             if (progressBar1.Value == 100)
             {
                 progressBar1.Value = 0;
                 timer1.Stop();
-                this.Close();
+                this.Hide();
+                loginForm login = new loginForm();
+                login.Show();
+
             }
+            
         }
 
 
         private void splashForm_Load(object sender, EventArgs e)
         {
             timer1.Start();
+            
         }
     }
 }

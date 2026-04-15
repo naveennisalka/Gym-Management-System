@@ -65,6 +65,7 @@ namespace Gym_Management_System
                     mainForm.lblUserName.Text = _name;
                     mainForm.lblRole.Text = _role;
                     mainForm.ShowDialog(); 
+                    
 
                 }
                 else
