@@ -64,6 +64,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\widgetStoreItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\widgetStoreItem.Designer.cs">
+      <DependentUpon>widgetStoreItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="dbConnect.cs" />
     <Compile Include="Forms\adminDashboardForm.cs">
       <SubType>Form</SubType>
@@ -115,6 +121,10 @@
     <Compile Include="Forms\storeForm.Designer.cs">
       <DependentUpon>storeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserSession.cs" />
+    <EmbeddedResource Include="Components\widgetStoreItem.resx">
+      <DependentUpon>widgetStoreItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\adminDashboardForm.resx">
       <DependentUpon>adminDashboardForm.cs</DependentUpon>
     </EmbeddedResource>

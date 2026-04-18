@@ -37,17 +37,11 @@
             this.btnDashboard = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pnlTitle = new System.Windows.Forms.Panel();
-            this.lblUserName = new System.Windows.Forms.Label();
-            this.lblRole = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panelDesctop = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.pnlTitle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panelDesctop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -178,58 +172,13 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // pnlTitle
-            // 
-            this.pnlTitle.Controls.Add(this.lblUserName);
-            this.pnlTitle.Controls.Add(this.lblRole);
-            this.pnlTitle.Controls.Add(this.pictureBox3);
-            this.pnlTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTitle.Location = new System.Drawing.Point(210, 0);
-            this.pnlTitle.Name = "pnlTitle";
-            this.pnlTitle.Size = new System.Drawing.Size(1074, 65);
-            this.pnlTitle.TabIndex = 2;
-            // 
-            // lblUserName
-            // 
-            this.lblUserName.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblUserName.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserName.Location = new System.Drawing.Point(677, 32);
-            this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(271, 26);
-            this.lblUserName.TabIndex = 4;
-            this.lblUserName.Text = "lblRolec";
-            this.lblUserName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblUserName.Click += new System.EventHandler(this.lblUserName_Click);
-            // 
-            // lblRole
-            // 
-            this.lblRole.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblRole.ForeColor = System.Drawing.Color.Gray;
-            this.lblRole.Location = new System.Drawing.Point(665, 6);
-            this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(271, 26);
-            this.lblRole.TabIndex = 3;
-            this.lblRole.Text = "lblRole";
-            this.lblRole.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(966, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(62, 58);
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            // 
             // panelDesctop
             // 
             this.panelDesctop.Controls.Add(this.pictureBox2);
             this.panelDesctop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesctop.Location = new System.Drawing.Point(210, 65);
+            this.panelDesctop.Location = new System.Drawing.Point(210, 0);
             this.panelDesctop.Name = "panelDesctop";
-            this.panelDesctop.Size = new System.Drawing.Size(1074, 648);
+            this.panelDesctop.Size = new System.Drawing.Size(1074, 713);
             this.panelDesctop.TabIndex = 3;
             // 
             // pictureBox2
@@ -237,7 +186,7 @@
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(431, 171);
+            this.pictureBox2.Location = new System.Drawing.Point(431, 203);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(268, 199);
             this.pictureBox2.TabIndex = 1;
@@ -249,7 +198,6 @@
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1284, 713);
             this.Controls.Add(this.panelDesctop);
-            this.Controls.Add(this.pnlTitle);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -261,8 +209,6 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.pnlTitle.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panelDesctop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -278,12 +224,8 @@
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.Button btnStore;
-        private System.Windows.Forms.Panel pnlTitle;
         private System.Windows.Forms.Panel panelDesctop;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        public System.Windows.Forms.Label lblUserName;
-        public System.Windows.Forms.Label lblRole;
     }
 }

@@ -34,52 +34,88 @@ namespace Gym_Management_System
         {
             try
             {
-                string _name = "", _role = "";
-                con.Open();
-                cmd = new SqlCommand("SELECT * FROM Users WHERE email = @Username AND password = @Password", con);
-                cmd.Parameters.AddWithValue("@Username", txtUser.Text);
+                string _name = "";
+                int _role = 0;
+
+                if (con.State == ConnectionState.Closed) con.Open();
+
+                
+                string query = "SELECT id,name, role FROM users WHERE email = @Email AND password = @Password";
+
+                cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@Email", txtUser.Text.Trim());
                 cmd.Parameters.AddWithValue("@Password", txtPwd.Text);
+
                 reader = cmd.ExecuteReader();
-                reader.Read();
-                if (reader.HasRows)
+
+              
+                if (reader.Read())
                 {
-                    _name = reader["FullName"].ToString();
-                    _role = reader["UserRole"].ToString();
-                    MessageBox.Show("Login successful!\n" + "Welcome " + _name, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Hide();
-                    mainFrame mainForm = new mainFrame();
-                    //mainForm.lblUser.Text = _name;
-                    //mainForm.lnlRole.Text = _role;
-                    //if (_role == "Admin")
-                    //{
-                    //    mainForm.adminToolStripMenuItem.Enabled = true;
-                    //    mainForm.userManagementToolStripMenuItem.Enabled = true;
-                    //}
-                    //else
-                    //{
-                    //    mainForm.adminToolStripMenuItem.Enabled = false;
-                    //    mainForm.userManagementToolStripMenuItem.Enabled = false;
-                    //}
-                    //adminDashboardForm.lblname.text = _name;
-                    //adminDashboardForm.lblrole.text = _role;
-                    mainForm.lblUserName.Text = _name;
-                    mainForm.lblRole.Text = _role;
-                    mainForm.ShowDialog(); 
+
                     
 
+                    _name = reader["name"].ToString();
+                    _role = Convert.ToInt32(reader["role"]);
+
+                    MessageBox.Show("Login successful!\nWelcome " + _name, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    UserSession.UserID = reader.GetValue(reader.GetOrdinal("id")).ToString();
+                    UserSession.UserName = reader["name"].ToString();
+                    UserSession.UserRole = Convert.ToInt32(reader["role"]);
+                    
+
+
+                    this.Hide();     
+                    mainFrame mainForm = new mainFrame();
+
+                    
+                    //mainForm.lblUserName.Text = _name;
+
+                    
+                    // 1: Admin, 2: Staff, 3: Coach, 4: Member
+                    if (_role == 1)
+                    {
+                        //mainForm.lblRole.Text = "Admin";
+                        //mainForm.adminToolStripMenuItem.Enabled = true;
+                        //mainForm.userManagementToolStripMenuItem.Enabled = true;
+                    }
+                    else if (_role == 2)
+                    {
+                        //mainForm.lblRole.Text = "Staff";
+                        //mainForm.adminToolStripMenuItem.Enabled = false;
+                        //mainForm.userManagementToolStripMenuItem.Enabled = true;
+                    }
+                    else if (_role == 3)
+                    {
+                        //mainForm.lblRole.Text = "Coach";
+                        //mainForm.adminToolStripMenuItem.Enabled = false;
+                        //mainForm.userManagementToolStripMenuItem.Enabled = false;
+                    }
+                    else
+                    {
+                        //mainForm.lblRole.Text = "Member";
+                        //mainForm.adminToolStripMenuItem.Enabled = false;
+                        //mainForm.userManagementToolStripMenuItem.Enabled = false;
+                    }
+
+                    
+                    mainForm.ShowDialog();
+                    this.Close(); 
                 }
                 else
                 {
-                    MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    
+                    MessageBox.Show("Invalid email or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                con.Close();
             }
             catch (Exception ex)
             {
-                con.Close();
-                MessageBox.Show(ex.Message);
-            };
+                MessageBox.Show("Error: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }        
+            finally
+            {
+                if (reader != null) reader.Close();
+                if (con.State == ConnectionState.Open) con.Close();
+            }
         }
 
         private void txtUser_TextChanged(object sender, EventArgs e)
@@ -95,6 +131,17 @@ namespace Gym_Management_System
         private void txtPwd_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void loginForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            
         }
     }
 }
