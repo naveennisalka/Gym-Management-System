@@ -47,11 +47,10 @@
             // 
             // itemName
             // 
-            this.itemName.AutoSize = true;
             this.itemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.itemName.Location = new System.Drawing.Point(8, 146);
+            this.itemName.Location = new System.Drawing.Point(8, 144);
             this.itemName.Name = "itemName";
-            this.itemName.Size = new System.Drawing.Size(87, 20);
+            this.itemName.Size = new System.Drawing.Size(144, 45);
             this.itemName.TabIndex = 1;
             this.itemName.Text = "Item Name";
             this.itemName.Click += new System.EventHandler(this.label1_Click);
@@ -61,7 +60,7 @@
             this.itemPrice.AutoSize = true;
             this.itemPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.itemPrice.ForeColor = System.Drawing.Color.DarkGreen;
-            this.itemPrice.Location = new System.Drawing.Point(8, 177);
+            this.itemPrice.Location = new System.Drawing.Point(8, 189);
             this.itemPrice.Name = "itemPrice";
             this.itemPrice.Size = new System.Drawing.Size(82, 24);
             this.itemPrice.TabIndex = 2;
@@ -76,7 +75,7 @@
             this.Controls.Add(this.itemName);
             this.Controls.Add(this.itemImg);
             this.Name = "storeItem";
-            this.Size = new System.Drawing.Size(166, 212);
+            this.Size = new System.Drawing.Size(166, 224);
             this.Load += new System.EventHandler(this.storeItem_Load);
             this.Click += new System.EventHandler(this.storeItem_Click);
             ((System.ComponentModel.ISupportInitialize)(this.itemImg)).EndInit();

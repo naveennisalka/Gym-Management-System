@@ -50,11 +50,22 @@ namespace Gym_Management_System
 
                     
                     item.ItemName = reader["name"].ToString();
-                    item.ItemPrice = string.Format("{0:N2}", reader["price"]); 
 
                     
-                    int catValue = Convert.ToInt32(reader["category"]);
-                    item.Category = (Categories)catValue;
+                    double price = 0;
+                    if (reader["price"] != DBNull.Value)
+                    {
+                        price = Convert.ToDouble(reader["price"]);
+                    }
+                    item.ItemPrice = price.ToString("N2");
+                    item.ItemPrice = string.Format("{0:N2}", reader["price"]);
+
+
+                   
+                    string categoryName = reader["category"].ToString();
+                    item.Category = (Categories)Enum.Parse(typeof(Categories), categoryName);
+
+                    
 
                     
                     string imgPath = reader["image_path"].ToString();
@@ -74,7 +85,7 @@ namespace Gym_Management_System
             }
             catch (Exception ex)
             {
-                MessageBox.Show("දෝෂයකි: " + ex.Message);
+                MessageBox.Show("විස්තරාත්මක දෝෂය: " + ex.ToString());
             }
             finally
             {
