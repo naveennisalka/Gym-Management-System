@@ -61,5 +61,10 @@ namespace Gym_Management_System
         {
 
         }
+
+        private void widgetStoreItem7_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
