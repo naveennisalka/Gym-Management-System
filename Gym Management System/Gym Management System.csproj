@@ -64,18 +64,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Components\widgetStoreItem.cs">
+    <Compile Include="Components\details_view.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Components\widgetStoreItem.Designer.cs">
-      <DependentUpon>widgetStoreItem.cs</DependentUpon>
+    <Compile Include="Components\details_view.Designer.cs">
+      <DependentUpon>details_view.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\wgtHoldOrders.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\wgtHoldOrders.Designer.cs">
+      <DependentUpon>wgtHoldOrders.cs</DependentUpon>
     </Compile>
     <Compile Include="dbConnect.cs" />
     <Compile Include="Enums.cs" />
-    <Compile Include="formStore.cs">
+    <Compile Include="Forms\formStore.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formStore.Designer.cs">
+    <Compile Include="Forms\formStore.Designer.cs">
       <DependentUpon>formStore.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\adminDashboardForm.cs">
@@ -83,6 +89,9 @@
     </Compile>
     <Compile Include="Forms\adminDashboardForm.Designer.cs">
       <DependentUpon>adminDashboardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InputDialog.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\settingsForm.cs">
       <SubType>Form</SubType>
@@ -126,20 +135,14 @@
     <Compile Include="Forms\userRegistrationForm.Designer.cs">
       <DependentUpon>userRegistrationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="orderItem.cs">
+    <Compile Include="Components\orderItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="orderItem.Designer.cs">
+    <Compile Include="Components\orderItem.Designer.cs">
       <DependentUpon>orderItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Forms\storeForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\storeForm.Designer.cs">
-      <DependentUpon>storeForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Components\storeItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -150,10 +153,13 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="UserSession.cs" />
-    <EmbeddedResource Include="Components\widgetStoreItem.resx">
-      <DependentUpon>widgetStoreItem.cs</DependentUpon>
+    <EmbeddedResource Include="Components\details_view.resx">
+      <DependentUpon>details_view.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formStore.resx">
+    <EmbeddedResource Include="Components\wgtHoldOrders.resx">
+      <DependentUpon>wgtHoldOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\formStore.resx">
       <DependentUpon>formStore.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\adminDashboardForm.resx">
@@ -174,7 +180,7 @@
     <EmbeddedResource Include="Forms\userRegistrationForm.resx">
       <DependentUpon>userRegistrationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="orderItem.resx">
+    <EmbeddedResource Include="Components\orderItem.resx">
       <DependentUpon>orderItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -189,9 +195,6 @@
     </Compile>
     <EmbeddedResource Include="Forms\splashForm.resx">
       <DependentUpon>splashForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\storeForm.resx">
-      <DependentUpon>storeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Components\storeItem.resx">
       <DependentUpon>storeItem.cs</DependentUpon>

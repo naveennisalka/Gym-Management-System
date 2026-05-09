@@ -30,6 +30,9 @@ namespace Gym_Management_System.Forms
             InitializeComponent();
             con = new SqlConnection(dbcon.connection());
             membersForm = member;
+            // default for new registration: show Save, hide Update
+            btnSave.Visible = true;
+            btnUpdate.Visible = false;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -42,20 +45,28 @@ namespace Gym_Management_System.Forms
                     if (MessageBox.Show("Are you sure you want to save this user?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
 
+                        // generate a new id for user
+                        string roleText = cbRole.SelectedItem?.ToString() ?? "Member";
+                        string prefix = "MEM";
+                        int roleId = 4;
+                        if (roleText.Equals("Admin", StringComparison.OrdinalIgnoreCase)) { prefix = "ADM"; roleId = 1; }
+                        else if (roleText.Equals("Cashier", StringComparison.OrdinalIgnoreCase) || roleText.Equals("Staff", StringComparison.OrdinalIgnoreCase)) { prefix = "STF"; roleId = 2; }
+                        else if (roleText.Equals("Coache", StringComparison.OrdinalIgnoreCase) || roleText.Equals("Coach", StringComparison.OrdinalIgnoreCase)) { prefix = "COA"; roleId = 3; }
 
-                        cmd = new SqlCommand("INSERT INTO Users (FullName, email, UserRole, DOB, Address, Phone, Status, Gender) VALUES (@FullName, @Email, @UserRole, @DOB, @Address, @Phone, @Status, @Gender)", con);
+                        string newId = prefix + DateTime.Now.ToString("yyMMddHHmmss");
 
-                        cmd.Parameters.AddWithValue("@FullName", txtName.Text);
-                        cmd.Parameters.AddWithValue("@Email", txtMail.Text);
-
-
-                        cmd.Parameters.AddWithValue("@Gender", cbGender.Text);
-
-                        cmd.Parameters.AddWithValue("@UserRole", cbRole.Text);
-                        cmd.Parameters.AddWithValue("@DOB", dtDob.Value);
-                        cmd.Parameters.AddWithValue("@Address", txtAddress.Text);
-                        cmd.Parameters.AddWithValue("@Phone", txtPhone.Text);
-                        cmd.Parameters.AddWithValue("@Status", cbStatus.Text);
+                        cmd = new SqlCommand("INSERT INTO users (id, name, email, password, role, phone, address, salary, status, dob, gender) VALUES (@id, @name, @email, @password, @role, @phone, @address, @salary, @status, @dob, @gender)", con);
+                        cmd.Parameters.AddWithValue("@id", newId);
+                        cmd.Parameters.AddWithValue("@name", txtName.Text);
+                        cmd.Parameters.AddWithValue("@email", txtMail.Text);
+                        cmd.Parameters.AddWithValue("@password", "");
+                        cmd.Parameters.AddWithValue("@role", roleId);
+                        cmd.Parameters.AddWithValue("@phone", txtPhone.Text);
+                        cmd.Parameters.AddWithValue("@address", txtAddress.Text);
+                        cmd.Parameters.AddWithValue("@salary", 0);
+                        cmd.Parameters.AddWithValue("@status", cbStatus.SelectedIndex >= 0 ? cbStatus.SelectedIndex : 0);
+                        cmd.Parameters.AddWithValue("@dob", dtDob.Value.Date);
+                        cmd.Parameters.AddWithValue("@gender", cbGender.SelectedItem?.ToString() ?? "");
 
                         con.Open();
                         cmd.ExecuteNonQuery();
@@ -88,18 +99,25 @@ namespace Gym_Management_System.Forms
                     if (MessageBox.Show("Are you sure you want to update this user's details?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
 
-                        string updateQuery = "UPDATE Users SET FullName = @FullName, email = @Email, UserRole = @UserRole, DOB = @DOB, Address = @Address, Phone = @Phone, Status = @Status, Gender = @Gender WHERE userID = @userID";
+                        string updateQuery = "UPDATE users SET name = @name, email = @email, role = @role, dob = @dob, address = @address, phone = @phone, status = @status, gender = @gender WHERE id = @id";
                         cmd = new SqlCommand(updateQuery, con);
 
-                        cmd.Parameters.AddWithValue("@userID", selectedUserID);
-                        cmd.Parameters.AddWithValue("@FullName", txtName.Text);
-                        cmd.Parameters.AddWithValue("@Email", txtMail.Text);
-                        cmd.Parameters.AddWithValue("@Gender", cbGender.Text);
-                        cmd.Parameters.AddWithValue("@UserRole", cbRole.Text);
-                        cmd.Parameters.AddWithValue("@DOB", dtDob.Value);
-                        cmd.Parameters.AddWithValue("@Address", txtAddress.Text);
-                        cmd.Parameters.AddWithValue("@Phone", txtPhone.Text);
-                        cmd.Parameters.AddWithValue("@Status", cbStatus.Text);
+                        // map role text back to numeric role
+                        int roleId = 4;
+                        var roleText = cbRole.SelectedItem?.ToString() ?? cbRole.Text;
+                        if (roleText.Equals("Admin", StringComparison.OrdinalIgnoreCase)) roleId = 1;
+                        else if (roleText.Equals("Cashier", StringComparison.OrdinalIgnoreCase) || roleText.Equals("Staff", StringComparison.OrdinalIgnoreCase)) roleId = 2;
+                        else if (roleText.Equals("Coache", StringComparison.OrdinalIgnoreCase) || roleText.Equals("Coach", StringComparison.OrdinalIgnoreCase)) roleId = 3;
+
+                        cmd.Parameters.AddWithValue("@id", selectedUserID);
+                        cmd.Parameters.AddWithValue("@name", txtName.Text);
+                        cmd.Parameters.AddWithValue("@email", txtMail.Text);
+                        cmd.Parameters.AddWithValue("@gender", cbGender.SelectedItem?.ToString() ?? cbGender.Text);
+                        cmd.Parameters.AddWithValue("@role", roleId);
+                        cmd.Parameters.AddWithValue("@dob", dtDob.Value.Date);
+                        cmd.Parameters.AddWithValue("@address", txtAddress.Text);
+                        cmd.Parameters.AddWithValue("@phone", txtPhone.Text);
+                        cmd.Parameters.AddWithValue("@status", cbStatus.SelectedIndex >= 0 ? cbStatus.SelectedIndex : 0);
 
                         con.Open();
                         cmd.ExecuteNonQuery();
@@ -174,6 +192,11 @@ namespace Gym_Management_System.Forms
             {
                 isChecked = true;
             }
+        }
+
+        private void userRegistrationForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -28,7 +28,12 @@ namespace Gym_Management_System
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            // refresh members list on search text change
+            try
+            {
+                loadMembers();
+            }
+            catch { }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -43,14 +48,68 @@ namespace Gym_Management_System
             {
                 int i = 0;
                 dgvUser.Rows.Clear();
-                cmd = new SqlCommand("SELECT * FROM Users WHERE CONCAT(userId,FullName, DOB, Address, Gender,Phone ,Status,UserRole,StoreCreditBalance) LIKE @search", con);
+                // select and alias columns to match existing UI expectations
+                string q = @"
+SELECT 
+  id AS userId,
+  name AS FullName,
+  dob AS DOB,
+  address AS Address,
+  gender AS Gender,
+  phone AS Phone,
+  status AS Status,
+  role AS UserRole,
+  email AS Email
+FROM users
+WHERE CONCAT(ISNULL(id, ''), ISNULL(name, ''), ISNULL(dob, ''), ISNULL(address, ''), ISNULL(gender, ''), ISNULL(phone, ''), ISNULL(status, ''), ISNULL(role, ''), ISNULL(email, '')) LIKE @search
+";
+                cmd = new SqlCommand(q, con);
                 cmd.Parameters.AddWithValue("@search", "%" + txtSearch.Text + "%");
                 con.Open();
                 reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
                     i++;
-                    dgvUser.Rows.Add(i, reader["userId"].ToString(), reader["FullName"].ToString(), Convert.ToDateTime(reader["DOB"]).ToString("yyyy-MM-dd"), reader["Address"].ToString(), reader["Gender"].ToString(), reader["Phone"].ToString(), reader["Status"].ToString(), reader["UserRole"].ToString(), reader["StoreCreditBalance"].ToString());
+                    string dobStr = "";
+                    if (reader["DOB"] != DBNull.Value && !string.IsNullOrEmpty(reader["DOB"].ToString()))
+                    {
+                        DateTime dt;
+                        if (DateTime.TryParse(reader["DOB"].ToString(), out dt)) dobStr = dt.ToString("yyyy-MM-dd");
+                    }
+
+                    dgvUser.Rows.Add(
+                        i,
+                        reader["userId"].ToString(),
+                        reader["FullName"].ToString(),
+                        dobStr,
+                        reader["Address"].ToString(),
+                        reader["Gender"] != DBNull.Value ? reader["Gender"].ToString() : string.Empty,
+                        reader["Phone"].ToString(),
+                        reader["Status"].ToString(),
+                        reader["UserRole"].ToString(),
+                        reader["Email"].ToString()
+                    );
+                    // ensure email cell is set (in case column ordering changed)
+                    try
+                    {
+                        var addedRow = dgvUser.Rows[dgvUser.Rows.Count - 1];
+                        var emailVal = reader["Email"] != DBNull.Value ? reader["Email"].ToString() : string.Empty;
+                        // find Email column by header text
+                        int emailColIndex = -1;
+                        for (int ci = 0; ci < dgvUser.Columns.Count; ci++)
+                        {
+                            if (dgvUser.Columns[ci].HeaderText.Equals("Email", StringComparison.OrdinalIgnoreCase))
+                            {
+                                emailColIndex = ci;
+                                break;
+                            }
+                        }
+                        if (emailColIndex >= 0)
+                        {
+                            addedRow.Cells[emailColIndex].Value = emailVal;
+                        }
+                    }
+                    catch { }
                 }
                 reader.Close();
                 con.Close();
@@ -70,13 +129,36 @@ namespace Gym_Management_System
                 userRegistrationForm userRegForm = new userRegistrationForm(this);
                 userRegForm.selectedUserID = dgvUser.Rows[e.RowIndex].Cells[1].Value.ToString();
                 userRegForm.txtName.Text = dgvUser.Rows[e.RowIndex].Cells[2].Value.ToString();
-                userRegForm.dtDob.Value = Convert.ToDateTime(dgvUser.Rows[e.RowIndex].Cells[3].Value.ToString());
-                userRegForm.txtAddress.Text = dgvUser.Rows[e.RowIndex].Cells[4].Value.ToString();
-                userRegForm.cbGender.Text = dgvUser.Rows[e.RowIndex].Cells[5].Value.ToString();
-                userRegForm.txtPhone.Text = dgvUser.Rows[e.RowIndex].Cells[6].Value.ToString();
+                DateTime dt;
+                if (DateTime.TryParse(dgvUser.Rows[e.RowIndex].Cells[3].Value?.ToString(), out dt)) userRegForm.dtDob.Value = dt;
+                userRegForm.txtAddress.Text = dgvUser.Rows[e.RowIndex].Cells[4].Value?.ToString() ?? string.Empty;
+                userRegForm.cbGender.Text = dgvUser.Rows[e.RowIndex].Cells[5].Value?.ToString() ?? string.Empty;
+                userRegForm.txtPhone.Text = dgvUser.Rows[e.RowIndex].Cells[6].Value?.ToString() ?? string.Empty;
+                // set email
+                userRegForm.txtMail.Text = dgvUser.Rows[e.RowIndex].Cells[9].Value?.ToString() ?? string.Empty;
+                // map role numeric->text
+                var roleVal = dgvUser.Rows[e.RowIndex].Cells[8].Value?.ToString();
+                int roleNum;
+                if (int.TryParse(roleVal, out roleNum))
+                {
+                    switch (roleNum)
+                    {
+                        case 1: userRegForm.cbRole.Text = "Admin"; break;
+                        case 2: userRegForm.cbRole.Text = "Cashier"; break;
+                        case 3: userRegForm.cbRole.Text = "Coache"; break;
+                        default: userRegForm.cbRole.Text = "Member"; break;
+                    }
+                }
+                // map status if numeric
+                var statusVal = dgvUser.Rows[e.RowIndex].Cells[7].Value?.ToString();
+                int st;
+                if (int.TryParse(statusVal, out st) && st >= 0 && st < userRegForm.cbStatus.Items.Count)
+                {
+                    userRegForm.cbStatus.SelectedIndex = st;
+                }
 
-                userRegForm.btnSave.Enabled = false;
-                userRegForm.btnUpdate.Enabled = true;
+                userRegForm.btnSave.Visible = false;
+                userRegForm.btnUpdate.Visible = true;
                 userRegForm.ShowDialog();
             }
             else if (colName == "Delete")
@@ -86,7 +168,7 @@ namespace Gym_Management_System
                     try
                     {
                         con.Open();
-                        cmd = new SqlCommand("DELETE FROM Users WHERE userId = @userId", con);
+                        cmd = new SqlCommand("DELETE FROM users WHERE id = @userId", con);
                         cmd.Parameters.AddWithValue("@userId", dgvUser.Rows[e.RowIndex].Cells[1].Value.ToString());
                         cmd.ExecuteNonQuery();
                         con.Close();

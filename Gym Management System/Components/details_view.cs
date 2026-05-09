@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Gym_Management_System
+namespace Gym_Management_System.Components
 {
-    public partial class orderItem : UserControl
+    public partial class details_view : UserControl
     {
-        public orderItem()
+        public details_view()
         {
             InitializeComponent();
         }

@@ -62,7 +62,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1113, 65);
+            this.panel1.Size = new System.Drawing.Size(1163, 65);
             this.panel1.TabIndex = 1;
             // 
             // button1
@@ -83,7 +83,7 @@
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(1045, 17);
+            this.pictureBox1.Location = new System.Drawing.Point(1095, 17);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(49, 31);
             this.pictureBox1.TabIndex = 2;
@@ -94,7 +94,7 @@
             this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSearch.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(847, 17);
+            this.txtSearch.Location = new System.Drawing.Point(897, 17);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(200, 31);
             this.txtSearch.TabIndex = 0;
@@ -124,7 +124,7 @@
             this.dgvUser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvUser.Location = new System.Drawing.Point(0, 65);
             this.dgvUser.Name = "dgvUser";
-            this.dgvUser.Size = new System.Drawing.Size(1113, 586);
+            this.dgvUser.Size = new System.Drawing.Size(1163, 586);
             this.dgvUser.TabIndex = 2;
             this.dgvUser.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUser_CellContentClick);
             // 
@@ -193,9 +193,9 @@
             // Column8
             // 
             this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column8.HeaderText = "Store Credit Balance";
+            this.Column8.HeaderText = "Email";
             this.Column8.Name = "Column8";
-            this.Column8.Width = 168;
+            this.Column8.Width = 80;
             // 
             // Edit
             // 
@@ -229,13 +229,13 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 491);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1113, 160);
+            this.panel2.Size = new System.Drawing.Size(1163, 160);
             this.panel2.TabIndex = 3;
             // 
             // MembersForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1113, 651);
+            this.ClientSize = new System.Drawing.Size(1163, 651);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgvUser);
             this.Controls.Add(this.panel1);

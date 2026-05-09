@@ -15,9 +15,10 @@ namespace Gym_Management_System
         [STAThread]
         static void Main()
         {
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formStore());
+            Application.Run(new MembersForm());
         }
     }
 }

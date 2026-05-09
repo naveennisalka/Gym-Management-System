@@ -15,6 +15,8 @@ namespace Gym_Management_System
     public partial class storeItem : UserControl
     {
         public event EventHandler OnItemSelect = null;
+        // expose the underlying store_items id
+        public string ItemId { get; set; }
         private Categories _category;
         public storeItem()
         {
@@ -23,12 +25,12 @@ namespace Gym_Management_System
 
         private void storeItem_Load(object sender, EventArgs e)
         {
-            OnItemSelect?.Invoke(this, EventArgs.Empty);
+            // Do not auto-invoke selection on load. Selection should occur when user clicks the control.
         }
 
         private void storeItem_Click(object sender, EventArgs e)
         {
-
+            OnItemSelect?.Invoke(this, EventArgs.Empty);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -65,7 +67,7 @@ namespace Gym_Management_System
 
         private void itemImg_Click(object sender, EventArgs e)
         {
-
+            OnItemSelect?.Invoke(this, EventArgs.Empty);
         }
     }
 }

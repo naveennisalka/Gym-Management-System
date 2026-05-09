@@ -118,25 +118,40 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAPpJREFUOE/l
-        lD1LQzEUhl/UTQqC+jscXMStIPgjCuKgu1tXcRJHd+09KbTg5OLs4uZfcNNF3AouUn3KjRc/bk7u0Hbr
-        gWfJyfuEJCTSgtY1mzLaMvampK0BG9+yU5ZkvMhgRp6jSz3WnOZ0lK6M8FXGmTPeTIOwq8BqJa738tSE
-        TzIuZBzpilY83z67UV4wTMIeNeFYgcP/1y/JWJfxmIQ9nC2P1WOnJrxLgjkcIeqzFUX3rFTC2ySYwxF+
-        KLAv40HGSMa5jMskmMMRflX8nfiZBHM4wmYCJzLeVHAQFyroyHhX4PhXeMPy3J5e6YpVfg4F2zPx8zks
-        XE0AiFB2iftOUSgAAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAT1JREFUOE/d
-        ky1LREEYhY9YBMGiUVAQUTFpEZNBLTaFxX9gMwgG13nnMv/CYFgQtojgb9CgxWwTwWrZbQuiR2buvXvn
-        C9SmHnjKnJeH2TvvAv8uPMY4BV0KbqmxEvdBKJinYGuIxgbbmBz2BhMU3FHAij411kJLFRbYpuDdG655
-        ocFYRlbTy0qpUGSGa5aocZU5r3mlwVQoFJjMYInGMhWek3OfU6z+VLhLwVvSlVwEsu8Iq5kdCgZBp3BG
-        YCT22W/YSkQlPfsg3ty+d9MuWxgNTV7cDTQOAgQLyVwbiyywmb1ZHbcWCh0KHjzuKTh0vWCPgpuov6bC
-        TOxyoeAo83MtHzSYdkucdvYbnscul68eJTlrusvY5fIHhAonyXDDXLJ/DelS29Bg1r2cwlNEx66H+6/H
-        neCRGuux63fnE8xz8gS2no/3AAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAISSURBVDhPvZRvb9JAHMfr9LnbGzDKFlHHgMEYg7ZQ/pd/HXMbpIsPfCl7oosLicbExDemTBNj
+        4qS9K1gKxSU8+poOgdIRBRL9JN8nl7tP7nd3v2OY/wlOT1fMYs1jFqsJM/c0YWYPPNaYc95fMYona31J
+        rpulKu0VquiJR+jmDtHNHMBIVaiRks47QmXVuW4mpnQS60syNUs1zJDBSEroCGXosaKqcyLnXD9Fb/8Z
+        35fkwRwy6FweP6K5gb6XYZ2eazqV56t9SSYLyNDey6C9m1L0YPqu08f0y/LZEjK0gglogfiLKRkE4Y5Z
+        qrWWkm3Hofk4guPj25PdSbLXLuukK2gn99FOlNGKl6DxBWisCBrJgoTTIKEkaFD4LeNBt1ioT9jNsbCb
+        r+XtO9PevsegqQzzfZTmMJfDqK/ejGVkMwLNHRFtwqO8vUz6+h2uGp9x1fg0zMeLYT5c4Od1GlBf1scy
+        8igMxR2aCHXx0Gs/M10oo8UX0GJFaJEsaDgNGkqCBASo/hhULwdik6kPd6FuhCYlg2FuGanK5XwXMClz
+        JFM2dr5ZjrHQwkiWz5aUQVkPTD8bC6s3O7EiWVjmCihfXMGbD9tCZ3O81U4LyAbNe/7ZrTdCi2Zj7d0U
+        nUOmKi7fnz+HEcYWt0a3hbrm4+lNWYg2HwTOv973z/d92QHDrJDHUY/qDieskPUdjzXmnPdP+QW6z1pT
+        1gXuagAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="button3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAS9JREFUOE9j
+        YBhy4H+mjeD/QhclMA5TcP/vyvXovwvXBzAGscMV3eDymTaC6PpRwP9cJ+X/eQ4//uc5/CcS/wAZjG4O
+        HIBtzTCf/z9R98D/COWv/8OV/mPFIDmQGpBafAaCwH87huz/tgz/icJ2DNno+jHA0DLwX4HL/789GXAD
+        /vZkgsXIM9Ce6f/v62f+//r58//f3qz/f/uywezf106D5Ug3EIT9xP7/vnX+/69fv8AYxAaJkedCmDcX
+        tsAN/LuwmbIw/DujAuKyu5f//75zGWLojAoyDQSF4fFt/3/fu/r/X4Dk/3+BUv9/37/2//exrRSEoSvX
+        ///+EggXgdgunGS6kBhMlIG2DDEYGnFhO4ZodP0Y4L8lA+d/W4bV/20Z7uLFdgyrQGrR9Q9+AACkBMlP
+        Ybsd1gAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAELSURBVDhPvZTPSsNAEIdX6732OSy+gFVa6MF2/2RWyPvkUgTpkxS6k4hHxWcxgrb01lsLEtmF
+        jc2YWorb/uA7ZJj5YGAzjB0zSZKccqPbPFM9h9FtW6N9O8OfeEsijAXCXCAUhLlIowdAOKdztRlm6maL
+        qEoafUqjO3S+Ep5G1wJh9Wt4Oys1vbuiHhe7gkCY1Qz9iUT46E/iJvUxkUb3tNnz/PbioPVSavSoIuu+
+        ds8EwoI2evJl7qD1DWbxJG6UQpWpy5qmfYSFfJQXpVAiDGiDXdGL1l9rh/+uW39o9O3hhMFXZgU7EQjv
+        tGkPYW4dP8LQz8Ym+MO2Cfrr+QQ9Dj5Bz9dmgh3Y/+Qb7b1I+V+tlu4AAAAASUVORK5CYII=
 </value>
   </data>
 </root>
