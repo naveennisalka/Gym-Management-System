@@ -114,6 +114,12 @@
     <Compile Include="Forms\splashForm.Designer.cs">
       <DependentUpon>splashForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\test.Designer.cs">
+      <DependentUpon>test.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\userRegistrationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,9 @@
     <Compile Include="Components\storeItem.Designer.cs">
       <DependentUpon>storeItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="RoundedPannel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UserSession.cs" />
     <EmbeddedResource Include="Components\widgetStoreItem.resx">
       <DependentUpon>widgetStoreItem.cs</DependentUpon>
@@ -158,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MembersForm.resx">
       <DependentUpon>MembersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\test.resx">
+      <DependentUpon>test.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\userRegistrationForm.resx">
       <DependentUpon>userRegistrationForm.cs</DependentUpon>

@@ -62,5 +62,10 @@ namespace Gym_Management_System
             get => _category;
             set => _category = value;
         }
+
+        private void itemImg_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

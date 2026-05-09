@@ -26,9 +26,20 @@ namespace Gym_Management_System
             LoadStoreItems();
         }
 
+        //search function
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            foreach (storeItem item in flpStore.Controls.OfType<storeItem>())
+            {
+                if (item.ItemName.IndexOf(txtSearch.Text, StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    item.Visible = true;
+                }
+                else
+                {
+                    item.Visible = false;
+                }
+            }
         }
 
         private void LoadStoreItems()
@@ -38,7 +49,6 @@ namespace Gym_Management_System
             try
             {
                 if (con.State == ConnectionState.Closed) con.Open();
-
                 
                 string query = "SELECT name, price, image_path, category FROM store_items";
                 cmd = new SqlCommand(query, con);
@@ -47,10 +57,8 @@ namespace Gym_Management_System
                 while (reader.Read())
                 {
                     storeItem item = new storeItem();
-
-                    
+                                        
                     item.ItemName = reader["name"].ToString();
-
                     
                     double price = 0;
                     if (reader["price"] != DBNull.Value)
@@ -59,14 +67,9 @@ namespace Gym_Management_System
                     }
                     item.ItemPrice = price.ToString("N2");
                     item.ItemPrice = string.Format("{0:N2}", reader["price"]);
-
-
                    
                     string categoryName = reader["category"].ToString();
                     item.Category = (Categories)Enum.Parse(typeof(Categories), categoryName);
-
-                    
-
                     
                     string imgPath = reader["image_path"].ToString();
 
@@ -85,12 +88,21 @@ namespace Gym_Management_System
             }
             catch (Exception ex)
             {
-                MessageBox.Show("විස්තරාත්මක දෝෂය: " + ex.ToString());
+                MessageBox.Show(ex.ToString());
             }
             finally
             {
                 con.Close();
             }
+        }
+
+        private void flpStore_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

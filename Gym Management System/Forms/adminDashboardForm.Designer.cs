@@ -64,7 +64,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.widgetStoreItem1 = new Gym_Management_System.Components.widgetStoreItem();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -437,22 +436,12 @@
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // widgetStoreItem1
-            // 
-            this.widgetStoreItem1.BackColor = System.Drawing.Color.FloralWhite;
-            this.widgetStoreItem1.Location = new System.Drawing.Point(767, 68);
-            this.widgetStoreItem1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.widgetStoreItem1.Name = "widgetStoreItem1";
-            this.widgetStoreItem1.Size = new System.Drawing.Size(231, 359);
-            this.widgetStoreItem1.TabIndex = 13;
-            // 
             // adminDashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1113, 651);
-            this.Controls.Add(this.widgetStoreItem1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -524,6 +513,5 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private Components.widgetStoreItem widgetStoreItem1;
     }
 }
