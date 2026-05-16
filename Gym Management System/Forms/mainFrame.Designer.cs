@@ -30,14 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainFrame));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnSettings = new System.Windows.Forms.Button();
             this.btnStore = new System.Windows.Forms.Button();
             this.btnMembers = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelDesctop = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -48,7 +52,8 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(33)))));
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.btnSettings);
             this.panel1.Controls.Add(this.btnStore);
@@ -59,8 +64,16 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(100);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(210, 713);
+            this.panel1.Size = new System.Drawing.Size(203, 787);
             this.panel1.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Red;
+            this.panel3.Location = new System.Drawing.Point(17, 734);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(159, 2);
+            this.panel3.TabIndex = 19;
             // 
             // btnLogout
             // 
@@ -68,12 +81,13 @@
             this.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnLogout.FlatAppearance.BorderSize = 0;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.ForeColor = System.Drawing.Color.White;
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(0, 653);
+            this.btnLogout.Location = new System.Drawing.Point(0, 742);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnLogout.Size = new System.Drawing.Size(210, 60);
+            this.btnLogout.Size = new System.Drawing.Size(203, 45);
             this.btnLogout.TabIndex = 4;
             this.btnLogout.Text = "     Log Out";
             this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -86,12 +100,13 @@
             this.btnSettings.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSettings.FlatAppearance.BorderSize = 0;
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSettings.ForeColor = System.Drawing.Color.White;
             this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
             this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSettings.Location = new System.Drawing.Point(0, 325);
+            this.btnSettings.Location = new System.Drawing.Point(0, 367);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnSettings.Size = new System.Drawing.Size(210, 60);
+            this.btnSettings.Size = new System.Drawing.Size(203, 43);
             this.btnSettings.TabIndex = 3;
             this.btnSettings.Text = "     Settings";
             this.btnSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -104,12 +119,13 @@
             this.btnStore.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnStore.FlatAppearance.BorderSize = 0;
             this.btnStore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStore.ForeColor = System.Drawing.Color.White;
             this.btnStore.Image = ((System.Drawing.Image)(resources.GetObject("btnStore.Image")));
             this.btnStore.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStore.Location = new System.Drawing.Point(0, 265);
+            this.btnStore.Location = new System.Drawing.Point(0, 313);
             this.btnStore.Name = "btnStore";
             this.btnStore.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnStore.Size = new System.Drawing.Size(210, 60);
+            this.btnStore.Size = new System.Drawing.Size(203, 54);
             this.btnStore.TabIndex = 2;
             this.btnStore.Text = "     Store";
             this.btnStore.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -122,12 +138,13 @@
             this.btnMembers.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMembers.FlatAppearance.BorderSize = 0;
             this.btnMembers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMembers.ForeColor = System.Drawing.Color.White;
             this.btnMembers.Image = ((System.Drawing.Image)(resources.GetObject("btnMembers.Image")));
             this.btnMembers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMembers.Location = new System.Drawing.Point(0, 205);
+            this.btnMembers.Location = new System.Drawing.Point(0, 268);
             this.btnMembers.Name = "btnMembers";
             this.btnMembers.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnMembers.Size = new System.Drawing.Size(210, 60);
+            this.btnMembers.Size = new System.Drawing.Size(203, 45);
             this.btnMembers.TabIndex = 1;
             this.btnMembers.Text = "     Members";
             this.btnMembers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -140,12 +157,13 @@
             this.btnDashboard.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDashboard.FlatAppearance.BorderSize = 0;
             this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashboard.ForeColor = System.Drawing.Color.White;
             this.btnDashboard.Image = ((System.Drawing.Image)(resources.GetObject("btnDashboard.Image")));
             this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDashboard.Location = new System.Drawing.Point(0, 145);
+            this.btnDashboard.Location = new System.Drawing.Point(0, 214);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnDashboard.Size = new System.Drawing.Size(210, 60);
+            this.btnDashboard.Size = new System.Drawing.Size(203, 54);
             this.btnDashboard.TabIndex = 0;
             this.btnDashboard.Text = "     Dashboard";
             this.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -154,49 +172,93 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(33)))));
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(210, 145);
+            this.panel2.Size = new System.Drawing.Size(203, 214);
             this.panel2.TabIndex = 1;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Lime;
+            this.panel4.Location = new System.Drawing.Point(17, 82);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(159, 2);
+            this.panel4.TabIndex = 20;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label8.Font = new System.Drawing.Font("Gotham", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(67, 36);
+            this.label8.Margin = new System.Windows.Forms.Padding(0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(77, 18);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "PowerFit";
+            this.label8.UseMnemonic = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(43, 24);
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(26, 22);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(118, 96);
-            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.Size = new System.Drawing.Size(51, 43);
+            this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
             // panelDesctop
             // 
+            this.panelDesctop.BackColor = System.Drawing.Color.White;
+            this.panelDesctop.Controls.Add(this.label1);
             this.panelDesctop.Controls.Add(this.pictureBox2);
             this.panelDesctop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesctop.Location = new System.Drawing.Point(210, 0);
+            this.panelDesctop.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.panelDesctop.Location = new System.Drawing.Point(203, 0);
             this.panelDesctop.Name = "panelDesctop";
-            this.panelDesctop.Size = new System.Drawing.Size(1074, 713);
+            this.panelDesctop.Size = new System.Drawing.Size(1301, 787);
             this.panelDesctop.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Font = new System.Drawing.Font("Gotham Ultra", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(473, 323);
+            this.label1.Margin = new System.Windows.Forms.Padding(0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(488, 115);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "PowerFit";
+            this.label1.UseMnemonic = false;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(431, 203);
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(318, 269);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(268, 199);
-            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.Size = new System.Drawing.Size(220, 249);
+            this.pictureBox2.TabIndex = 17;
             this.pictureBox2.TabStop = false;
             // 
             // mainFrame
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1284, 713);
+            this.ClientSize = new System.Drawing.Size(1504, 787);
             this.Controls.Add(this.panelDesctop);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -208,8 +270,10 @@
             this.Load += new System.EventHandler(this.mainFrame_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelDesctop.ResumeLayout(false);
+            this.panelDesctop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
@@ -225,7 +289,11 @@
         private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.Button btnStore;
         private System.Windows.Forms.Panel panelDesctop;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
     }
 }

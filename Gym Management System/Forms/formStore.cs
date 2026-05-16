@@ -580,6 +580,11 @@ namespace Gym_Management_System
             }
             finally { con.Close(); }
         }
+
+        private void flpStore_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 
 

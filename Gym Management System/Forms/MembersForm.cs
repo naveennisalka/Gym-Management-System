@@ -1,4 +1,4 @@
-﻿using Gym_Management_System.Forms;
+﻿ using Gym_Management_System.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -182,6 +182,17 @@ WHERE CONCAT(ISNULL(id, ''), ISNULL(name, ''), ISNULL(dob, ''), ISNULL(address, 
                 }
             }
             loadMembers();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            userRegistrationForm userRegForm = new userRegistrationForm(this);
+            userRegForm.ShowDialog();
         }
     }
 }

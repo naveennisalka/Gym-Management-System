@@ -46,9 +46,10 @@
             this.roundedPannel1.Controls.Add(this.itemImg);
             this.roundedPannel1.Controls.Add(this.itemPrice);
             this.roundedPannel1.Controls.Add(this.itemName);
+            this.roundedPannel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roundedPannel1.Location = new System.Drawing.Point(3, 6);
             this.roundedPannel1.Name = "roundedPannel1";
-            this.roundedPannel1.Size = new System.Drawing.Size(172, 238);
+            this.roundedPannel1.Size = new System.Drawing.Size(132, 179);
             this.roundedPannel1.TabIndex = 3;
             // 
             // itemImg
@@ -57,7 +58,7 @@
             this.itemImg.Image = ((System.Drawing.Image)(resources.GetObject("itemImg.Image")));
             this.itemImg.Location = new System.Drawing.Point(16, 15);
             this.itemImg.Name = "itemImg";
-            this.itemImg.Size = new System.Drawing.Size(140, 119);
+            this.itemImg.Size = new System.Drawing.Size(109, 89);
             this.itemImg.TabIndex = 0;
             this.itemImg.TabStop = false;
             this.itemImg.Click += new System.EventHandler(this.itemImg_Click);
@@ -65,20 +66,20 @@
             // itemPrice
             // 
             this.itemPrice.AutoSize = true;
-            this.itemPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.itemPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.itemPrice.ForeColor = System.Drawing.Color.DarkGreen;
-            this.itemPrice.Location = new System.Drawing.Point(12, 195);
+            this.itemPrice.Location = new System.Drawing.Point(13, 152);
             this.itemPrice.Name = "itemPrice";
-            this.itemPrice.Size = new System.Drawing.Size(82, 24);
+            this.itemPrice.Size = new System.Drawing.Size(59, 16);
             this.itemPrice.TabIndex = 2;
             this.itemPrice.Text = "1000.00";
             // 
             // itemName
             // 
-            this.itemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.itemName.Location = new System.Drawing.Point(12, 150);
+            this.itemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.itemName.Location = new System.Drawing.Point(12, 107);
             this.itemName.Name = "itemName";
-            this.itemName.Size = new System.Drawing.Size(144, 45);
+            this.itemName.Size = new System.Drawing.Size(129, 45);
             this.itemName.TabIndex = 1;
             this.itemName.Text = "Item Name";
             this.itemName.Click += new System.EventHandler(this.label1_Click);
@@ -91,7 +92,7 @@
             this.Controls.Add(this.roundedPannel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "storeItem";
-            this.Size = new System.Drawing.Size(180, 244);
+            this.Size = new System.Drawing.Size(142, 195);
             this.Load += new System.EventHandler(this.storeItem_Load);
             this.Click += new System.EventHandler(this.storeItem_Click);
             this.roundedPannel1.ResumeLayout(false);

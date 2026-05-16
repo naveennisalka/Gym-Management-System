@@ -8,7 +8,7 @@ namespace Gym_Management_System
 
         adminDashboardForm Dashboard;
         MembersForm Members;
-        storeForm Store;
+        //storeForm Store;
         settingsForm Settings;
 
         private Form currentChildForm;
@@ -31,19 +31,30 @@ namespace Gym_Management_System
 
         public void OpenChildForm(Form childForm)
         {
+            // close and remove previous child
             if (currentChildForm != null)
             {
-                currentChildForm.Close();
+                try { currentChildForm.Close(); } catch { }
+                panelDesctop.Controls.Clear();
+                currentChildForm = null;
             }
 
             currentChildForm = childForm;
+            // embed the form into the panel so it fits exactly
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.TopMost = false;
+            childForm.Margin = new Padding(0);
+            childForm.Padding = new Padding(0);
+            childForm.WindowState = FormWindowState.Normal;
             childForm.Dock = DockStyle.Fill;
+
+            panelDesctop.SuspendLayout();
             panelDesctop.Controls.Add(childForm);
             panelDesctop.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
+            panelDesctop.ResumeLayout();
         }
 
         private void btnDashboard_Click_1(object sender, EventArgs e)
@@ -62,7 +73,8 @@ namespace Gym_Management_System
 
         private void btnStore_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new storeForm());
+            //OpenChildForm(new storeForm());
+            OpenChildForm(new formStore());
         }
 
 
@@ -94,6 +106,11 @@ namespace Gym_Management_System
         }
 
         private void lblUserName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
         {
 
         }
