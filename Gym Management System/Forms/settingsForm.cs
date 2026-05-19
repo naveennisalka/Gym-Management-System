@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gym_Management_System.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,13 @@ namespace Gym_Management_System
         public settingsForm()
         {
             InitializeComponent();
+        }
+        
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            formEquipment equipmentForm = new formEquipment();
+            equipmentForm.ShowDialog();
         }
     }
 }

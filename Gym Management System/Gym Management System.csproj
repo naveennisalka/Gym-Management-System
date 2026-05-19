@@ -78,6 +78,24 @@
     </Compile>
     <Compile Include="dbConnect.cs" />
     <Compile Include="Enums.cs" />
+    <Compile Include="Forms\formAddAssets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\formAddAssets.Designer.cs">
+      <DependentUpon>formAddAssets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\formAssetsInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\formAssetsInfo.Designer.cs">
+      <DependentUpon>formAssetsInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\formEquipment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\formEquipment.Designer.cs">
+      <DependentUpon>formEquipment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\formStore.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +176,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Components\wgtHoldOrders.resx">
       <DependentUpon>wgtHoldOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\formAddAssets.resx">
+      <DependentUpon>formAddAssets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\formAssetsInfo.resx">
+      <DependentUpon>formAssetsInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\formEquipment.resx">
+      <DependentUpon>formEquipment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\formStore.resx">
       <DependentUpon>formStore.cs</DependentUpon>

@@ -40,7 +40,7 @@ namespace Gym_Management_System
             }
 
             currentChildForm = childForm;
-            // embed the form into the panel so it fits exactly
+           
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.TopMost = false;
