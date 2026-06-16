@@ -35,23 +35,23 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.button10 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             this.button11 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -134,66 +134,6 @@
             this.label3.Text = "Profile";
             this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(131, 184);
-            this.label4.Margin = new System.Windows.Forms.Padding(3, 0, 3, 20);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(697, 58);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "Store";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // label5
-            // 
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(131, 514);
-            this.label5.Margin = new System.Windows.Forms.Padding(3, 0, 3, 20);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(697, 58);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "Equipments";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // label6
-            // 
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(131, 682);
-            this.label6.Margin = new System.Windows.Forms.Padding(3, 0, 3, 20);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(697, 58);
-            this.label6.TabIndex = 25;
-            this.label6.Text = "Order";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(131, 805);
-            this.label7.Margin = new System.Windows.Forms.Padding(3, 0, 3, 20);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(697, 58);
-            this.label7.TabIndex = 27;
-            this.label7.Text = "Reports";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // panel2
-            // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 145);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(170, 506);
-            this.panel2.TabIndex = 3;
-            // 
-            // panel3
-            // 
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(1109, 145);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(54, 506);
-            this.panel3.TabIndex = 4;
-            // 
             // button8
             // 
             this.button8.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -241,6 +181,18 @@
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseMnemonic = false;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(131, 184);
+            this.label4.Margin = new System.Windows.Forms.Padding(3, 0, 3, 20);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(697, 58);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Store";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // button2
             // 
@@ -363,6 +315,17 @@
             this.button6.UseMnemonic = false;
             this.button6.UseVisualStyleBackColor = false;
             // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(131, 514);
+            this.label5.Margin = new System.Windows.Forms.Padding(3, 0, 3, 20);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(697, 58);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Equipments";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
             // button7
             // 
             this.button7.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -411,6 +374,18 @@
             this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button9.UseMnemonic = false;
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(131, 682);
+            this.label6.Margin = new System.Windows.Forms.Padding(3, 0, 3, 20);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(697, 58);
+            this.label6.TabIndex = 25;
+            this.label6.Text = "Order";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // button10
             // 
@@ -436,6 +411,17 @@
             this.button10.UseMnemonic = false;
             this.button10.UseVisualStyleBackColor = false;
             // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(131, 805);
+            this.label7.Margin = new System.Windows.Forms.Padding(3, 0, 3, 20);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(697, 58);
+            this.label7.TabIndex = 27;
+            this.label7.Text = "Reports";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
             // button11
             // 
             this.button11.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -460,6 +446,22 @@
             this.button11.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button11.UseMnemonic = false;
             this.button11.UseVisualStyleBackColor = false;
+            // 
+            // panel2
+            // 
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 145);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(170, 506);
+            this.panel2.TabIndex = 3;
+            // 
+            // panel3
+            // 
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(1109, 145);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(54, 506);
+            this.panel3.TabIndex = 4;
             // 
             // settingsForm
             // 

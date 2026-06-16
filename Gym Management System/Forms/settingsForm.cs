@@ -21,8 +21,22 @@ namespace Gym_Management_System
 
         private void button7_Click(object sender, EventArgs e)
         {
-            formEquipment equipmentForm = new formEquipment();
-            equipmentForm.ShowDialog();
+            formAddAssets formAddAssets = new formAddAssets();
+            formAddAssets.btnUpdate.Hide();
+            formAddAssets.ShowDialog();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            formEquipment formEquipment = new formEquipment();
+            formEquipment.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            formChangePassword formChangePassword = new formChangePassword();
+
+            formChangePassword.ShowDialog();
         }
     }
 }

@@ -35,27 +35,30 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDetails = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNextService = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLastService = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.brand = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.purchase_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.model_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serial_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.purchase_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.warranty_expiry_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.info = new System.Windows.Forms.DataGridViewImageColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnLogin = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsset)).BeginInit();
             this.panel3.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -74,13 +77,16 @@
             this.dgvAsset.ColumnHeadersHeight = 40;
             this.dgvAsset.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvAsset.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.No,
             this.Column1,
-            this.Column2,
-            this.colDetails,
-            this.Column6,
-            this.colNextService,
-            this.colLastService,
+            this.name,
+            this.brand,
+            this.category,
+            this.purchase_date,
+            this.status,
+            this.model_number,
+            this.serial_number,
+            this.purchase_price,
+            this.warranty_expiry_date,
             this.Edit,
             this.Delete,
             this.info});
@@ -133,6 +139,17 @@
             this.panel3.Size = new System.Drawing.Size(32, 30);
             this.panel3.TabIndex = 13;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(27, 28);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -148,49 +165,42 @@
             this.panel1.Size = new System.Drawing.Size(1147, 165);
             this.panel1.TabIndex = 4;
             // 
-            // No
+            // button1
             // 
-            this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.No.HeaderText = "No";
-            this.No.Name = "No";
-            this.No.Width = 52;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.Lime;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(12, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(103, 31);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Back";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Column1
+            // btnLogin
             // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 47;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column2.HeaderText = "Name";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 74;
-            // 
-            // colDetails
-            // 
-            this.colDetails.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colDetails.HeaderText = "Details";
-            this.colDetails.Name = "colDetails";
-            // 
-            // Column6
-            // 
-            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column6.HeaderText = "Status";
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 77;
-            // 
-            // colNextService
-            // 
-            this.colNextService.HeaderText = "Next Service Date";
-            this.colNextService.Name = "colNextService";
-            // 
-            // colLastService
-            // 
-            this.colLastService.HeaderText = "Last service Date";
-            this.colLastService.Name = "colLastService";
+            this.btnLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLogin.BackColor = System.Drawing.Color.Chartreuse;
+            this.btnLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnLogin.Image = ((System.Drawing.Image)(resources.GetObject("btnLogin.Image")));
+            this.btnLogin.Location = new System.Drawing.Point(941, 112);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnLogin.Size = new System.Drawing.Size(194, 39);
+            this.btnLogin.TabIndex = 12;
+            this.btnLogin.Text = "      Add New Asset\r\n";
+            this.btnLogin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLogin.UseMnemonic = false;
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // dataGridViewImageColumn1
             // 
@@ -199,7 +209,6 @@
             this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
             this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 5;
             // 
             // dataGridViewImageColumn2
             // 
@@ -208,7 +217,6 @@
             this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
             this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.Width = 5;
             // 
             // dataGridViewImageColumn3
             // 
@@ -217,7 +225,60 @@
             this.dataGridViewImageColumn3.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn3.Image")));
             this.dataGridViewImageColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
-            this.dataGridViewImageColumn3.Width = 5;
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 47;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "Name";
+            this.name.Name = "name";
+            // 
+            // brand
+            // 
+            this.brand.HeaderText = "Brand";
+            this.brand.Name = "brand";
+            // 
+            // category
+            // 
+            this.category.HeaderText = "Category";
+            this.category.Name = "category";
+            // 
+            // purchase_date
+            // 
+            this.purchase_date.HeaderText = "Purchase Date";
+            this.purchase_date.Name = "purchase_date";
+            // 
+            // status
+            // 
+            this.status.HeaderText = "Status";
+            this.status.Name = "status";
+            // 
+            // model_number
+            // 
+            this.model_number.HeaderText = "Model Number";
+            this.model_number.Name = "model_number";
+            // 
+            // serial_number
+            // 
+            this.serial_number.HeaderText = "Serial Number";
+            this.serial_number.Name = "serial_number";
+            // 
+            // purchase_price
+            // 
+            this.purchase_price.HeaderText = "Purchase Price";
+            this.purchase_price.Name = "purchase_price";
+            // 
+            // warranty_expiry_date
+            // 
+            this.warranty_expiry_date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.warranty_expiry_date.HeaderText = "Warranty Expiry Date";
+            this.warranty_expiry_date.Name = "warranty_expiry_date";
+            this.warranty_expiry_date.Width = 170;
             // 
             // Edit
             // 
@@ -246,53 +307,6 @@
             this.info.Name = "info";
             this.info.Width = 5;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Lime;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(12, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 31);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Back";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(27, 28);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLogin.BackColor = System.Drawing.Color.Chartreuse;
-            this.btnLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnLogin.Image = ((System.Drawing.Image)(resources.GetObject("btnLogin.Image")));
-            this.btnLogin.Location = new System.Drawing.Point(941, 112);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnLogin.Size = new System.Drawing.Size(194, 39);
-            this.btnLogin.TabIndex = 12;
-            this.btnLogin.Text = "      Add New Asset\r\n";
-            this.btnLogin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLogin.UseMnemonic = false;
-            this.btnLogin.UseVisualStyleBackColor = false;
-            // 
             // formEquipment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
@@ -309,9 +323,9 @@
             this.Text = "formEquipment";
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsset)).EndInit();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -331,13 +345,16 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn No;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDetails;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNextService;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colLastService;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn brand;
+        private System.Windows.Forms.DataGridViewTextBoxColumn category;
+        private System.Windows.Forms.DataGridViewTextBoxColumn purchase_date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn model_number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn serial_number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn purchase_price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn warranty_expiry_date;
         private System.Windows.Forms.DataGridViewImageColumn Edit;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
         private System.Windows.Forms.DataGridViewImageColumn info;

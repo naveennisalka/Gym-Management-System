@@ -16,5 +16,10 @@ namespace Gym_Management_System.Forms
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

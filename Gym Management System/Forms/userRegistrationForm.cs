@@ -203,5 +203,10 @@ namespace Gym_Management_System.Forms
         {
             Dispose();
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

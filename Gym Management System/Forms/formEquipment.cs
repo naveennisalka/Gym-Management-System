@@ -21,5 +21,11 @@ namespace Gym_Management_System.Forms
         {
             this.Close();
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            formAddAssets formAddAssets = new formAddAssets();
+            formAddAssets.ShowDialog();
+        }
     }
 }
