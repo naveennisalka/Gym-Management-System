@@ -21,7 +21,7 @@ namespace Gym_Management_System
         public mainFrame()
         {
             InitializeComponent();
-
+            ConfigureDashboardView();
         }
 
 
@@ -58,6 +58,55 @@ namespace Gym_Management_System
             panelDesctop.ResumeLayout();
         }
 
+
+        // No parameters needed anymore! It reads directly from the static session class
+        public void ConfigureDashboardView()
+        {
+           
+            
+
+            
+            HideAllDashboardElements();
+
+            // 3. Render modules based on the static class role variable
+            switch (UserSession.UserRole)
+            {
+                case 1: // ---- SUPER ADMIN VIEW ----
+                    btnMembers.Visible = true;
+                    btnSettings.Visible = true;
+                    btnStore.Visible = true;
+                    btnSchedules.Visible = true;
+                    btnEquipment.Visible = true;
+                    break;
+
+                case 3: // ---- COACH VIEW ----
+                    btnSchedules.Visible = true;
+                    btnSettings.Visible = true;
+                    break;
+
+                case 4: // ---- GYM MEMBER VIEW ----
+                    btnSettings.Visible = true;
+                    break;
+
+                default:
+                    MessageBox.Show("Unknown security clearance role level detected.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    this.Close();
+                    break;
+            }
+        }
+
+        private void HideAllDashboardElements()
+        {
+
+            btnMembers.Visible = false;
+            btnSettings.Visible = false;
+            btnStore.Visible = false;
+            btnSchedules.Visible = false;
+            btnEquipment.Visible = false;
+            
+
+        }
+
         private void btnDashboard_Click_1(object sender, EventArgs e)
         {
             OpenChildForm(new adminDashboardForm());
@@ -88,7 +137,12 @@ namespace Gym_Management_System
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            UserSession.ClearSession();
 
+            this.Hide();
+            loginForm loginWindow = new loginForm();
+            loginWindow.ShowDialog();
+            this.Close();
         }
 
         private void mainFrame_Load(object sender, EventArgs e)

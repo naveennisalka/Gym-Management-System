@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainFrame));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEquipment = new System.Windows.Forms.Button();
+            this.btnSchedules = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnSettings = new System.Windows.Forms.Button();
@@ -38,25 +40,25 @@
             this.btnMembers = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelDesctop = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelDesctop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(33)))));
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.btnEquipment);
+            this.panel1.Controls.Add(this.btnSchedules);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.btnSettings);
@@ -65,30 +67,50 @@
             this.panel1.Controls.Add(this.btnDashboard);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.ForeColor = System.Drawing.Color.Gray;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(100);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(203, 787);
             this.panel1.TabIndex = 0;
             // 
-            // button1
+            // btnEquipment
             // 
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 410);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(203, 43);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "     Schedules";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnEquipment.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnEquipment.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEquipment.FlatAppearance.BorderSize = 0;
+            this.btnEquipment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEquipment.ForeColor = System.Drawing.Color.White;
+            this.btnEquipment.Image = ((System.Drawing.Image)(resources.GetObject("btnEquipment.Image")));
+            this.btnEquipment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEquipment.Location = new System.Drawing.Point(0, 372);
+            this.btnEquipment.Name = "btnEquipment";
+            this.btnEquipment.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnEquipment.Size = new System.Drawing.Size(203, 43);
+            this.btnEquipment.TabIndex = 21;
+            this.btnEquipment.Text = "     Equipment";
+            this.btnEquipment.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEquipment.UseVisualStyleBackColor = true;
+            this.btnEquipment.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnSchedules
+            // 
+            this.btnSchedules.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnSchedules.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSchedules.FlatAppearance.BorderSize = 0;
+            this.btnSchedules.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSchedules.ForeColor = System.Drawing.Color.White;
+            this.btnSchedules.Image = ((System.Drawing.Image)(resources.GetObject("btnSchedules.Image")));
+            this.btnSchedules.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSchedules.Location = new System.Drawing.Point(0, 329);
+            this.btnSchedules.Name = "btnSchedules";
+            this.btnSchedules.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnSchedules.Size = new System.Drawing.Size(203, 43);
+            this.btnSchedules.TabIndex = 20;
+            this.btnSchedules.Text = "     Schedules";
+            this.btnSchedules.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSchedules.UseVisualStyleBackColor = true;
+            this.btnSchedules.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel3
             // 
@@ -126,7 +148,7 @@
             this.btnSettings.ForeColor = System.Drawing.Color.White;
             this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
             this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSettings.Location = new System.Drawing.Point(0, 367);
+            this.btnSettings.Location = new System.Drawing.Point(0, 286);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnSettings.Size = new System.Drawing.Size(203, 43);
@@ -145,10 +167,10 @@
             this.btnStore.ForeColor = System.Drawing.Color.White;
             this.btnStore.Image = ((System.Drawing.Image)(resources.GetObject("btnStore.Image")));
             this.btnStore.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStore.Location = new System.Drawing.Point(0, 313);
+            this.btnStore.Location = new System.Drawing.Point(0, 238);
             this.btnStore.Name = "btnStore";
             this.btnStore.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnStore.Size = new System.Drawing.Size(203, 54);
+            this.btnStore.Size = new System.Drawing.Size(203, 48);
             this.btnStore.TabIndex = 2;
             this.btnStore.Text = "     Store";
             this.btnStore.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -164,7 +186,7 @@
             this.btnMembers.ForeColor = System.Drawing.Color.White;
             this.btnMembers.Image = ((System.Drawing.Image)(resources.GetObject("btnMembers.Image")));
             this.btnMembers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMembers.Location = new System.Drawing.Point(0, 268);
+            this.btnMembers.Location = new System.Drawing.Point(0, 193);
             this.btnMembers.Name = "btnMembers";
             this.btnMembers.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnMembers.Size = new System.Drawing.Size(203, 45);
@@ -183,10 +205,10 @@
             this.btnDashboard.ForeColor = System.Drawing.Color.White;
             this.btnDashboard.Image = ((System.Drawing.Image)(resources.GetObject("btnDashboard.Image")));
             this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDashboard.Location = new System.Drawing.Point(0, 214);
+            this.btnDashboard.Location = new System.Drawing.Point(0, 145);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnDashboard.Size = new System.Drawing.Size(203, 54);
+            this.btnDashboard.Size = new System.Drawing.Size(203, 48);
             this.btnDashboard.TabIndex = 0;
             this.btnDashboard.Text = "     Dashboard";
             this.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -196,23 +218,14 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(33)))));
-            this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(203, 214);
+            this.panel2.Size = new System.Drawing.Size(203, 145);
             this.panel2.TabIndex = 1;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Lime;
-            this.panel4.Location = new System.Drawing.Point(17, 82);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(159, 2);
-            this.panel4.TabIndex = 20;
             // 
             // label8
             // 
@@ -221,7 +234,7 @@
             this.label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label8.Font = new System.Drawing.Font("Gotham", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(67, 36);
+            this.label8.Location = new System.Drawing.Point(56, 90);
             this.label8.Margin = new System.Windows.Forms.Padding(0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(77, 18);
@@ -233,7 +246,7 @@
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(26, 22);
+            this.pictureBox1.Location = new System.Drawing.Point(70, 33);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(51, 43);
             this.pictureBox1.TabIndex = 15;
@@ -277,24 +290,9 @@
             this.pictureBox2.TabIndex = 17;
             this.pictureBox2.TabStop = false;
             // 
-            // button2
+            // errorProvider1
             // 
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 453);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(203, 43);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "     Equipment";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.errorProvider1.ContainerControl = this;
             // 
             // mainFrame
             // 
@@ -317,6 +315,7 @@
             this.panelDesctop.ResumeLayout(false);
             this.panelDesctop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -336,8 +335,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSchedules;
+        private System.Windows.Forms.Button btnEquipment;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

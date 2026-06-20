@@ -32,90 +32,73 @@ namespace Gym_Management_System
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            string inputEmail = txtEmail.Text.Trim();
+            string inputPassword = txtPassword.Text;
+
+            if (VerifyUserLogin(inputEmail, inputPassword, out string currentID, out string currentName, out int currentRole))
+            {
+                // 1. Save the data globally into the static class memory variables!
+                UserSession.UserID = currentID;
+                UserSession.UserName = currentName;
+                UserSession.UserRole = currentRole;
+
+                this.Hide();
+
+                // 2. Initialize and load the dashboard form shell
+                mainFrame mainDash = new mainFrame();
+
+                // 3. Run the display router (it will grab the data automatically)
+                //mainDash.ConfigureDashboardView();
+
+                mainDash.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Invalid Email or Password.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        public bool VerifyUserLogin(string email, string password, out string userId, out string userName, out int userRole)
+        {
+            // Initialize default fallback values
+            userId = "";
+            userName = "";
+            userRole = -1;
+
+            // Query filters by matching active email and password strings exactly
+            string query = "SELECT id, name, role FROM users WHERE email = @Email AND password = @Password";
+
             try
             {
-                string _name = "";
-                int _role = 0;
-
-                if (con.State == ConnectionState.Closed) con.Open();
-
-                
-                string query = "SELECT id,name, role FROM users WHERE email = @Email AND password = @Password";
-
-                cmd = new SqlCommand(query, con);
-                cmd.Parameters.AddWithValue("@Email", txtUser.Text.Trim());
-                cmd.Parameters.AddWithValue("@Password", txtPwd.Text);
-
-                reader = cmd.ExecuteReader();
-
-              
-                if (reader.Read())
+                using (SqlConnection tempCon = new SqlConnection(dbcon.connection()))
+                using (SqlCommand cmd = new SqlCommand(query, tempCon))
                 {
+                    // Use exact parameters to prevent injection bugs
+                    cmd.Parameters.AddWithValue("@Email", email.Trim());
+                    cmd.Parameters.AddWithValue("@Password", password); // In production, hash this string check!
 
-                    
-
-                    _name = reader["name"].ToString();
-                    _role = Convert.ToInt32(reader["role"]);
-
-                    MessageBox.Show("Login successful!\nWelcome " + _name, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    UserSession.UserID = reader.GetValue(reader.GetOrdinal("id")).ToString();
-                    UserSession.UserName = reader["name"].ToString();
-                    UserSession.UserRole = Convert.ToInt32(reader["role"]);
-                    
-
-
-                    this.Hide();     
-                    mainFrame mainForm = new mainFrame();
-
-                    
-                    //mainForm.lblUserName.Text = _name;
-
-                    
-                    // 1: Admin, 2: Staff, 3: Coach, 4: Member
-                    if (_role == 1)
+                    tempCon.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        //mainForm.lblRole.Text = "Admin";
-                        //mainForm.adminToolStripMenuItem.Enabled = true;
-                        //mainForm.userManagementToolStripMenuItem.Enabled = true;
+                        if (reader.Read())
+                        {
+                            // Map details out to the session variables
+                            userId = reader["id"].ToString();
+                            userName = reader["name"].ToString();
+                            userRole = Convert.ToInt32(reader["role"]);
+                            return true; // Authentication successful!
+                        }
                     }
-                    else if (_role == 2)
-                    {
-                        //mainForm.lblRole.Text = "Staff";
-                        //mainForm.adminToolStripMenuItem.Enabled = false;
-                        //mainForm.userManagementToolStripMenuItem.Enabled = true;
-                    }
-                    else if (_role == 3)
-                    {
-                        //mainForm.lblRole.Text = "Coach";
-                        //mainForm.adminToolStripMenuItem.Enabled = false;
-                        //mainForm.userManagementToolStripMenuItem.Enabled = false;
-                    }
-                    else
-                    {
-                        //mainForm.lblRole.Text = "Member";
-                        //mainForm.adminToolStripMenuItem.Enabled = false;
-                        //mainForm.userManagementToolStripMenuItem.Enabled = false;
-                    }
-
-                    
-                    mainForm.ShowDialog();
-                    this.Close(); 
-                }
-                else
-                {
-                    MessageBox.Show("Invalid email or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }        
-            finally
-            {
-                if (reader != null) reader.Close();
-                if (con.State == ConnectionState.Open) con.Close();
+                MessageBox.Show("Authentication Error: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            return false; // Authentication failed (wrong email/password or disabled account)
         }
 
         private void txtUser_TextChanged(object sender, EventArgs e)
@@ -142,7 +125,7 @@ namespace Gym_Management_System
 
         private void label7_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            Application.Exit();
         }
     }
 }
