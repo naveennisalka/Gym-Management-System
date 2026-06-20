@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gym_Management_System.Forms;
+using System;
 using System.Windows.Forms;
 
 namespace Gym_Management_System
@@ -113,6 +114,16 @@ namespace Gym_Management_System
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new formSchedule());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new formEquipment());
         }
     }
 }

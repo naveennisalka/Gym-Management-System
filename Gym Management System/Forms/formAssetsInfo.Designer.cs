@@ -38,9 +38,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dgvUser = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblAssetName = new System.Windows.Forms.Label();
+            this.dgvServices = new System.Windows.Forms.DataGridView();
             this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.service_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,26 +50,27 @@
             this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.next_service = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
+            this.lblCategory = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lblBrand = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.lblModel = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
+            this.lblSerial = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
+            this.lblWarranty = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
+            this.lblPurchasePrice = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
+            this.lblPurchaseDate = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvServices)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -110,6 +110,7 @@
             this.btnLogin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLogin.UseMnemonic = false;
             this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // dataGridViewImageColumn3
             // 
@@ -179,24 +180,24 @@
             this.panel2.Size = new System.Drawing.Size(1163, 16);
             this.panel2.TabIndex = 9;
             // 
-            // label3
+            // lblAssetName
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Poppins SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(29, 171);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(158, 37);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "Gym Asset 01";
+            this.lblAssetName.AutoSize = true;
+            this.lblAssetName.Font = new System.Drawing.Font("Poppins SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAssetName.ForeColor = System.Drawing.Color.Black;
+            this.lblAssetName.Location = new System.Drawing.Point(29, 171);
+            this.lblAssetName.Name = "lblAssetName";
+            this.lblAssetName.Size = new System.Drawing.Size(158, 37);
+            this.lblAssetName.TabIndex = 17;
+            this.lblAssetName.Text = "Gym Asset 01";
             // 
-            // dgvUser
+            // dgvServices
             // 
-            this.dgvUser.AllowUserToAddRows = false;
-            this.dgvUser.BackgroundColor = System.Drawing.Color.White;
-            this.dgvUser.ColumnHeadersHeight = 40;
-            this.dgvUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvUser.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvServices.AllowUserToAddRows = false;
+            this.dgvServices.BackgroundColor = System.Drawing.Color.White;
+            this.dgvServices.ColumnHeadersHeight = 40;
+            this.dgvServices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvServices.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.No,
             this.Column1,
             this.service_date,
@@ -207,22 +208,11 @@
             this.cost,
             this.next_service,
             this.status});
-            this.dgvUser.Location = new System.Drawing.Point(19, 425);
-            this.dgvUser.Name = "dgvUser";
-            this.dgvUser.Size = new System.Drawing.Size(1132, 194);
-            this.dgvUser.TabIndex = 18;
-            this.dgvUser.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUser_CellContentClick);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(13, 392);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 26);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "Services";
+            this.dgvServices.Location = new System.Drawing.Point(19, 425);
+            this.dgvServices.Name = "dgvServices";
+            this.dgvServices.Size = new System.Drawing.Size(1132, 194);
+            this.dgvServices.TabIndex = 18;
+            this.dgvServices.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUser_CellContentClick);
             // 
             // No
             // 
@@ -281,6 +271,17 @@
             this.status.HeaderText = "Status";
             this.status.Name = "status";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(13, 392);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(74, 26);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Services";
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -292,23 +293,23 @@
             this.label6.Text = "ID :";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
-            // label7
+            // lblID
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(73, 148);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 23);
-            this.label7.TabIndex = 21;
-            this.label7.Text = "label7";
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(73, 148);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(49, 23);
+            this.lblID.TabIndex = 21;
+            this.lblID.Text = "label7";
             // 
-            // label10
+            // lblCategory
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(173, 238);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(54, 23);
-            this.label10.TabIndex = 25;
-            this.label10.Text = "label10";
+            this.lblCategory.AutoSize = true;
+            this.lblCategory.Location = new System.Drawing.Point(173, 238);
+            this.lblCategory.Name = "lblCategory";
+            this.lblCategory.Size = new System.Drawing.Size(54, 23);
+            this.lblCategory.TabIndex = 25;
+            this.lblCategory.Text = "label10";
             // 
             // label11
             // 
@@ -320,14 +321,14 @@
             this.label11.TabIndex = 24;
             this.label11.Text = "Category :";
             // 
-            // label12
+            // lblBrand
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(151, 320);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(53, 23);
-            this.label12.TabIndex = 27;
-            this.label12.Text = "label12";
+            this.lblBrand.AutoSize = true;
+            this.lblBrand.Location = new System.Drawing.Point(151, 320);
+            this.lblBrand.Name = "lblBrand";
+            this.lblBrand.Size = new System.Drawing.Size(53, 23);
+            this.lblBrand.TabIndex = 27;
+            this.lblBrand.Text = "label12";
             // 
             // label13
             // 
@@ -339,14 +340,14 @@
             this.label13.TabIndex = 26;
             this.label13.Text = "Brand :";
             // 
-            // label14
+            // lblModel
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(535, 233);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(54, 23);
-            this.label14.TabIndex = 29;
-            this.label14.Text = "label14";
+            this.lblModel.AutoSize = true;
+            this.lblModel.Location = new System.Drawing.Point(535, 233);
+            this.lblModel.Name = "lblModel";
+            this.lblModel.Size = new System.Drawing.Size(54, 23);
+            this.lblModel.TabIndex = 29;
+            this.lblModel.Text = "label14";
             // 
             // label15
             // 
@@ -358,14 +359,14 @@
             this.label15.TabIndex = 28;
             this.label15.Text = "Model Number :";
             // 
-            // label16
+            // lblSerial
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(535, 275);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(54, 23);
-            this.label16.TabIndex = 31;
-            this.label16.Text = "label16";
+            this.lblSerial.AutoSize = true;
+            this.lblSerial.Location = new System.Drawing.Point(535, 275);
+            this.lblSerial.Name = "lblSerial";
+            this.lblSerial.Size = new System.Drawing.Size(54, 23);
+            this.lblSerial.TabIndex = 31;
+            this.lblSerial.Text = "label16";
             // 
             // label17
             // 
@@ -377,14 +378,14 @@
             this.label17.TabIndex = 30;
             this.label17.Text = "Serial Number :";
             // 
-            // label18
+            // lblWarranty
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(994, 314);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(54, 23);
-            this.label18.TabIndex = 37;
-            this.label18.Text = "label18";
+            this.lblWarranty.AutoSize = true;
+            this.lblWarranty.Location = new System.Drawing.Point(994, 314);
+            this.lblWarranty.Name = "lblWarranty";
+            this.lblWarranty.Size = new System.Drawing.Size(54, 23);
+            this.lblWarranty.TabIndex = 37;
+            this.lblWarranty.Text = "label18";
             // 
             // label19
             // 
@@ -396,15 +397,15 @@
             this.label19.TabIndex = 36;
             this.label19.Text = "Warranty Expiry Date :";
             // 
-            // label20
+            // lblPurchasePrice
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(944, 274);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(57, 23);
-            this.label20.TabIndex = 35;
-            this.label20.Text = "label20";
-            this.label20.Click += new System.EventHandler(this.label20_Click);
+            this.lblPurchasePrice.AutoSize = true;
+            this.lblPurchasePrice.Location = new System.Drawing.Point(944, 274);
+            this.lblPurchasePrice.Name = "lblPurchasePrice";
+            this.lblPurchasePrice.Size = new System.Drawing.Size(57, 23);
+            this.lblPurchasePrice.TabIndex = 35;
+            this.lblPurchasePrice.Text = "label20";
+            this.lblPurchasePrice.Click += new System.EventHandler(this.label20_Click);
             // 
             // label21
             // 
@@ -416,14 +417,14 @@
             this.label21.TabIndex = 34;
             this.label21.Text = "Purchase Price :";
             // 
-            // label22
+            // lblPurchaseDate
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(943, 229);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(56, 23);
-            this.label22.TabIndex = 33;
-            this.label22.Text = "label22";
+            this.lblPurchaseDate.AutoSize = true;
+            this.lblPurchaseDate.Location = new System.Drawing.Point(943, 229);
+            this.lblPurchaseDate.Name = "lblPurchaseDate";
+            this.lblPurchaseDate.Size = new System.Drawing.Size(56, 23);
+            this.lblPurchaseDate.TabIndex = 33;
+            this.lblPurchaseDate.Text = "label22";
             // 
             // label23
             // 
@@ -435,14 +436,14 @@
             this.label23.TabIndex = 32;
             this.label23.Text = "Purchase Date :";
             // 
-            // label24
+            // lblStatus
             // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(150, 278);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(57, 23);
-            this.label24.TabIndex = 39;
-            this.label24.Text = "label24";
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(150, 278);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(57, 23);
+            this.lblStatus.TabIndex = 39;
+            this.lblStatus.Text = "label24";
             // 
             // label25
             // 
@@ -459,27 +460,27 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1163, 651);
-            this.Controls.Add(this.label24);
+            this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.label25);
-            this.Controls.Add(this.label18);
+            this.Controls.Add(this.lblWarranty);
             this.Controls.Add(this.label19);
-            this.Controls.Add(this.label20);
+            this.Controls.Add(this.lblPurchasePrice);
             this.Controls.Add(this.label21);
-            this.Controls.Add(this.label22);
+            this.Controls.Add(this.lblPurchaseDate);
             this.Controls.Add(this.label23);
-            this.Controls.Add(this.label16);
+            this.Controls.Add(this.lblSerial);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.label14);
+            this.Controls.Add(this.lblModel);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.label12);
+            this.Controls.Add(this.lblBrand);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.lblCategory);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lblID);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dgvUser);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.dgvServices);
+            this.Controls.Add(this.lblAssetName);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -489,7 +490,7 @@
             this.Text = "formAssetsInfo";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvServices)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -506,8 +507,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dgvUser;
+        private System.Windows.Forms.Label lblAssetName;
+        private System.Windows.Forms.DataGridView dgvServices;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridViewTextBoxColumn No;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
@@ -520,22 +521,22 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn next_service;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.Label lblCategory;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblBrand;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lblModel;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lblSerial;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lblWarranty;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label lblPurchasePrice;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label lblPurchaseDate;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label label25;
     }
 }

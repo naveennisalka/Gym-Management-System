@@ -176,10 +176,10 @@
         JUMUF2EwVTm3vWSI9iKhr2E06kvWn4cHsTQ7uEyKozS1QzRnbGfMJ9Qei/6VNf0SAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="info.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="view.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="info.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="view.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAbVJREFUSEvN
         V0tKA0EULBA/uHShoPgB8SaiCIK/O+hB/MSgR1BB8HMDFyKKIrhSLyC6c2nSr5OIbkqezAyTR6PGzDgW

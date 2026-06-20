@@ -78,6 +78,30 @@
     </Compile>
     <Compile Include="dbConnect.cs" />
     <Compile Include="Enums.cs" />
+    <Compile Include="Forms\FormAddExecise.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAddExecise.Designer.cs">
+      <DependentUpon>FormAddExecise.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\formAddSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\formAddSchedule.Designer.cs">
+      <DependentUpon>formAddSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\formAddService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\formAddService.Designer.cs">
+      <DependentUpon>formAddService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\formSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\formSchedule.Designer.cs">
+      <DependentUpon>formSchedule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\formAddAssets.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +206,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Components\wgtHoldOrders.resx">
       <DependentUpon>wgtHoldOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAddExecise.resx">
+      <DependentUpon>FormAddExecise.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\formAddSchedule.resx">
+      <DependentUpon>formAddSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\formAddService.resx">
+      <DependentUpon>formAddService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\formSchedule.resx">
+      <DependentUpon>formSchedule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\formAddAssets.resx">
       <DependentUpon>formAddAssets.cs</DependentUpon>

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formEquipment));
-            this.panel2 = new System.Windows.Forms.Panel();
             this.dgvAsset = new System.Windows.Forms.DataGridView();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,21 +53,12 @@
             this.warranty_expiry_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.info = new System.Windows.Forms.DataGridViewImageColumn();
+            this.view = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsset)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 596);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1147, 16);
-            this.panel2.TabIndex = 6;
             // 
             // dgvAsset
             // 
@@ -89,12 +79,13 @@
             this.warranty_expiry_date,
             this.Edit,
             this.Delete,
-            this.info});
+            this.view});
             this.dgvAsset.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAsset.Location = new System.Drawing.Point(0, 165);
             this.dgvAsset.Name = "dgvAsset";
             this.dgvAsset.Size = new System.Drawing.Size(1147, 447);
             this.dgvAsset.TabIndex = 5;
+            this.dgvAsset.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAsset_CellContentClick);
             // 
             // txtSearch
             // 
@@ -106,6 +97,7 @@
             this.txtSearch.Size = new System.Drawing.Size(329, 31);
             this.txtSearch.TabIndex = 0;
             this.txtSearch.UseWaitCursor = true;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // label2
             // 
@@ -298,21 +290,20 @@
             this.Delete.Name = "Delete";
             this.Delete.Width = 5;
             // 
-            // info
+            // view
             // 
-            this.info.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.info.HeaderText = "";
-            this.info.Image = ((System.Drawing.Image)(resources.GetObject("info.Image")));
-            this.info.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.info.Name = "info";
-            this.info.Width = 5;
+            this.view.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.view.HeaderText = "";
+            this.view.Image = ((System.Drawing.Image)(resources.GetObject("view.Image")));
+            this.view.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.view.Name = "view";
+            this.view.Width = 5;
             // 
             // formEquipment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1147, 612);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgvAsset);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -331,8 +322,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dgvAsset;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.TextBox txtSearch;
@@ -357,6 +346,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn warranty_expiry_date;
         private System.Windows.Forms.DataGridViewImageColumn Edit;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
-        private System.Windows.Forms.DataGridViewImageColumn info;
+        private System.Windows.Forms.DataGridViewImageColumn view;
     }
 }
