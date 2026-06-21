@@ -91,6 +91,7 @@
             // 
             this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSearch.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.txtSearch.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.Location = new System.Drawing.Point(19, 120);
             this.txtSearch.Name = "txtSearch";
@@ -227,6 +228,7 @@
             // 
             // name
             // 
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.name.HeaderText = "Name";
             this.name.Name = "name";
             // 
@@ -242,8 +244,10 @@
             // 
             // purchase_date
             // 
+            this.purchase_date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.purchase_date.HeaderText = "Purchase Date";
             this.purchase_date.Name = "purchase_date";
+            this.purchase_date.Width = 130;
             // 
             // status
             // 

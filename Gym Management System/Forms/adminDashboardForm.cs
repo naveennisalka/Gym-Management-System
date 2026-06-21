@@ -340,5 +340,18 @@ namespace Gym_Management_System
             userRegistrationForm userRegForm = new userRegistrationForm();
             userRegForm.ShowDialog();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            formManageStoreItems manageStoreItems = new formManageStoreItems();
+            manageStoreItems.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            formManageStoreItems ExpiredStoreItems = new formManageStoreItems();
+            ExpiredStoreItems.chkExpiredItems.Checked = true;
+            ExpiredStoreItems.ShowDialog();
+        }
     }
 }

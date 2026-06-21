@@ -42,49 +42,49 @@
             this.pnlTotalActiveMember = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
             this.lblActiveMembers = new System.Windows.Forms.Label();
+            this.panel18 = new System.Windows.Forms.Panel();
             this.panel19 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlMonthlyReveneue = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lblMonthlyRevenue = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnlActiveCoaches = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.lblActiveCoaches = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.pnlFaultyEqupment = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.lblFaultyEquipment = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.pnlGymPlan = new System.Windows.Forms.Panel();
             this.lblMembershipCountdown = new System.Windows.Forms.Label();
             this.lblPlanName = new System.Windows.Forms.Label();
+            this.panel11 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.pnlTotalStoreSpend = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.lblTotalStoreSpend = new System.Windows.Forms.Label();
+            this.panel14 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
             this.pnlAssignedMembers = new System.Windows.Forms.Panel();
             this.gg = new System.Windows.Forms.Label();
             this.lblAssignedMembers = new System.Windows.Forms.Label();
+            this.panel21 = new System.Windows.Forms.Panel();
             this.panel22 = new System.Windows.Forms.Panel();
             this.pnlTodaySessions = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.lblTodaySessions = new System.Windows.Forms.Label();
+            this.panel24 = new System.Windows.Forms.Panel();
             this.panel25 = new System.Windows.Forms.Panel();
             this.pnlPendingSchedules = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.lblPendingSchedules = new System.Windows.Forms.Label();
-            this.panel28 = new System.Windows.Forms.Panel();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.panel21 = new System.Windows.Forms.Panel();
-            this.panel24 = new System.Windows.Forms.Panel();
             this.panel27 = new System.Windows.Forms.Panel();
+            this.panel28 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -121,7 +121,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Poppins Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(163, 463);
+            this.label14.Location = new System.Drawing.Point(166, 513);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(110, 23);
             this.label14.TabIndex = 9;
@@ -175,11 +175,11 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Poppins Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(163, 626);
+            this.label7.Location = new System.Drawing.Point(166, 676);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(110, 23);
+            this.label7.Size = new System.Drawing.Size(67, 23);
             this.label7.TabIndex = 20;
-            this.label7.Text = "Quick Actions";
+            this.label7.Text = "Reports";
             // 
             // label8
             // 
@@ -241,6 +241,16 @@
             this.lblActiveMembers.TabIndex = 2;
             this.lblActiveMembers.Text = "1000";
             // 
+            // panel18
+            // 
+            this.panel18.BackColor = System.Drawing.Color.Transparent;
+            this.panel18.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel18.BackgroundImage")));
+            this.panel18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel18.Location = new System.Drawing.Point(17, 26);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(60, 62);
+            this.panel18.TabIndex = 1;
+            // 
             // panel19
             // 
             this.panel19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -261,7 +271,7 @@
             this.flowLayoutPanel1.Controls.Add(this.pnlAssignedMembers);
             this.flowLayoutPanel1.Controls.Add(this.pnlTodaySessions);
             this.flowLayoutPanel1.Controls.Add(this.pnlPendingSchedules);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(167, 151);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(163, 166);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(950, 335);
             this.flowLayoutPanel1.TabIndex = 29;
@@ -298,6 +308,16 @@
             this.lblMonthlyRevenue.TabIndex = 2;
             this.lblMonthlyRevenue.Text = "1000";
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel2.Location = new System.Drawing.Point(17, 26);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(60, 62);
+            this.panel2.TabIndex = 1;
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -316,7 +336,7 @@
             this.pnlActiveCoaches.Controls.Add(this.panel6);
             this.pnlActiveCoaches.Location = new System.Drawing.Point(591, 3);
             this.pnlActiveCoaches.Name = "pnlActiveCoaches";
-            this.pnlActiveCoaches.Size = new System.Drawing.Size(230, 102);
+            this.pnlActiveCoaches.Size = new System.Drawing.Size(278, 102);
             this.pnlActiveCoaches.TabIndex = 29;
             // 
             // label3
@@ -339,13 +359,23 @@
             this.lblActiveCoaches.TabIndex = 2;
             this.lblActiveCoaches.Text = "1000";
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Transparent;
+            this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
+            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel5.Location = new System.Drawing.Point(17, 26);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(60, 62);
+            this.panel5.TabIndex = 1;
+            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(230, 10);
+            this.panel6.Size = new System.Drawing.Size(278, 10);
             this.panel6.TabIndex = 1;
             // 
             // pnlFaultyEqupment
@@ -379,6 +409,16 @@
             this.lblFaultyEquipment.Size = new System.Drawing.Size(84, 48);
             this.lblFaultyEquipment.TabIndex = 2;
             this.lblFaultyEquipment.Text = "1000";
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.Transparent;
+            this.panel8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel8.BackgroundImage")));
+            this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel8.Location = new System.Drawing.Point(17, 26);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(60, 62);
+            this.panel8.TabIndex = 1;
             // 
             // panel9
             // 
@@ -421,6 +461,16 @@
             this.lblPlanName.TabIndex = 2;
             this.lblPlanName.Text = "lblPlanName";
             // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.Transparent;
+            this.panel11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel11.BackgroundImage")));
+            this.panel11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel11.Location = new System.Drawing.Point(17, 26);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(60, 62);
+            this.panel11.TabIndex = 1;
+            // 
             // panel12
             // 
             this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -462,6 +512,16 @@
             this.lblTotalStoreSpend.TabIndex = 2;
             this.lblTotalStoreSpend.Text = "1000";
             // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.Transparent;
+            this.panel14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel14.BackgroundImage")));
+            this.panel14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel14.Location = new System.Drawing.Point(17, 26);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(60, 62);
+            this.panel14.TabIndex = 1;
+            // 
             // panel15
             // 
             this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -480,7 +540,7 @@
             this.pnlAssignedMembers.Controls.Add(this.panel22);
             this.pnlAssignedMembers.Location = new System.Drawing.Point(3, 219);
             this.pnlAssignedMembers.Name = "pnlAssignedMembers";
-            this.pnlAssignedMembers.Size = new System.Drawing.Size(230, 102);
+            this.pnlAssignedMembers.Size = new System.Drawing.Size(394, 102);
             this.pnlAssignedMembers.TabIndex = 33;
             // 
             // gg
@@ -503,13 +563,23 @@
             this.lblAssignedMembers.TabIndex = 2;
             this.lblAssignedMembers.Text = "1000";
             // 
+            // panel21
+            // 
+            this.panel21.BackColor = System.Drawing.Color.Transparent;
+            this.panel21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel21.BackgroundImage")));
+            this.panel21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel21.Location = new System.Drawing.Point(17, 26);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(60, 62);
+            this.panel21.TabIndex = 1;
+            // 
             // panel22
             // 
             this.panel22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.panel22.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel22.Location = new System.Drawing.Point(0, 0);
             this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(230, 10);
+            this.panel22.Size = new System.Drawing.Size(394, 10);
             this.panel22.TabIndex = 1;
             // 
             // pnlTodaySessions
@@ -519,7 +589,7 @@
             this.pnlTodaySessions.Controls.Add(this.lblTodaySessions);
             this.pnlTodaySessions.Controls.Add(this.panel24);
             this.pnlTodaySessions.Controls.Add(this.panel25);
-            this.pnlTodaySessions.Location = new System.Drawing.Point(239, 219);
+            this.pnlTodaySessions.Location = new System.Drawing.Point(403, 219);
             this.pnlTodaySessions.Name = "pnlTodaySessions";
             this.pnlTodaySessions.Size = new System.Drawing.Size(230, 102);
             this.pnlTodaySessions.TabIndex = 34;
@@ -544,6 +614,16 @@
             this.lblTodaySessions.TabIndex = 2;
             this.lblTodaySessions.Text = "1000";
             // 
+            // panel24
+            // 
+            this.panel24.BackColor = System.Drawing.Color.Transparent;
+            this.panel24.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel24.BackgroundImage")));
+            this.panel24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel24.Location = new System.Drawing.Point(17, 26);
+            this.panel24.Name = "panel24";
+            this.panel24.Size = new System.Drawing.Size(60, 62);
+            this.panel24.TabIndex = 1;
+            // 
             // panel25
             // 
             this.panel25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -560,7 +640,7 @@
             this.pnlPendingSchedules.Controls.Add(this.lblPendingSchedules);
             this.pnlPendingSchedules.Controls.Add(this.panel27);
             this.pnlPendingSchedules.Controls.Add(this.panel28);
-            this.pnlPendingSchedules.Location = new System.Drawing.Point(475, 219);
+            this.pnlPendingSchedules.Location = new System.Drawing.Point(639, 219);
             this.pnlPendingSchedules.Name = "pnlPendingSchedules";
             this.pnlPendingSchedules.Size = new System.Drawing.Size(230, 102);
             this.pnlPendingSchedules.TabIndex = 35;
@@ -585,95 +665,6 @@
             this.lblPendingSchedules.TabIndex = 2;
             this.lblPendingSchedules.Text = "1000";
             // 
-            // panel28
-            // 
-            this.panel28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.panel28.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel28.Location = new System.Drawing.Point(0, 0);
-            this.panel28.Name = "panel28";
-            this.panel28.Size = new System.Drawing.Size(230, 10);
-            this.panel28.TabIndex = 1;
-            // 
-            // panel18
-            // 
-            this.panel18.BackColor = System.Drawing.Color.Transparent;
-            this.panel18.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel18.BackgroundImage")));
-            this.panel18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel18.Location = new System.Drawing.Point(17, 26);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(60, 62);
-            this.panel18.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel2.Location = new System.Drawing.Point(17, 26);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(60, 62);
-            this.panel2.TabIndex = 1;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.Transparent;
-            this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
-            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel5.Location = new System.Drawing.Point(17, 26);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(60, 62);
-            this.panel5.TabIndex = 1;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.Transparent;
-            this.panel8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel8.BackgroundImage")));
-            this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel8.Location = new System.Drawing.Point(17, 26);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(60, 62);
-            this.panel8.TabIndex = 1;
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.Transparent;
-            this.panel11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel11.BackgroundImage")));
-            this.panel11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel11.Location = new System.Drawing.Point(17, 26);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(60, 62);
-            this.panel11.TabIndex = 1;
-            // 
-            // panel14
-            // 
-            this.panel14.BackColor = System.Drawing.Color.Transparent;
-            this.panel14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel14.BackgroundImage")));
-            this.panel14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel14.Location = new System.Drawing.Point(17, 26);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(60, 62);
-            this.panel14.TabIndex = 1;
-            // 
-            // panel21
-            // 
-            this.panel21.BackColor = System.Drawing.Color.Transparent;
-            this.panel21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel21.BackgroundImage")));
-            this.panel21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel21.Location = new System.Drawing.Point(17, 26);
-            this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(60, 62);
-            this.panel21.TabIndex = 1;
-            // 
-            // panel24
-            // 
-            this.panel24.BackColor = System.Drawing.Color.Transparent;
-            this.panel24.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel24.BackgroundImage")));
-            this.panel24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel24.Location = new System.Drawing.Point(17, 26);
-            this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(60, 62);
-            this.panel24.TabIndex = 1;
-            // 
             // panel27
             // 
             this.panel27.BackColor = System.Drawing.Color.Transparent;
@@ -684,6 +675,15 @@
             this.panel27.Size = new System.Drawing.Size(60, 62);
             this.panel27.TabIndex = 1;
             // 
+            // panel28
+            // 
+            this.panel28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.panel28.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel28.Location = new System.Drawing.Point(0, 0);
+            this.panel28.Name = "panel28";
+            this.panel28.Size = new System.Drawing.Size(230, 10);
+            this.panel28.TabIndex = 1;
+            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -693,7 +693,7 @@
             this.button2.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(383, 661);
+            this.button2.Location = new System.Drawing.Point(386, 711);
             this.button2.Name = "button2";
             this.button2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.button2.Size = new System.Drawing.Size(210, 39);
@@ -712,7 +712,7 @@
             this.button1.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(167, 661);
+            this.button1.Location = new System.Drawing.Point(170, 711);
             this.button1.Name = "button1";
             this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.button1.Size = new System.Drawing.Size(210, 39);
@@ -731,7 +731,7 @@
             this.button8.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.Location = new System.Drawing.Point(815, 505);
+            this.button8.Location = new System.Drawing.Point(818, 555);
             this.button8.Name = "button8";
             this.button8.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.button8.Size = new System.Drawing.Size(210, 39);
@@ -751,7 +751,7 @@
             this.button7.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.Location = new System.Drawing.Point(599, 505);
+            this.button7.Location = new System.Drawing.Point(602, 555);
             this.button7.Name = "button7";
             this.button7.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.button7.Size = new System.Drawing.Size(210, 39);
@@ -771,7 +771,7 @@
             this.button6.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.Location = new System.Drawing.Point(383, 505);
+            this.button6.Location = new System.Drawing.Point(386, 555);
             this.button6.Name = "button6";
             this.button6.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.button6.Size = new System.Drawing.Size(210, 39);
@@ -791,7 +791,7 @@
             this.btnLogin.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnLogin.Image = ((System.Drawing.Image)(resources.GetObject("btnLogin.Image")));
-            this.btnLogin.Location = new System.Drawing.Point(167, 505);
+            this.btnLogin.Location = new System.Drawing.Point(170, 555);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnLogin.Size = new System.Drawing.Size(210, 39);
@@ -811,7 +811,7 @@
             this.button3.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(167, 550);
+            this.button3.Location = new System.Drawing.Point(170, 600);
             this.button3.Name = "button3";
             this.button3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.button3.Size = new System.Drawing.Size(210, 39);
@@ -830,15 +830,16 @@
             this.button4.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(383, 550);
+            this.button4.Location = new System.Drawing.Point(602, 600);
             this.button4.Name = "button4";
             this.button4.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.button4.Size = new System.Drawing.Size(210, 39);
             this.button4.TabIndex = 31;
-            this.button4.Text = "      Reset User Password";
+            this.button4.Text = "      Expired Items";
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button4.UseMnemonic = false;
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -849,15 +850,16 @@
             this.button5.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.Location = new System.Drawing.Point(599, 550);
+            this.button5.Location = new System.Drawing.Point(386, 600);
             this.button5.Name = "button5";
             this.button5.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.button5.Size = new System.Drawing.Size(210, 39);
             this.button5.TabIndex = 32;
-            this.button5.Text = "      Reset User Password";
+            this.button5.Text = "      Manage Store Items";
             this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button5.UseMnemonic = false;
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button9
             // 
@@ -868,12 +870,12 @@
             this.button9.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
-            this.button9.Location = new System.Drawing.Point(815, 550);
+            this.button9.Location = new System.Drawing.Point(818, 600);
             this.button9.Name = "button9";
             this.button9.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.button9.Size = new System.Drawing.Size(210, 39);
             this.button9.TabIndex = 33;
-            this.button9.Text = "      Reset User Password";
+            this.button9.Text = "      All Orders";
             this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button9.UseMnemonic = false;
             this.button9.UseVisualStyleBackColor = false;
@@ -887,8 +889,8 @@
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label8);
