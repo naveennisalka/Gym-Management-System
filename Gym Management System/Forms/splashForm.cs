@@ -33,8 +33,6 @@ namespace Gym_Management_System
         {
 
         }
-
-        // Define this at the top of your Splash Form class level variables
         int startPoint = 0;
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -45,14 +43,8 @@ namespace Gym_Management_System
             {
                 progressBar1.Value = 100;
                 timer1.Stop();
-
-                // 1. Initialize the new login system instance
                 loginForm login = new loginForm();
-
-                // 2. Display the login screen on the screen surface
                 login.Show();
-
-                // 3. Change form ownership so the Splash Form can close without killing the thread
                 this.Hide();
             }
             else

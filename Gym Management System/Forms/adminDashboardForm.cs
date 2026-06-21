@@ -29,14 +29,14 @@ namespace Gym_Management_System
 
         public void ConfigureDashboardView()
         {
-            // 1. Assign global session header labels (if applicable)
+            //Assign global session header labels (if applicable)
             lblCurrentUserName.Text = UserSession.UserName;
             lblCurrentUserRole.Text = GetRoleName(UserSession.UserRole);
 
-            // 2. Reset everything to hidden first for maximum security
+            //Reset everything to hidden first for maximum security
             HideAllDashboardElements();
 
-            // 3. Selectively display components depending on the role integer mapping
+            //Selectively display components depending on the role integer mapping
             switch (UserSession.UserRole)
             {
                 case 1: // ---- SUPER ADMIN VIEW ----
@@ -155,14 +155,14 @@ namespace Gym_Management_System
                 {
                     con.Open();
 
-                    // 1. Total Active Members
+                    // Total Active Members
                     string qActive = "SELECT COUNT(*) FROM memberships WHERE end_date >= GETDATE();";
                     using (SqlCommand cmd = new SqlCommand(qActive, con))
                     {
                         lblActiveMembers.Text = cmd.ExecuteScalar()?.ToString() ?? "0";
                     }
 
-                    // 2. Monthly Revenue (Memberships + Retail Store Orders)
+                    //Monthly Revenue (Memberships + Retail Store Orders)
                     string qRevenue = @"SELECT 
                 (SELECT ISNULL(SUM(total_amount), 0.00) FROM orders WHERE MONTH(order_date) = MONTH(GETDATE()) AND YEAR(order_date) = YEAR(GETDATE())) +
                 (SELECT ISNULL(SUM(gp.price), 0.00) FROM memberships m INNER JOIN gym_plans gp ON m.plan_id = gp.id WHERE MONTH(m.start_date) = MONTH(GETDATE()) AND YEAR(m.start_date) = YEAR(GETDATE()))";
@@ -172,14 +172,14 @@ namespace Gym_Management_System
                         lblMonthlyRevenue.Text = "Rs. " + revenue.ToString("N2");
                     }
 
-                    // 3. Active Coaches (Role = 3, Status = 1)
+                    // Active Coaches
                     string qCoaches = "SELECT COUNT(*) FROM users WHERE role = 3 AND status = 1;";
                     using (SqlCommand cmd = new SqlCommand(qCoaches, con))
                     {
                         lblActiveCoaches.Text = cmd.ExecuteScalar()?.ToString() ?? "0";
                     }
 
-                    // 4. Equipment Breakdown Alert (Under Repair + Out of Service)
+                    //Equipment Breakdown Alert (Under Repair + Out of Service)
                     string qEquipment = "SELECT COUNT(*) FROM equipment WHERE status IN ('Under Repair', 'Out of Service');";
                     using (SqlCommand cmd = new SqlCommand(qEquipment, con))
                     {
@@ -227,7 +227,7 @@ namespace Gym_Management_System
                 {
                     con.Open();
 
-                    // 1. Assigned Members count
+                    //Assigned Members count
                     string qAssigned = "SELECT COUNT(DISTINCT member_id) FROM schedules WHERE coach_id = @CoachID;";
                     using (SqlCommand cmd = new SqlCommand(qAssigned, con))
                     {
@@ -235,7 +235,7 @@ namespace Gym_Management_System
                         lblAssignedMembers.Text = cmd.ExecuteScalar()?.ToString() ?? "0";
                     }
 
-                    // 2. Today's Assigned Routines
+                    //Today's Assigned Routines
                     string qTodayRoutines = @"SELECT COUNT(DISTINCT s.id) 
                                       FROM schedules s
                                       INNER JOIN schedule_exercises se ON s.id = se.schedule_id
@@ -247,7 +247,7 @@ namespace Gym_Management_System
                         lblTodaySessions.Text = cmd.ExecuteScalar()?.ToString() ?? "0";
                     }
 
-                    // 3. Pending Configurations (Schedules with no active exercises setup yet)
+                    //Pending Configurations (Schedules with no active exercises setup yet)
                     string qPending = @"SELECT COUNT(*) FROM schedules s
                                 LEFT JOIN schedule_exercises se ON s.id = se.schedule_id
                                 WHERE s.coach_id = @CoachID AND se.id IS NULL;";
@@ -272,7 +272,7 @@ namespace Gym_Management_System
                 {
                     con.Open();
 
-                    // 1. Current Membership Plan & Countdown
+                    //Current Membership Plan & Countdown
                     string qExpiry = @"SELECT TOP 1 gp.name, DATEDIFF(DAY, GETDATE(), m.end_date) AS DaysRemaining
                                FROM memberships m
                                INNER JOIN gym_plans gp ON m.plan_id = gp.id
@@ -297,7 +297,7 @@ namespace Gym_Management_System
                         }
                     }
 
-                    // 2. Total Retail Purchases Summary Metric
+                    //Total Retail Purchases Summary Metric
                     string qStoreTotal = "SELECT ISNULL(SUM(total_amount), 0.00) FROM orders WHERE user_id = @MemberID;";
                     using (SqlCommand cmd = new SqlCommand(qStoreTotal, con))
                     {

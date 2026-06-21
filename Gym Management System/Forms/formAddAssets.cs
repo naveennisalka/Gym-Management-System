@@ -59,7 +59,7 @@ namespace Gym_Management_System.Forms
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            // 1. Validation Check: Ensure critical fields are filled
+            //Validation Check: Ensure critical fields are filled
             if (string.IsNullOrWhiteSpace(txtName.Text) ||
                 cbCategory.SelectedIndex == -1 ||
                 cbStatus.SelectedIndex == -1 ||
@@ -70,7 +70,7 @@ namespace Gym_Management_System.Forms
                 return;
             }
 
-            // Validate that the price input is a true numeric value
+            //Validate that the price input is a true numeric value
             if (!decimal.TryParse(txtPrice.Text, out decimal purchasePrice))
             {
                 MessageBox.Show("Please enter a valid numeric value for the purchase price.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -79,7 +79,7 @@ namespace Gym_Management_System.Forms
 
             string newEquipmentId = GetNextEquipmentID();
 
-            // 2. Define the parameterized SQL INSERT query
+            // Define the parameterized SQL INSERT query
             string query = @"INSERT INTO equipment 
                      (id,name, category, status, brand, model_number, serial_number, purchase_date, purchase_price, warranty_expiry_date) 
                      VALUES 
@@ -90,7 +90,7 @@ namespace Gym_Management_System.Forms
                 using (SqlConnection tempCon = new SqlConnection(dbcon.connection()))
                 using (SqlCommand insertCmd = new SqlCommand(query, tempCon))
                 {
-                    // 3. Add parameters to prevent any SQL injection attacks
+                    //Add parameters to prevent any SQL injection attacks
                     insertCmd.Parameters.AddWithValue("@id", newEquipmentId);
                     insertCmd.Parameters.AddWithValue("@name", txtName.Text.Trim());
                     insertCmd.Parameters.AddWithValue("@category", cbCategory.Text);
@@ -99,12 +99,12 @@ namespace Gym_Management_System.Forms
                     insertCmd.Parameters.AddWithValue("@model_number", string.IsNullOrWhiteSpace(txtModelNum.Text) ? (object)DBNull.Value : txtModelNum.Text.Trim());
                     insertCmd.Parameters.AddWithValue("@serial_number", string.IsNullOrWhiteSpace(txtSerialNum.Text) ? (object)DBNull.Value : txtSerialNum.Text.Trim());
 
-                    // Extract pure Date values from your DateTimePickers
+                    //Extract pure Date values from your DateTimePickers
                     insertCmd.Parameters.AddWithValue("@purchase_date", dtpPurchaseDate.Value.Date);
                     insertCmd.Parameters.AddWithValue("@purchase_price", purchasePrice);
                     insertCmd.Parameters.AddWithValue("@warranty_expiry_date", dtpWarrantyExpiry.Value.Date);
 
-                    // 4. Open connection and execute
+                    
                     tempCon.Open();
                     int rowsAffected = insertCmd.ExecuteNonQuery();
 
@@ -112,7 +112,7 @@ namespace Gym_Management_System.Forms
                     {
                         MessageBox.Show("New equipment asset registered successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        // 5. Clear all inputs for the next entry
+                        
                         ClearFormInputs();
                     }
                 }
@@ -123,7 +123,7 @@ namespace Gym_Management_System.Forms
             }
         }
 
-        // Helper routine to reset inputs after a successful save operation
+      
         private void ClearFormInputs()
         {
             txtName.Clear();

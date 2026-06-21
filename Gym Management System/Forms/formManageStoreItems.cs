@@ -30,7 +30,7 @@ namespace Gym_Management_System.Forms
         {
             try
             {
-                dgvStoreItems.Rows.Clear(); // Make sure this matches your DataGridView name
+                dgvStoreItems.Rows.Clear(); 
 
                 string query = @"SELECT id, name, description, price, stock, category, expiry_date, min_stock_level 
                          FROM store_items 
@@ -91,37 +91,35 @@ namespace Gym_Management_System.Forms
 
         private void dgvStoreItems_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Skip clicking headers
+     
             if (e.RowIndex < 0) return;
 
             string colName = dgvStoreItems.Columns[e.ColumnIndex].Name;
-            string itemId = dgvStoreItems.Rows[e.RowIndex].Cells[1].Value.ToString(); // Index 1 = Item ID Column
-            string itemName = dgvStoreItems.Rows[e.RowIndex].Cells[2].Value.ToString(); // Index 2 = Name Column
+            string itemId = dgvStoreItems.Rows[e.RowIndex].Cells[1].Value.ToString(); 
+            string itemName = dgvStoreItems.Rows[e.RowIndex].Cells[2].Value.ToString(); 
 
             if (colName == "Edit")
             {
                 DataGridViewRow row = dgvStoreItems.Rows[e.RowIndex];
 
-                // Extract the data variables sequentially matching your grid layout mapping
-                string id = row.Cells[1].Value.ToString();          // Index 1 = ID
-                string name = row.Cells[2].Value.ToString();        // Index 2 = Name
-                string description = row.Cells[3].Value?.ToString() ?? "";
-                string price = row.Cells[4].Value.ToString();       // Index 4 = Price
-                string stock = row.Cells[5].Value.ToString();       // Index 5 = Stock
-                string category = row.Cells[6].Value.ToString();    // Index 6 = Category
-                string expiryDate = row.Cells[7].Value?.ToString() ?? "";
-                string minStock = row.Cells[8].Value.ToString();    // Index 8 = Min Stock Level
 
-                // Initialize the specialized input form passing ALL parameters through Constructor 2
+                string id = row.Cells[1].Value.ToString();         
+                string name = row.Cells[2].Value.ToString();       
+                string description = row.Cells[3].Value?.ToString() ?? "";
+                string price = row.Cells[4].Value.ToString();       
+                string stock = row.Cells[5].Value.ToString();       
+                string category = row.Cells[6].Value.ToString();   
+                string expiryDate = row.Cells[7].Value?.ToString() ?? "";
+                string minStock = row.Cells[8].Value.ToString();    
+
                 formAddStoreItem editForm = new formAddStoreItem(id, name, description, price, stock, category, expiryDate, minStock);
 
-                // Hide the primary standard save executor button, displaying update option layout instead
+   
                 editForm.btnSave.Visible = false;
                 editForm.btnUpdate.Visible = true;
 
                 editForm.ShowDialog();
 
-                // Refresh the local inventory dashboard grid instantly once the dialog window wraps up
                 LoadStoreItemsGrid();
             }
             else if (colName == "Delete")
@@ -148,7 +146,7 @@ namespace Gym_Management_System.Forms
                         }
 
                         MessageBox.Show("Inventory item removed successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LoadStoreItemsGrid(); // Refresh grid layout context
+                        LoadStoreItemsGrid(); 
                     }
                     catch (Exception ex)
                     {

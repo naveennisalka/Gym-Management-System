@@ -9,14 +9,9 @@ namespace Gym_Management_System
 
         adminDashboardForm Dashboard;
         MembersForm Members;
-        //storeForm Store;
         settingsForm Settings;
 
         private Form currentChildForm;
-
-
-        //public static object lblUsername;
-        //public static object lblUserRole;
 
         public mainFrame()
         {
@@ -32,7 +27,7 @@ namespace Gym_Management_System
 
         public void OpenChildForm(Form childForm)
         {
-            // close and remove previous child
+
             if (currentChildForm != null)
             {
                 try { currentChildForm.Close(); } catch { }
@@ -58,8 +53,6 @@ namespace Gym_Management_System
             panelDesctop.ResumeLayout();
         }
 
-
-        // No parameters needed anymore! It reads directly from the static session class
         public void ConfigureDashboardView()
         {
            
@@ -68,7 +61,7 @@ namespace Gym_Management_System
             
             HideAllDashboardElements();
 
-            // 3. Render modules based on the static class role variable
+            //Render modules based on the static class role variable
             switch (UserSession.UserRole)
             {
                 case 1: // ---- SUPER ADMIN VIEW ----

@@ -32,7 +32,7 @@ namespace Gym_Management_System
             {
                 int i = 0;
                 dgvSchedule.Rows.Clear();
-                // select and alias columns to match existing UI expectations
+           
                 string q = @"SELECT 
                 s.id AS SID,
                 s.coach_id AS CoachID,
@@ -87,32 +87,26 @@ namespace Gym_Management_System
             {
                 DataGridViewRow row = dgvSchedule.Rows[e.RowIndex];
 
-                // Extract all parameters exactly from your row columns mapping
                 string sid = row.Cells["SID"].Value.ToString();
                 string coachId = row.Cells["CoachID"].Value.ToString();
                 string memberId = row.Cells["MemID"].Value.ToString();
                 string title = row.Cells["Title"].Value.ToString();
                 string dpw = row.Cells["dpw"].Value.ToString();
 
-                // Assuming you have access to or want to pass the coach name (or fetch via ID)
                 string coachName = GetCoachNameFromDB(coachId);
 
-                // Initialize form using Constructor 2 (Passes ALL data fields)
                 formAddSchedule updateForm = new formAddSchedule(sid, memberId, title, dpw);
                 updateForm.btnSave.Enabled = false;
                 updateForm.btnSave.Hide();
                 updateForm.ShowDialog();
-
-                // Refresh main list after form closes
                 loadMembers();
             }
             else if (colName == "Delete")
             {
                 DataGridViewRow row = dgvSchedule.Rows[e.RowIndex];
-                string sid = row.Cells[1].Value.ToString(); // Index 1 is your Schedule ID (SID)
-                string title = row.Cells[5].Value.ToString(); // Index 5 is the Title text
+                string sid = row.Cells[1].Value.ToString(); 
+                string title = row.Cells[5].Value.ToString();
 
-                // 1. Ask the coach for confirmation before deleting
                 DialogResult dialogResult = MessageBox.Show(
                     $"Are you sure you want to permanently delete the schedule '{title}' (ID: {sid})? This will remove all assigned exercises.",
                     "Confirm Delete",
@@ -122,10 +116,8 @@ namespace Gym_Management_System
 
                 if (dialogResult == DialogResult.Yes)
                 {
-                    // 2. Execute the deletion routine
-                    DeleteScheduleFromDB(sid);
 
-                    // 3. Refresh the main DataGridView list immediately
+                    DeleteScheduleFromDB(sid);
                     loadMembers();
                 }
             }

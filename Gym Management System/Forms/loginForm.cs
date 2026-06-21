@@ -38,19 +38,12 @@ namespace Gym_Management_System
 
             if (VerifyUserLogin(inputEmail, inputPassword, out string currentID, out string currentName, out int currentRole))
             {
-                // 1. Save the data globally into the static class memory variables!
                 UserSession.UserID = currentID;
                 UserSession.UserName = currentName;
                 UserSession.UserRole = currentRole;
 
                 this.Hide();
-
-                // 2. Initialize and load the dashboard form shell
                 mainFrame mainDash = new mainFrame();
-
-                // 3. Run the display router (it will grab the data automatically)
-                //mainDash.ConfigureDashboardView();
-
                 mainDash.ShowDialog();
                 this.Close();
             }
@@ -63,12 +56,10 @@ namespace Gym_Management_System
 
         public bool VerifyUserLogin(string email, string password, out string userId, out string userName, out int userRole)
         {
-            // Initialize default fallback values
             userId = "";
             userName = "";
             userRole = -1;
 
-            // Query filters by matching active email and password strings exactly
             string query = "SELECT id, name, role FROM users WHERE email = @Email AND password = @Password";
 
             try
@@ -76,20 +67,19 @@ namespace Gym_Management_System
                 using (SqlConnection tempCon = new SqlConnection(dbcon.connection()))
                 using (SqlCommand cmd = new SqlCommand(query, tempCon))
                 {
-                    // Use exact parameters to prevent injection bugs
+
                     cmd.Parameters.AddWithValue("@Email", email.Trim());
-                    cmd.Parameters.AddWithValue("@Password", password); // In production, hash this string check!
+                    cmd.Parameters.AddWithValue("@Password", password); 
 
                     tempCon.Open();
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         if (reader.Read())
                         {
-                            // Map details out to the session variables
                             userId = reader["id"].ToString();
                             userName = reader["name"].ToString();
                             userRole = Convert.ToInt32(reader["role"]);
-                            return true; // Authentication successful!
+                            return true; 
                         }
                     }
                 }
@@ -99,7 +89,7 @@ namespace Gym_Management_System
                 MessageBox.Show("Authentication Error: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            return false; // Authentication failed (wrong email/password or disabled account)
+            return false; 
         }
 
         private void txtUser_TextChanged(object sender, EventArgs e)

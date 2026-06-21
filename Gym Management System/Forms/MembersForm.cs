@@ -28,7 +28,6 @@ namespace Gym_Management_System
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            // refresh members list on search text change
             try
             {
                 loadMembers();
@@ -48,7 +47,6 @@ namespace Gym_Management_System
             {
                 int i = 0;
                 dgvUser.Rows.Clear();
-                // select and alias columns to match existing UI expectations
                 string q = @"
 SELECT 
   id AS userId,
@@ -89,12 +87,10 @@ WHERE CONCAT(ISNULL(id, ''), ISNULL(name, ''), ISNULL(dob, ''), ISNULL(address, 
                         reader["UserRole"].ToString(),
                         reader["Email"].ToString()
                     );
-                    // ensure email cell is set (in case column ordering changed)
                     try
                     {
                         var addedRow = dgvUser.Rows[dgvUser.Rows.Count - 1];
                         var emailVal = reader["Email"] != DBNull.Value ? reader["Email"].ToString() : string.Empty;
-                        // find Email column by header text
                         int emailColIndex = -1;
                         for (int ci = 0; ci < dgvUser.Columns.Count; ci++)
                         {
@@ -134,9 +130,7 @@ WHERE CONCAT(ISNULL(id, ''), ISNULL(name, ''), ISNULL(dob, ''), ISNULL(address, 
                 userRegForm.txtAddress.Text = dgvUser.Rows[e.RowIndex].Cells[4].Value?.ToString() ?? string.Empty;
                 userRegForm.cbGender.Text = dgvUser.Rows[e.RowIndex].Cells[5].Value?.ToString() ?? string.Empty;
                 userRegForm.txtPhone.Text = dgvUser.Rows[e.RowIndex].Cells[6].Value?.ToString() ?? string.Empty;
-                // set email
                 userRegForm.txtMail.Text = dgvUser.Rows[e.RowIndex].Cells[9].Value?.ToString() ?? string.Empty;
-                // map role numeric->text
                 var roleVal = dgvUser.Rows[e.RowIndex].Cells[8].Value?.ToString();
                 int roleNum;
                 if (int.TryParse(roleVal, out roleNum))
@@ -149,7 +143,6 @@ WHERE CONCAT(ISNULL(id, ''), ISNULL(name, ''), ISNULL(dob, ''), ISNULL(address, 
                         default: userRegForm.cbRole.Text = "Member"; break;
                     }
                 }
-                // map status if numeric
                 var statusVal = dgvUser.Rows[e.RowIndex].Cells[7].Value?.ToString();
                 int st;
                 if (int.TryParse(statusVal, out st) && st >= 0 && st < userRegForm.cbStatus.Items.Count)

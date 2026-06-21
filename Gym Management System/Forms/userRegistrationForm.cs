@@ -121,7 +121,6 @@ namespace Gym_Management_System.Forms
             InitializeComponent();
             con = new SqlConnection(dbcon.connection());
             membersForm = member;
-            // default for new registration: show Save, hide Update
             btnSave.Visible = true;
             btnUpdate.Visible = false;
         }
@@ -136,7 +135,6 @@ namespace Gym_Management_System.Forms
                     if (MessageBox.Show("Are you sure you want to save this user?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
 
-                        // generate a new id for user
                         string roleText = cbRole.SelectedItem?.ToString() ?? "Member";
                         string prefix = "MEM";
                         int roleId = 4;
@@ -217,7 +215,6 @@ namespace Gym_Management_System.Forms
                         cmd.ExecuteNonQuery();
                         con.Close();
 
-                        // 4. Changed success message
                         MessageBox.Show("User updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         this.Dispose();
@@ -230,7 +227,7 @@ namespace Gym_Management_System.Forms
                 }
                 catch (Exception ex)
                 {
-                    // Ensures the connection is closed even if the update crashes
+
                     if (con.State == ConnectionState.Open)
                     {
                         con.Close();

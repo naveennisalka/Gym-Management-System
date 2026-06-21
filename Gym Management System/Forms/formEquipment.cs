@@ -110,36 +110,31 @@ WHERE CONCAT(
             {
                 DataGridViewRow row = dgvAsset.Rows[e.RowIndex];
 
-                // Extract the strings sequentially matching your column mapping positions
-                string id = row.Cells[0].Value.ToString(); // Index 0 = ID
-                string name = row.Cells[1].Value.ToString(); // Index 1 = Name
-                string brand = row.Cells[2].Value.ToString(); // Index 2 = Brand
-                string category = row.Cells[3].Value.ToString(); // Index 3 = Category
-
-                // Format handles dates safely if raw column values exist
+                
+                string id = row.Cells[0].Value.ToString(); 
+                string name = row.Cells[1].Value.ToString(); 
+                string brand = row.Cells[2].Value.ToString(); 
+                string category = row.Cells[3].Value.ToString(); 
                 string purchaseDate = row.Cells[4].Value?.ToString() ?? "";
-                string status = row.Cells[5].Value.ToString(); // Index 5 = Status
+                string status = row.Cells[5].Value.ToString(); 
                 string model = row.Cells[6].Value?.ToString() ?? "";
                 string serial = row.Cells[7].Value?.ToString() ?? "";
                 string price = row.Cells[8].Value.ToString();
                 string warrantyDate = row.Cells[9].Value?.ToString() ?? "";
 
-                // Initialize the form with Constructor 2 (Passes ALL details)
                 formAddAssets editForm = new formAddAssets(id, name, brand, category, status, model, serial, price, purchaseDate, warrantyDate);
                 editForm.btnSave.Hide();
                 editForm.ShowDialog();
 
-                // Refresh the grid to show updates after the edit form closes
                 loadEquipment();
 
             }
             else if (colName == "Delete")
             {
                 DataGridViewRow row = dgvAsset.Rows[e.RowIndex];
-                string assetId = row.Cells[0].Value.ToString();   // Index 0 = ID (e.g., 'EQ-001')
-                string assetName = row.Cells[1].Value.ToString(); // Index 1 = Name
+                string assetId = row.Cells[0].Value.ToString();   
+                string assetName = row.Cells[1].Value.ToString(); 
 
-                // 1. Double check with the user before deleting permanent records
                 DialogResult dialogResult = MessageBox.Show(
                     $"Are you sure you want to permanently delete the asset '{assetName}' ({assetId})?\nThis action cannot be undone and may remove associated maintenance logs.",
                     "Confirm Asset Deletion",
@@ -149,18 +144,15 @@ WHERE CONCAT(
 
                 if (dialogResult == DialogResult.Yes)
                 {
-                    // 2. Run the deletion method
+              
                     DeleteAssetFromDB(assetId);
-
-                    // 3. Refresh the grid instantly to reflect changes
-                    loadEquipment(); // Replace with your exact grid loading method name
+                    loadEquipment(); 
                 }
             }
             else if (colName == "view")
             {
                 DataGridViewRow row = dgvAsset.Rows[e.RowIndex];
 
-                // 1. Extract values sequentially from your main list row columns
                 string id = row.Cells[0].Value.ToString();
                 string name = row.Cells[1].Value.ToString();
                 string brand = row.Cells[2].Value.ToString();
@@ -172,10 +164,8 @@ WHERE CONCAT(
                 string price = row.Cells[8].Value.ToString();
                 string warrantyDate = row.Cells[9].Value?.ToString() ?? "";
 
-                // 2. Initialize the info preview form using the new custom constructor parameters
                 formAssetsInfo infoForm = new formAssetsInfo(id, name, category, status, brand, model, serial, purchaseDate, price, warrantyDate);
 
-                // 3. Display the dialog window on top
                 infoForm.ShowDialog();
             }
         }
@@ -194,7 +184,7 @@ WHERE CONCAT(
                 using (SqlConnection tempCon = new SqlConnection(dbcon.connection()))
                 using (SqlCommand deleteCmd = new SqlCommand(query, tempCon))
                 {
-                    // Use precise parameterized assignments to secure the query execution
+   
                     deleteCmd.Parameters.AddWithValue("@AssetID", assetId);
 
                     tempCon.Open();

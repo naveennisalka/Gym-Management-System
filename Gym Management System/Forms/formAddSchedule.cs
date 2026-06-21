@@ -34,7 +34,7 @@ namespace Gym_Management_System
 
         }
 
-        // Constructor 1:  adding a BRAND NEW schedule
+        //adding a BRAND NEW schedule
         public formAddSchedule(string coachId, string coachName)
         {
             InitializeComponent();
@@ -47,7 +47,7 @@ namespace Gym_Management_System
             
         }
 
-        // Constructor 2:  UPDATING an existing schedule from the grid
+        //UPDATING an existing schedule from the grid
         public formAddSchedule(string scheduleId, string memberId, string title, string daysPerWeek)
         {
             InitializeComponent();
@@ -203,7 +203,7 @@ namespace Gym_Management_System
                 MessageBox.Show("Please fill in all required fields.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            // 1. Collect inputs from form controls
+           
             string exId = cbExercise.SelectedValue.ToString(); 
 
             string fullText = cbExercise.Text;
@@ -220,7 +220,7 @@ namespace Gym_Management_System
 
             if (editingRowIndex > -1)
             {
-                // Update existing row
+                
                 DataGridViewRow row = dgvExecise.Rows[editingRowIndex];
                 row.Cells[0].Value = exId;
                 row.Cells[1].Value = exName;
@@ -231,7 +231,7 @@ namespace Gym_Management_System
             }
             else
             {
-                // Add brand new row
+                
                 dgvExecise.Rows.Add(exId, exName, sets, reps, dayOfWeek, notes);
             }                    
 
@@ -263,18 +263,18 @@ namespace Gym_Management_System
          
                 DataGridViewRow row = dgvExecise.Rows[editingRowIndex];
                 
-                cbExercise.SelectedValue = row.Cells[0].Value.ToString(); // Index 0 = exId
-                txtSet.Text = row.Cells[2].Value.ToString(); // Index 2 = sets
-                txtRep.Text = row.Cells[3].Value.ToString(); // Index 3 = reps
-                cbDay.Text = row.Cells[4].Value.ToString(); // Index 4 = dayOfWeek
-                txtNote.Text = row.Cells[5].Value?.ToString() ?? ""; // Index 5 = notes
+                cbExercise.SelectedValue = row.Cells[0].Value.ToString();
+                txtSet.Text = row.Cells[2].Value.ToString(); 
+                txtRep.Text = row.Cells[3].Value.ToString();
+                cbDay.Text = row.Cells[4].Value.ToString(); 
+                txtNote.Text = row.Cells[5].Value?.ToString() ?? ""; 
 
                 button3.Text = "✓ Update";
                 
             }
             else if (colName == "Delete")
             {
-                string exName = dgvExecise.Rows[e.RowIndex].Cells[1].Value.ToString(); // Index 1 = Exercise Name
+                string exName = dgvExecise.Rows[e.RowIndex].Cells[1].Value.ToString(); 
 
                 DialogResult dialogResult = MessageBox.Show(
                     $"Are you sure you want to remove '{exName}' from this schedule list?",
@@ -288,7 +288,7 @@ namespace Gym_Management_System
                     // Remove the row directly from the DataGridView collections in memory
                     dgvExecise.Rows.RemoveAt(e.RowIndex);
 
-                    // Safety: If the coach was editing this exact row and decided to delete it, reset the input form fields
+                    //If the coach was editing this exact row and decided to delete it, reset the input form fields
                     if (editingRowIndex == e.RowIndex)
                     {
                         editingRowIndex = -1;
@@ -302,7 +302,7 @@ namespace Gym_Management_System
                     }
                     else if (editingRowIndex > e.RowIndex)
                     {
-                        // Shifting our pointer back by 1 if a row preceding our active editing row index is dropped
+                        //Shifting our pointer back by 1 if a row preceding our active editing row index is dropped
                         editingRowIndex--;
                     }
                 }
@@ -326,29 +326,29 @@ namespace Gym_Management_System
             }
 
             if (con.State == ConnectionState.Closed) con.Open();
-            SqlTransaction transaction = con.BeginTransaction(); // Start transaction to prevent partial saves
+            SqlTransaction transaction = con.BeginTransaction(); 
 
             try
             {
-                // Step 1: Insert the high-level Schedule details
+                //Insert the high-level Schedule details
                 string insertScheduleQuery = @"INSERT INTO schedules (title, member_id, coach_id, days_per_week) 
                                        VALUES (@title, @member_id, @coach_id, @days_per_week);
                                        SELECT SCOPE_IDENTITY();";
 
                 SqlCommand scheduleCmd = new SqlCommand(insertScheduleQuery, con, transaction);
                 scheduleCmd.Parameters.AddWithValue("@title", txtScheduleTitle.Text);
-                scheduleCmd.Parameters.AddWithValue("@member_id", cbMember.SelectedValue.ToString()); // Fixed: Pulls 'MEM001' from ComboBox Value
+                scheduleCmd.Parameters.AddWithValue("@member_id", cbMember.SelectedValue.ToString()); //Pulls 'MEM001' from ComboBox Value
                 scheduleCmd.Parameters.AddWithValue("@coach_id", UserSession.UserID);                          // Active logged-in coach
                 scheduleCmd.Parameters.AddWithValue("@days_per_week", int.Parse(txtDPW.Text));
 
                 // Execute and get the newly generated schedule_id
                 int newScheduleId = Convert.ToInt32(scheduleCmd.ExecuteScalar());
 
-                // Step 2: Loop through every row in your temporary GridView and insert into schedule_exercises
+                //Loop through every row in your temporary GridView and insert into schedule_exercises
                 string insertExerciseQuery = @"INSERT INTO schedule_exercises (schedule_id, exercise_id, sets, reps, day_of_week, notes)
                                        VALUES (@schedule_id, @exercise_id, @sets, @reps, @day_of_week, @notes);";
 
-                foreach (DataGridViewRow row in dgvExecise.Rows) // Fixed: Name changed to match dgvExecise
+                foreach (DataGridViewRow row in dgvExecise.Rows) 
                 {
                     // Skip the new uncommitted empty row at the bottom of the grid if there is one
                     if (row.IsNewRow) continue;
@@ -356,7 +356,7 @@ namespace Gym_Management_System
                     SqlCommand exerciseCmd = new SqlCommand(insertExerciseQuery, con, transaction);
                     exerciseCmd.Parameters.AddWithValue("@schedule_id", newScheduleId);
 
-                    // Fixed: Accessing cells via exact zero-based cell indexes matching your add layout map
+                  
                     exerciseCmd.Parameters.AddWithValue("@exercise_id", row.Cells[0].Value.ToString());
                     exerciseCmd.Parameters.AddWithValue("@sets", Convert.ToInt32(row.Cells[2].Value));
                     exerciseCmd.Parameters.AddWithValue("@reps", Convert.ToInt32(row.Cells[3].Value));
@@ -366,11 +366,10 @@ namespace Gym_Management_System
                     exerciseCmd.ExecuteNonQuery();
                 }
 
-                // Commit everything if no errors occurred
+                
                 transaction.Commit();
                 MessageBox.Show("Schedule saved successfully to the database!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Clear grid and inputs after successful save
                 dgvExecise.Rows.Clear();
                 txtScheduleTitle.Clear();
                 txtDPW.Clear();
@@ -378,7 +377,7 @@ namespace Gym_Management_System
             }
             catch (Exception ex)
             {
-                // Roll back everything to keep database clean if an exercise row fails
+                
                 transaction.Rollback();
                 MessageBox.Show("Database Error: Save operation cancelled. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

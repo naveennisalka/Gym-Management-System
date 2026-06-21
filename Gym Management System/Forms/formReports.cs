@@ -74,7 +74,7 @@ namespace Gym_Management_System.Forms
             }
             else if (reportType == "Monthly Sales & Revenue Summary")
             {
-                // Aggregates payments and splits transactions by year and month calendar blocks
+                
                 query = @"SELECT 
                 FORMAT(order_date, 'yyyy - MMMM') AS [Billing Period],
                 COUNT(id) AS [Total Transactions],
@@ -117,7 +117,7 @@ namespace Gym_Management_System.Forms
             // Dynamically adjust column spacing allocations to fit wide financial numbers
             int colWidth = (e.PageBounds.Width - 80) / dtActiveReport.Columns.Count;
 
-            // 1. Draw Report Header Typography Block
+            //Draw Report Header Typography Block
             g.DrawString("MAHARAJA GYM NETWORK", fontTitle, Brushes.Black, xStart, yStart);
             yStart += 25;
             g.DrawString($"Official System Registry Report: {cbReportType.SelectedItem}", fontHeader, Brushes.DarkGray, xStart, yStart);
@@ -129,7 +129,7 @@ namespace Gym_Management_System.Forms
             g.DrawLine(Pens.Black, xStart, yStart, e.PageBounds.Width - 40, yStart);
             yStart += 20;
 
-            // 2. Render Data Table Headers Grid Rows
+            //Render Data Table Headers Grid Rows
             int currentX = xStart;
             for (int i = 0; i < dtActiveReport.Columns.Count; i++)
             {
@@ -141,7 +141,7 @@ namespace Gym_Management_System.Forms
             }
             yStart += 25;
 
-            // 3. Render Data Table Rows loop logic
+            //Render Data Table Rows loop logic
             for (int r = 0; r < dtActiveReport.Rows.Count; r++)
             {
                 currentX = xStart;
@@ -197,7 +197,7 @@ namespace Gym_Management_System.Forms
 
             // Bind the dataset right into your UI preview grid
             dgvReportPreview.DataSource = dtActiveReport;
-            btnExportPdf.Enabled = true; // Enable exporting now that data exists
+            btnExportPdf.Enabled = true; 
         }
 
         private void btnExportPdf_Click(object sender, EventArgs e)
@@ -213,7 +213,7 @@ namespace Gym_Management_System.Forms
 
                 if (printDlg.ShowDialog() == DialogResult.OK)
                 {
-                    printDoc.Print(); // Compiles document pages natively
+                    printDoc.Print(); 
                 }
             }
         }

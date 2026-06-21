@@ -32,8 +32,6 @@ namespace Gym_Management_System.Forms
 
 
             currentAssetId = id;
-
-            //Map the data strings directly to your UI Labels
             lblID.Text = id;             
             lblAssetName.Text = name;    
             lblCategory.Text = category; 
@@ -41,8 +39,6 @@ namespace Gym_Management_System.Forms
             lblBrand.Text = brand;       
             lblModel.Text = model;       
             lblSerial.Text = serial;     
-
-            // Format dates or clear if empty strings
             lblPurchaseDate.Text = purchaseDate; 
             lblPurchasePrice.Text = price;       
             lblWarranty.Text = warrantyDate;
@@ -76,7 +72,7 @@ namespace Gym_Management_System.Forms
             {
                 dgvServices.Rows.Clear();
 
-                // FIXED: Changed table name from 'services' to 'service_log'
+                
                 string q = @"SELECT service_id, service_date, service_type, technician, description, parts_replaced, cost, next_service, status 
                      FROM service_log 
                      WHERE equipment_id = @AssetID 

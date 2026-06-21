@@ -86,7 +86,7 @@ namespace Gym_Management_System.Forms
                     object result = cmd.ExecuteScalar();
                     if (result != null)
                     {
-                        string lastId = result.ToString(); // E.g., "SRV-103"
+                        string lastId = result.ToString(); //  "SRV-103"
                         int currentNum = int.Parse(lastId.Replace("SRV-", ""));
                         nextId = "SRV-" + (currentNum + 1).ToString("D3"); // Becomes "SRV-104"
                     }
@@ -102,7 +102,7 @@ namespace Gym_Management_System.Forms
         
         private void btnSave_Click(object sender, EventArgs e)
         {
-            // 1. Validation Check: Ensure primary transaction fields are filled out
+            //primary transaction fields are filled out
             if (cbServiceType.SelectedIndex == -1 ||
                 string.IsNullOrWhiteSpace(txtTechnician.Text) ||
                 string.IsNullOrWhiteSpace(txtCost.Text) ||
@@ -119,10 +119,10 @@ namespace Gym_Management_System.Forms
                 return;
             }
 
-            // Generate the next auto-incremented primary key (e.g., 'SRV-104')
+            // Generate the next auto-incremented primary key
             string newServiceId = GetNextServiceID();
 
-            // 2. Define the parameterized SQL INSERT query matching your 'service_log' table schema
+           
             string query = @"INSERT INTO service_log 
                      (service_id, equipment_id, service_date, service_type, technician, description, parts_replaced, cost, next_service, status) 
                      VALUES 
@@ -133,19 +133,19 @@ namespace Gym_Management_System.Forms
                 using (SqlConnection tempCon = new SqlConnection(dbcon.connection()))
                 using (SqlCommand insertCmd = new SqlCommand(query, tempCon))
                 {
-                    // 3. Map parameters to fully secure the transaction execution
+                  
                     insertCmd.Parameters.AddWithValue("@service_id", newServiceId);
                     insertCmd.Parameters.AddWithValue("@equipment_id", trackingEquipmentId);
                     insertCmd.Parameters.AddWithValue("@service_date", dtpServiceDate.Value.Date);
                     insertCmd.Parameters.AddWithValue("@service_type", cbServiceType.Text);
                     insertCmd.Parameters.AddWithValue("@technician", txtTechnician.Text.Trim());
 
-                    // Map text area fields safely
+                    
                     insertCmd.Parameters.AddWithValue("@description", string.IsNullOrWhiteSpace(txtDescription.Text) ? (object)DBNull.Value : txtDescription.Text.Trim());
                     insertCmd.Parameters.AddWithValue("@parts_replaced", string.IsNullOrWhiteSpace(txtPartsReplaced.Text) ? "None" : txtPartsReplaced.Text.Trim());
                     insertCmd.Parameters.AddWithValue("@cost", serviceCost);
 
-                    // Conditional block: If work status is "In Progress", set next service field as database NULL
+                    
                     if (cbServiceStatus.Text == "In Progress")
                     {
                         insertCmd.Parameters.AddWithValue("@next_service", DBNull.Value);
@@ -157,7 +157,7 @@ namespace Gym_Management_System.Forms
 
                     insertCmd.Parameters.AddWithValue("@status", cbServiceStatus.Text);
 
-                    // 4. Open connection and commit records to database
+                    
                     tempCon.Open();
                     int rowsAffected = insertCmd.ExecuteNonQuery();
 
@@ -165,7 +165,6 @@ namespace Gym_Management_System.Forms
                     {
                         MessageBox.Show($"Service log entry '{newServiceId}' committed successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        // Signal to the main form that a save was successfully performed
                         this.DialogResult = DialogResult.OK;
                         this.Close();
                     }

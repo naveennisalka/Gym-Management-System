@@ -44,7 +44,7 @@ namespace Gym_Management_System.Forms
             con = new SqlConnection(dbcon.connection());
             LoadCategories();
 
-            // 1. Assign extracted text elements to input controls
+           
             
             lblID.Text = id;
             txtItemName.Text = name;
@@ -54,13 +54,13 @@ namespace Gym_Management_System.Forms
             cbCategory.Text = category;
             txtMinStock.Text = minStock;
 
-            // 2. Safely parse and assign expiry date
+       
             if (!string.IsNullOrEmpty(expiry) && expiry != "N/A" && DateTime.TryParse(expiry, out DateTime dt))
             {
                 dtpExpiryDate.Value = dt;
             }
 
-            // 3. Dynamically fetch the image file path from database using the ID
+       
             try
             {
                 string imgQuery = "SELECT image_path FROM store_items WHERE id = @id";
@@ -85,7 +85,7 @@ namespace Gym_Management_System.Forms
                 con.Close();
             }
 
-            // 4. Render image preview to pbItemImage without locking the file on disk storage
+          
             if (!string.IsNullOrEmpty(originalImagePath) && File.Exists(originalImagePath))
             {
                 try
@@ -105,7 +105,7 @@ namespace Gym_Management_System.Forms
                 pbItemImage.Image = Properties.Resources.no_image;
             }
 
-            // UI Layout for Update Mode
+          
             btnSave.Visible = false;
             btnUpdate.Visible = true;
         }
@@ -206,7 +206,7 @@ namespace Gym_Management_System.Forms
                 {
                     if (MessageBox.Show("Are you sure you want to save this product item?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        // Generate dynamic tracking ID: ITM + timestamp
+                        //Generate dynamic tracking ID: ITM + timestamp
                         string newId = "ITM" + DateTime.Now.ToString("yyMMddHHmmss");
                         string portableImagePath = SaveImageToProjectFolder(txtImagePath.Text.Trim(), newId);
 
