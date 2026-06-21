@@ -102,6 +102,12 @@
     <Compile Include="Forms\formCourchDashbord.Designer.cs">
       <DependentUpon>formCourchDashbord.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\formPasswordReset.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\formPasswordReset.Designer.cs">
+      <DependentUpon>formPasswordReset.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\formSchedule.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\formCourchDashbord.resx">
       <DependentUpon>formCourchDashbord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\formPasswordReset.resx">
+      <DependentUpon>formPasswordReset.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\formSchedule.resx">
       <DependentUpon>formSchedule.cs</DependentUpon>

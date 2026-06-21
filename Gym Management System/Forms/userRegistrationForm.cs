@@ -25,6 +25,15 @@ namespace Gym_Management_System.Forms
         Boolean isChecked = false;
         
         public string selectedUserID { get; set; }
+
+        public userRegistrationForm()
+        {
+            InitializeComponent();
+            con = new SqlConnection(dbcon.connection());
+            membersForm = null; // MembersForm එකක් දැනට නැත
+            btnSave.Visible = true;
+            btnUpdate.Visible = false;
+        }
         public userRegistrationForm(MembersForm member)
         {
             InitializeComponent();
@@ -75,7 +84,10 @@ namespace Gym_Management_System.Forms
 
                         MessageBox.Show("User saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         clearForm();
-                        membersForm.loadMembers();
+                        if (membersForm != null)
+                        {
+                            membersForm.loadMembers(); 
+                        }
                     }
 
 
@@ -127,7 +139,11 @@ namespace Gym_Management_System.Forms
                         MessageBox.Show("User updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         this.Dispose();
-                        membersForm.loadMembers();
+                        if (membersForm != null)
+                        {
+                            membersForm.loadMembers(); 
+                        }
+                        ;
                     }
                 }
                 catch (Exception ex)

@@ -124,6 +124,161 @@ namespace Gym_Management_System
             }
         }
 
+        //private void Button1_Click(object sender, EventArgs e)
+        //{
+        //    // Place order: prompt for user id or name
+        //    string userInput;
+        //    using (var d = new Forms.InputDialog("Place Order", "Enter Member ID or Name:"))
+        //    {
+        //        if (d.ShowDialog() != DialogResult.OK) return;
+        //        if (string.IsNullOrWhiteSpace(d.Value)) return;
+        //        userInput = d.Value;
+        //    }
+
+        //    // try to find user by id or name
+        //    string userId = null;
+        //    try
+        //    {
+        //        if (con.State == ConnectionState.Closed) con.Open();
+        //        cmd = new SqlCommand("SELECT id FROM users WHERE id = @q OR name = @q", con);
+        //        cmd.Parameters.AddWithValue("@q", userInput);
+        //        var r = cmd.ExecuteScalar();
+        //        if (r != null) userId = r.ToString();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.ToString());
+        //    }
+        //    finally { con.Close(); }
+
+        //    if (userId == null)
+        //    {
+        //        MessageBox.Show("User not found.");
+        //        return;
+        //    }
+
+        //    // determine order id: if we loaded a held order, update it instead of creating a new one
+        //    string orderId = loadedHeldOrderId ?? GenerateOrderId();
+        //    decimal total = 0m;
+        //    foreach (var oi in flpCurrentOrder.Controls.OfType<orderItem>()) total += oi.ItemPrice * oi.Qty;
+
+        //    try
+        //    {
+        //        if (con.State == ConnectionState.Closed) con.Open();
+        //        if (loadedHeldOrderId == null)
+        //        {
+        //            // create new order
+        //            cmd = new SqlCommand("INSERT INTO orders (id, user_id, staff_id, total_amount, order_date, status) VALUES (@id, @user, @staff, @total, GETDATE(), 1)", con);
+        //            cmd.Parameters.AddWithValue("@id", orderId);
+        //            cmd.Parameters.AddWithValue("@user", userId);
+        //            cmd.Parameters.AddWithValue("@staff", DBNull.Value);
+        //            cmd.Parameters.AddWithValue("@total", total);
+        //            cmd.ExecuteNonQuery();
+        //        }
+        //        else
+        //        {
+        //            // update existing held order to completed
+        //            var cmdUp = new SqlCommand("UPDATE orders SET user_id = @user, staff_id = @staff, total_amount = @total, order_date = GETDATE(), status = 1 WHERE id = @id", con);
+        //            cmdUp.Parameters.AddWithValue("@id", orderId);
+        //            cmdUp.Parameters.AddWithValue("@user", userId);
+        //            cmdUp.Parameters.AddWithValue("@staff", DBNull.Value);
+        //            cmdUp.Parameters.AddWithValue("@total", total);
+        //            cmdUp.ExecuteNonQuery();
+
+        //            // remove previous order items for this held order; we'll insert current items below
+        //            var del = new SqlCommand("DELETE FROM order_items WHERE order_id = @o", con);
+        //            del.Parameters.AddWithValue("@o", orderId);
+        //            del.ExecuteNonQuery();
+        //        }
+
+        //        // insert order items
+        //        foreach (var oi in flpCurrentOrder.Controls.OfType<orderItem>())
+        //        {
+        //            // ensure item_id refers to an existing store_items id; if not, insert NULL to avoid FK violations
+        //            object itemIdParam = DBNull.Value;
+        //            if (!string.IsNullOrEmpty(oi.ItemId))
+        //            {
+        //                var chk = new SqlCommand("SELECT COUNT(1) FROM store_items WHERE id = @id", con);
+        //                chk.Parameters.AddWithValue("@id", oi.ItemId);
+        //                var exists = Convert.ToInt32(chk.ExecuteScalar()) > 0;
+        //                if (exists) itemIdParam = oi.ItemId;
+        //            }
+
+        //            var cmd2 = new SqlCommand("INSERT INTO order_items (order_id, item_id, quantity, unit_price) VALUES (@o, @it, @q, @p)", con);
+        //            cmd2.Parameters.AddWithValue("@o", orderId);
+        //            cmd2.Parameters.AddWithValue("@it", itemIdParam);
+        //            cmd2.Parameters.AddWithValue("@q", oi.Qty);
+        //            cmd2.Parameters.AddWithValue("@p", oi.ItemPrice);
+        //            cmd2.ExecuteNonQuery();
+
+        //            // if it was a membership plan, update membership for user
+        //            if (!string.IsNullOrEmpty(oi.ItemId))
+        //            {
+        //                // check if ItemId exists in gym_plans
+        //                var cmd3 = new SqlCommand("SELECT duration_months FROM gym_plans WHERE id = @pid", con);
+        //                cmd3.Parameters.AddWithValue("@pid", oi.ItemId);
+        //                var dur = cmd3.ExecuteScalar();
+        //                if (dur != null && dur != DBNull.Value)
+        //                {
+        //                    int months = Convert.ToInt32(dur);
+        //                    // extend or create membership
+        //                    var cmd4 = new SqlCommand("SELECT id, end_date FROM memberships WHERE user_id = @u", con);
+        //                    cmd4.Parameters.AddWithValue("@u", userId);
+        //                    var rdr = cmd4.ExecuteReader();
+        //                    if (rdr.Read())
+        //                    {
+        //                        var mid = rdr["id"]?.ToString();
+        //                        DateTime curEnd = rdr["end_date"] != DBNull.Value ? Convert.ToDateTime(rdr["end_date"]) : DateTime.Now;
+        //                        rdr.Close();
+        //                        var cmd5 = new SqlCommand("UPDATE memberships SET end_date = @end, payment_status = 1 WHERE id = @mid", con);
+        //                        cmd5.Parameters.AddWithValue("@end", curEnd.AddMonths(months));
+        //                        cmd5.Parameters.AddWithValue("@mid", mid);
+        //                        cmd5.ExecuteNonQuery();
+        //                    }
+        //                    else
+        //                    {
+        //                        rdr.Close();
+        //                        var cmd6 = new SqlCommand("INSERT INTO memberships (id, user_id, plan_id, start_date, end_date, payment_status) VALUES (@id, @u, @p, @s, @e, 1)", con);
+        //                        cmd6.Parameters.AddWithValue("@id", Guid.NewGuid().ToString());
+        //                        cmd6.Parameters.AddWithValue("@u", userId);
+        //                        cmd6.Parameters.AddWithValue("@p", oi.ItemId);
+        //                        cmd6.Parameters.AddWithValue("@s", DateTime.Now.Date);
+        //                        cmd6.Parameters.AddWithValue("@e", DateTime.Now.Date.AddMonths(months));
+        //                        cmd6.ExecuteNonQuery();
+        //                    }
+        //                }
+        //            }
+        //        }
+
+        //        MessageBox.Show("Order placed successfully.");
+        //        // if this order originated from a held order, remove the held record
+        //        if (!string.IsNullOrEmpty(loadedHeldOrderId))
+        //        {
+        //            try
+        //            {
+        //                var cmdDelItems = new SqlCommand("DELETE FROM order_items WHERE order_id = @o", con);
+        //                cmdDelItems.Parameters.AddWithValue("@o", loadedHeldOrderId);
+        //                cmdDelItems.ExecuteNonQuery();
+        //                var cmdDel = new SqlCommand("DELETE FROM orders WHERE id = @o", con);
+        //                cmdDel.Parameters.AddWithValue("@o", loadedHeldOrderId);
+        //                cmdDel.ExecuteNonQuery();
+        //            }
+        //            catch { }
+        //            loadedHeldOrderId = null;
+        //        }
+
+        //        flpCurrentOrder.Controls.Clear();
+        //        UpdateTotal();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.ToString());
+        //    }
+        //    finally { con.Close(); }
+        //}
+
+        //search function
+
         private void Button1_Click(object sender, EventArgs e)
         {
             // Place order: prompt for user id or name
@@ -157,7 +312,6 @@ namespace Gym_Management_System
                 return;
             }
 
-            // determine order id: if we loaded a held order, update it instead of creating a new one
             string orderId = loadedHeldOrderId ?? GenerateOrderId();
             decimal total = 0m;
             foreach (var oi in flpCurrentOrder.Controls.OfType<orderItem>()) total += oi.ItemPrice * oi.Qty;
@@ -167,7 +321,6 @@ namespace Gym_Management_System
                 if (con.State == ConnectionState.Closed) con.Open();
                 if (loadedHeldOrderId == null)
                 {
-                    // create new order
                     cmd = new SqlCommand("INSERT INTO orders (id, user_id, staff_id, total_amount, order_date, status) VALUES (@id, @user, @staff, @total, GETDATE(), 1)", con);
                     cmd.Parameters.AddWithValue("@id", orderId);
                     cmd.Parameters.AddWithValue("@user", userId);
@@ -177,7 +330,6 @@ namespace Gym_Management_System
                 }
                 else
                 {
-                    // update existing held order to completed
                     var cmdUp = new SqlCommand("UPDATE orders SET user_id = @user, staff_id = @staff, total_amount = @total, order_date = GETDATE(), status = 1 WHERE id = @id", con);
                     cmdUp.Parameters.AddWithValue("@id", orderId);
                     cmdUp.Parameters.AddWithValue("@user", userId);
@@ -185,7 +337,6 @@ namespace Gym_Management_System
                     cmdUp.Parameters.AddWithValue("@total", total);
                     cmdUp.ExecuteNonQuery();
 
-                    // remove previous order items for this held order; we'll insert current items below
                     var del = new SqlCommand("DELETE FROM order_items WHERE order_id = @o", con);
                     del.Parameters.AddWithValue("@o", orderId);
                     del.ExecuteNonQuery();
@@ -194,7 +345,6 @@ namespace Gym_Management_System
                 // insert order items
                 foreach (var oi in flpCurrentOrder.Controls.OfType<orderItem>())
                 {
-                    // ensure item_id refers to an existing store_items id; if not, insert NULL to avoid FK violations
                     object itemIdParam = DBNull.Value;
                     if (!string.IsNullOrEmpty(oi.ItemId))
                     {
@@ -211,27 +361,34 @@ namespace Gym_Management_System
                     cmd2.Parameters.AddWithValue("@p", oi.ItemPrice);
                     cmd2.ExecuteNonQuery();
 
-                    // if it was a membership plan, update membership for user
+                    // Handle Membership Plans Extension/Creation
                     if (!string.IsNullOrEmpty(oi.ItemId))
                     {
-                        // check if ItemId exists in gym_plans
                         var cmd3 = new SqlCommand("SELECT duration_months FROM gym_plans WHERE id = @pid", con);
                         cmd3.Parameters.AddWithValue("@pid", oi.ItemId);
                         var dur = cmd3.ExecuteScalar();
+
                         if (dur != null && dur != DBNull.Value)
                         {
                             int months = Convert.ToInt32(dur);
-                            // extend or create membership
+
                             var cmd4 = new SqlCommand("SELECT id, end_date FROM memberships WHERE user_id = @u", con);
                             cmd4.Parameters.AddWithValue("@u", userId);
+
                             var rdr = cmd4.ExecuteReader();
                             if (rdr.Read())
                             {
                                 var mid = rdr["id"]?.ToString();
                                 DateTime curEnd = rdr["end_date"] != DBNull.Value ? Convert.ToDateTime(rdr["end_date"]) : DateTime.Now;
                                 rdr.Close();
-                                var cmd5 = new SqlCommand("UPDATE memberships SET end_date = @end, payment_status = 1 WHERE id = @mid", con);
-                                cmd5.Parameters.AddWithValue("@end", curEnd.AddMonths(months));
+
+                                // FIXED LOGIC: If membership has already expired, renewal extends starting from TODAY instead of the past date
+                                DateTime baseDate = (curEnd < DateTime.Now) ? DateTime.Now : curEnd;
+                                DateTime newEndDate = baseDate.AddMonths(months);
+
+                                var cmd5 = new SqlCommand("UPDATE memberships SET plan_id = @pid, end_date = @end, payment_status = 1 WHERE id = @mid", con);
+                                cmd5.Parameters.AddWithValue("@pid", oi.ItemId);
+                                cmd5.Parameters.AddWithValue("@end", newEndDate);
                                 cmd5.Parameters.AddWithValue("@mid", mid);
                                 cmd5.ExecuteNonQuery();
                             }
@@ -251,7 +408,7 @@ namespace Gym_Management_System
                 }
 
                 MessageBox.Show("Order placed successfully.");
-                // if this order originated from a held order, remove the held record
+
                 if (!string.IsNullOrEmpty(loadedHeldOrderId))
                 {
                     try
@@ -276,8 +433,6 @@ namespace Gym_Management_System
             }
             finally { con.Close(); }
         }
-
-        //search function
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             foreach (storeItem item in flpStore.Controls.OfType<storeItem>())

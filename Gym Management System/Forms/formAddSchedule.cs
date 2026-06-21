@@ -40,15 +40,15 @@ namespace Gym_Management_System
             InitializeComponent();
             InitializeFormDefaults();
 
-            lblCID.Text = coachId;
-            lblCName.Text = coachName;
+            lblCID.Text = UserSession.UserID;
+            lblCName.Text = UserSession.UserName;
 
             isUpdateMode = false;
             
         }
 
         // Constructor 2:  UPDATING an existing schedule from the grid
-        public formAddSchedule(string scheduleId, string coachId, string coachName, string memberId, string title, string daysPerWeek)
+        public formAddSchedule(string scheduleId, string memberId, string title, string daysPerWeek)
         {
             InitializeComponent();
             InitializeFormDefaults();
@@ -57,8 +57,8 @@ namespace Gym_Management_System
             targetScheduleId = Convert.ToInt32(scheduleId);
             isUpdateMode = true;
 
-            lblCID.Text = coachId;
-            lblCName.Text = coachName;
+            lblCID.Text = UserSession.UserID;
+            lblCName.Text = UserSession.UserName;
 
             txtScheduleTitle.Text = title;
             txtDPW.Text = daysPerWeek;
@@ -338,7 +338,7 @@ namespace Gym_Management_System
                 SqlCommand scheduleCmd = new SqlCommand(insertScheduleQuery, con, transaction);
                 scheduleCmd.Parameters.AddWithValue("@title", txtScheduleTitle.Text);
                 scheduleCmd.Parameters.AddWithValue("@member_id", cbMember.SelectedValue.ToString()); // Fixed: Pulls 'MEM001' from ComboBox Value
-                scheduleCmd.Parameters.AddWithValue("@coach_id", "COH001");                          // Active logged-in coach
+                scheduleCmd.Parameters.AddWithValue("@coach_id", UserSession.UserID);                          // Active logged-in coach
                 scheduleCmd.Parameters.AddWithValue("@days_per_week", int.Parse(txtDPW.Text));
 
                 // Execute and get the newly generated schedule_id

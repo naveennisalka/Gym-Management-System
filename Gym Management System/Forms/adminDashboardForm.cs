@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gym_Management_System.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -310,6 +311,34 @@ namespace Gym_Management_System
             {
                 MessageBox.Show("Error loading Member KPIs: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            formChangePassword passwordResetForm = new formChangePassword();
+            passwordResetForm.ShowDialog();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            formAddSchedule addScheduleForm = new formAddSchedule();
+            addScheduleForm.btnUpdate.Enabled = false;
+            addScheduleForm.btnUpdate.Hide();
+
+            addScheduleForm.ShowDialog();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            formAddAssets formAddAssets = new formAddAssets();
+            formAddAssets.btnUpdate.Visible = false;
+            formAddAssets.ShowDialog();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            userRegistrationForm userRegForm = new userRegistrationForm();
+            userRegForm.ShowDialog();
         }
     }
 }

@@ -98,7 +98,7 @@ namespace Gym_Management_System
                 string coachName = GetCoachNameFromDB(coachId);
 
                 // Initialize form using Constructor 2 (Passes ALL data fields)
-                formAddSchedule updateForm = new formAddSchedule(sid, coachId, coachName, memberId, title, dpw);
+                formAddSchedule updateForm = new formAddSchedule(sid, memberId, title, dpw);
                 updateForm.btnSave.Enabled = false;
                 updateForm.btnSave.Hide();
                 updateForm.ShowDialog();
@@ -143,11 +143,10 @@ namespace Gym_Management_System
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string activeCoachId = "COH001";
-            string activeCoachName = "Coach Kamal";
+            
 
             
-            formAddSchedule addScheduleForm = new formAddSchedule(activeCoachId, activeCoachName);
+            formAddSchedule addScheduleForm = new formAddSchedule();
             addScheduleForm.btnUpdate.Enabled = false;
             addScheduleForm.btnUpdate.Hide();
 
