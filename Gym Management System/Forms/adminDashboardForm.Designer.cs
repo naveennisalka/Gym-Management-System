@@ -41,51 +41,51 @@
             this.pnlTotalActiveMember = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
             this.lblActiveMembers = new System.Windows.Forms.Label();
+            this.panel18 = new System.Windows.Forms.Panel();
             this.panel19 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlMonthlyReveneue = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lblMonthlyRevenue = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnlActiveCoaches = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.lblActiveCoaches = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.pnlFaultyEqupment = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.lblFaultyEquipment = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.pnlGymPlan = new System.Windows.Forms.Panel();
             this.lblMembershipCountdown = new System.Windows.Forms.Label();
             this.lblPlanName = new System.Windows.Forms.Label();
+            this.panel11 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.pnlTotalStoreSpend = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.lblTotalStoreSpend = new System.Windows.Forms.Label();
+            this.panel14 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
             this.pnlAssignedMembers = new System.Windows.Forms.Panel();
             this.gg = new System.Windows.Forms.Label();
             this.lblAssignedMembers = new System.Windows.Forms.Label();
+            this.panel21 = new System.Windows.Forms.Panel();
             this.panel22 = new System.Windows.Forms.Panel();
             this.pnlTodaySessions = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.lblTodaySessions = new System.Windows.Forms.Label();
+            this.panel24 = new System.Windows.Forms.Panel();
             this.panel25 = new System.Windows.Forms.Panel();
             this.pnlPendingSchedules = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.lblPendingSchedules = new System.Windows.Forms.Label();
+            this.panel27 = new System.Windows.Forms.Panel();
             this.panel28 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.panel21 = new System.Windows.Forms.Panel();
-            this.panel24 = new System.Windows.Forms.Panel();
-            this.panel27 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -227,6 +227,16 @@
             this.lblActiveMembers.TabIndex = 2;
             this.lblActiveMembers.Text = "1000";
             // 
+            // panel18
+            // 
+            this.panel18.BackColor = System.Drawing.Color.Transparent;
+            this.panel18.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel18.BackgroundImage")));
+            this.panel18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel18.Location = new System.Drawing.Point(17, 26);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(60, 62);
+            this.panel18.TabIndex = 1;
+            // 
             // panel19
             // 
             this.panel19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -284,6 +294,16 @@
             this.lblMonthlyRevenue.TabIndex = 2;
             this.lblMonthlyRevenue.Text = "1000";
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel2.Location = new System.Drawing.Point(17, 26);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(60, 62);
+            this.panel2.TabIndex = 1;
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -324,6 +344,16 @@
             this.lblActiveCoaches.Size = new System.Drawing.Size(84, 48);
             this.lblActiveCoaches.TabIndex = 2;
             this.lblActiveCoaches.Text = "1000";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Transparent;
+            this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
+            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel5.Location = new System.Drawing.Point(17, 26);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(60, 62);
+            this.panel5.TabIndex = 1;
             // 
             // panel6
             // 
@@ -366,6 +396,16 @@
             this.lblFaultyEquipment.TabIndex = 2;
             this.lblFaultyEquipment.Text = "1000";
             // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.Transparent;
+            this.panel8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel8.BackgroundImage")));
+            this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel8.Location = new System.Drawing.Point(17, 26);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(60, 62);
+            this.panel8.TabIndex = 1;
+            // 
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -406,6 +446,16 @@
             this.lblPlanName.Size = new System.Drawing.Size(204, 48);
             this.lblPlanName.TabIndex = 2;
             this.lblPlanName.Text = "lblPlanName";
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.Transparent;
+            this.panel11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel11.BackgroundImage")));
+            this.panel11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel11.Location = new System.Drawing.Point(17, 26);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(60, 62);
+            this.panel11.TabIndex = 1;
             // 
             // panel12
             // 
@@ -448,6 +498,16 @@
             this.lblTotalStoreSpend.TabIndex = 2;
             this.lblTotalStoreSpend.Text = "1000";
             // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.Transparent;
+            this.panel14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel14.BackgroundImage")));
+            this.panel14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel14.Location = new System.Drawing.Point(17, 26);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(60, 62);
+            this.panel14.TabIndex = 1;
+            // 
             // panel15
             // 
             this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -488,6 +548,16 @@
             this.lblAssignedMembers.Size = new System.Drawing.Size(84, 48);
             this.lblAssignedMembers.TabIndex = 2;
             this.lblAssignedMembers.Text = "1000";
+            // 
+            // panel21
+            // 
+            this.panel21.BackColor = System.Drawing.Color.Transparent;
+            this.panel21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel21.BackgroundImage")));
+            this.panel21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel21.Location = new System.Drawing.Point(17, 26);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(60, 62);
+            this.panel21.TabIndex = 1;
             // 
             // panel22
             // 
@@ -530,6 +600,16 @@
             this.lblTodaySessions.TabIndex = 2;
             this.lblTodaySessions.Text = "1000";
             // 
+            // panel24
+            // 
+            this.panel24.BackColor = System.Drawing.Color.Transparent;
+            this.panel24.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel24.BackgroundImage")));
+            this.panel24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel24.Location = new System.Drawing.Point(17, 26);
+            this.panel24.Name = "panel24";
+            this.panel24.Size = new System.Drawing.Size(60, 62);
+            this.panel24.TabIndex = 1;
+            // 
             // panel25
             // 
             this.panel25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -570,6 +650,16 @@
             this.lblPendingSchedules.Size = new System.Drawing.Size(84, 48);
             this.lblPendingSchedules.TabIndex = 2;
             this.lblPendingSchedules.Text = "1000";
+            // 
+            // panel27
+            // 
+            this.panel27.BackColor = System.Drawing.Color.Transparent;
+            this.panel27.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel27.BackgroundImage")));
+            this.panel27.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel27.Location = new System.Drawing.Point(17, 26);
+            this.panel27.Name = "panel27";
+            this.panel27.Size = new System.Drawing.Size(60, 62);
+            this.panel27.TabIndex = 1;
             // 
             // panel28
             // 
@@ -620,96 +710,6 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // panel18
-            // 
-            this.panel18.BackColor = System.Drawing.Color.Transparent;
-            this.panel18.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel18.BackgroundImage")));
-            this.panel18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel18.Location = new System.Drawing.Point(17, 26);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(60, 62);
-            this.panel18.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel2.Location = new System.Drawing.Point(17, 26);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(60, 62);
-            this.panel2.TabIndex = 1;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.Transparent;
-            this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
-            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel5.Location = new System.Drawing.Point(17, 26);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(60, 62);
-            this.panel5.TabIndex = 1;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.Transparent;
-            this.panel8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel8.BackgroundImage")));
-            this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel8.Location = new System.Drawing.Point(17, 26);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(60, 62);
-            this.panel8.TabIndex = 1;
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.Transparent;
-            this.panel11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel11.BackgroundImage")));
-            this.panel11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel11.Location = new System.Drawing.Point(17, 26);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(60, 62);
-            this.panel11.TabIndex = 1;
-            // 
-            // panel14
-            // 
-            this.panel14.BackColor = System.Drawing.Color.Transparent;
-            this.panel14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel14.BackgroundImage")));
-            this.panel14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel14.Location = new System.Drawing.Point(17, 26);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(60, 62);
-            this.panel14.TabIndex = 1;
-            // 
-            // panel21
-            // 
-            this.panel21.BackColor = System.Drawing.Color.Transparent;
-            this.panel21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel21.BackgroundImage")));
-            this.panel21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel21.Location = new System.Drawing.Point(17, 26);
-            this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(60, 62);
-            this.panel21.TabIndex = 1;
-            // 
-            // panel24
-            // 
-            this.panel24.BackColor = System.Drawing.Color.Transparent;
-            this.panel24.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel24.BackgroundImage")));
-            this.panel24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel24.Location = new System.Drawing.Point(17, 26);
-            this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(60, 62);
-            this.panel24.TabIndex = 1;
-            // 
-            // panel27
-            // 
-            this.panel27.BackColor = System.Drawing.Color.Transparent;
-            this.panel27.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel27.BackgroundImage")));
-            this.panel27.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel27.Location = new System.Drawing.Point(17, 26);
-            this.panel27.Name = "panel27";
-            this.panel27.Size = new System.Drawing.Size(60, 62);
-            this.panel27.TabIndex = 1;
-            // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -728,6 +728,7 @@
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button3.UseMnemonic = false;
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button8
             // 
@@ -831,6 +832,7 @@
             this.Controls.Add(this.label13);
             this.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "adminDashboardForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;

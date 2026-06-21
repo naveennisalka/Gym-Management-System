@@ -64,12 +64,13 @@ namespace Gym_Management_System
             //Render modules based on the static class role variable
             switch (UserSession.UserRole)
             {
-                case 1: // ---- SUPER ADMIN VIEW ----
+                case 1: // ---- SUPER ADMIN (owner) VIEW ----
                     btnMembers.Visible = true;
                     btnSettings.Visible = true;
                     btnStore.Visible = true;
                     btnSchedules.Visible = true;
                     btnEquipment.Visible = true;
+                    button1.Visible = true;
                     break;
 
                 case 3: // ---- COACH VIEW ----
@@ -96,7 +97,9 @@ namespace Gym_Management_System
             btnStore.Visible = false;
             btnSchedules.Visible = false;
             btnEquipment.Visible = false;
-            
+            button1.Visible = false; //reports
+
+
 
         }
 

@@ -1,4 +1,4 @@
-﻿using Gym_Management_System.Forms;
+using Gym_Management_System.Forms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,15 +9,15 @@ namespace Gym_Management_System
 {
     internal static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
+        // The main entry point for the application.
         [STAThread]
         static void Main()
         {
-            
+            // Enable visual styles for modern Windows UI components
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            
+            // Launch the splash screen form as the initial window
             Application.Run(new splashForm());
         }
     }

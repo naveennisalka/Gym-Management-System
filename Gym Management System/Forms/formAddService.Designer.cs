@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formAddService));
             this.dtpNextServiceDate = new System.Windows.Forms.DateTimePicker();
             this.dtpServiceDate = new System.Windows.Forms.DateTimePicker();
             this.txtTechnician = new System.Windows.Forms.TextBox();
@@ -287,8 +288,12 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "formAddService";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "formAddService";
             this.Load += new System.EventHandler(this.formAddService_Load);
             this.flowLayoutPanel1.ResumeLayout(false);

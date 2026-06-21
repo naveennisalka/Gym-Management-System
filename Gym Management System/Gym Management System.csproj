@@ -273,6 +273,9 @@
     <EmbeddedResource Include="Forms\adminDashboardForm.resx">
       <DependentUpon>adminDashboardForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InputDialog.resx">
+      <DependentUpon>InputDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\loginForm.resx">
       <DependentUpon>loginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -339,6 +342,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="db Script\script.sql" />
     <Content Include="dbGymMS.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

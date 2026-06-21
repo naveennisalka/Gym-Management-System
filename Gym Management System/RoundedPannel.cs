@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -9,6 +9,7 @@ using System.Windows.Forms;
 
 namespace Gym_Management_System
 {
+    // Custom Panel control that renders with rounded corners
     internal class RoundedPannel : Panel
     {
         // Properties to customize the look in the Property Window

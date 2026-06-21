@@ -45,6 +45,13 @@ namespace Gym_Management_System
                     pnlTotalActiveMember.Visible = true;
                     pnlMonthlyReveneue.Visible = true;
                     pnlFaultyEqupment.Visible = true;
+                    btnLogin.Visible = true; // Registration button only for guests (not logged in users)
+                    button8.Visible = true; // reset Password button 
+                    button7.Visible = true; // Schedule Management (Coach)
+                    button3.Visible = true; // Store Management (Admin)
+                    button4.Visible = true; // Expired Store Items (Admin)
+                    button5.Visible = true; // Store Orders (Admin)
+                    button6.Visible = true; // Asset Management (Admin)
                     // Execute Database Content Loading for Admin
                     LoadAdminDashboardKPIs();
                     break;
@@ -54,6 +61,7 @@ namespace Gym_Management_System
                     pnlPendingSchedules.Visible = true;
                     pnlTodaySessions.Visible = true;
                     pnlAssignedMembers.Visible = true;
+                    button7.Visible = true;
 
                     // Execute Database Content Loading for this specific coach
                     LoadCoachDashboardKPIs(UserSession.UserID);
@@ -90,6 +98,15 @@ namespace Gym_Management_System
             pnlPendingSchedules.Visible = false;
             pnlTodaySessions.Visible = false;
             pnlAssignedMembers.Visible = false;
+
+
+            btnLogin.Visible = false; // Registration button only for guests (not logged in users)
+            button8.Visible = false; // reset Password button 
+            button7.Visible = false; // Schedule Management (Coach)
+            button3.Visible = false; // Store Management (Admin)
+            button4.Visible = false; // Expired Store Items (Admin)
+            button5.Visible = false; // Store Orders (Admin)
+            button6.Visible = false; // Asset Management (Admin)
 
         }
 
@@ -315,7 +332,7 @@ namespace Gym_Management_System
 
         private void button8_Click(object sender, EventArgs e)
         {
-            formChangePassword passwordResetForm = new formChangePassword();
+            formPasswordReset passwordResetForm = new formPasswordReset();
             passwordResetForm.ShowDialog();
         }
 
@@ -352,6 +369,12 @@ namespace Gym_Management_System
             formManageStoreItems ExpiredStoreItems = new formManageStoreItems();
             ExpiredStoreItems.chkExpiredItems.Checked = true;
             ExpiredStoreItems.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            formAddStoreItem formAddStoreItem = new formAddStoreItem();
+            formAddStoreItem.ShowDialog();
         }
     }
 }

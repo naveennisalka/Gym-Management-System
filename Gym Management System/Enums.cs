@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +8,7 @@ using System;
 
 namespace Gym_Management_System
 {
+    // Represents the current status of a user's account
     public enum UserStatus
     {
         Pending = 0,
@@ -16,6 +17,7 @@ namespace Gym_Management_System
         Suspended = 3
     }
 
+    // Represents the status of store item orders
     public enum OrderStatus
     {
         Hold = 0,
@@ -23,6 +25,7 @@ namespace Gym_Management_System
         Reversed = 2
     }
 
+    // Defines the different roles a user can have in the system
     public enum UserRole
     {
         Admin = 1,  
@@ -31,6 +34,7 @@ namespace Gym_Management_System
         Member = 4
     }
 
+    // Defines accepted payment methods
     public enum PaymentMethod
     {
         Cash = 0,
@@ -39,6 +43,7 @@ namespace Gym_Management_System
         MobilePayment = 3
     }
 
+    // Represents the status of requests (like schedule or leave requests)
     public enum RequestStatus
     {
         Pending = 0,
@@ -46,6 +51,7 @@ namespace Gym_Management_System
         Rejected = 2
     }
 
+    // Categories for items in the gym
     public enum Categories 
     {
         GymItem,
