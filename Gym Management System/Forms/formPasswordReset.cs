@@ -26,7 +26,7 @@ namespace Gym_Management_System.Forms
         {
             cbUsers.Items.Clear(); 
 
-            string query = "SELECT id, name FROM users WHERE status = 1 ORDER BY role ASC, name ASC";
+            string query = "SELECT id, name FROM users ORDER BY role ASC, name ASC";
 
             try
             {

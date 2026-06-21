@@ -52,7 +52,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -318,7 +317,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.pictureBox2);
@@ -327,16 +325,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(558, 145);
             this.panel1.TabIndex = 28;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.ForeColor = System.Drawing.Color.LightGray;
-            this.label11.Location = new System.Drawing.Point(15, 105);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(282, 28);
-            this.label11.TabIndex = 15;
-            this.label11.Text = "Enter the hardware specifications.";
             // 
             // label12
             // 
@@ -416,7 +404,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
+        public System.Windows.Forms.Label label12;
     }
 }

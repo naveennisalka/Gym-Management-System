@@ -103,21 +103,30 @@ namespace Gym_Management_System.Forms
                 DataGridViewRow row = dgvStoreItems.Rows[e.RowIndex];
 
 
-                string id = row.Cells[1].Value.ToString();         
-                string name = row.Cells[2].Value.ToString();       
-                string description = row.Cells[3].Value?.ToString() ?? "";
-                string price = row.Cells[4].Value.ToString();       
-                string stock = row.Cells[5].Value.ToString();       
-                string category = row.Cells[6].Value.ToString();   
-                string expiryDate = row.Cells[7].Value?.ToString() ?? "";
-                string minStock = row.Cells[8].Value.ToString();    
+                //string id = row.Cells[1].Value.ToString();         
+                //string name = row.Cells[2].Value.ToString();       
+                //string description = row.Cells[3].Value?.ToString() ?? "";
+                //string price = row.Cells[4].Value.ToString();       
+                //string stock = row.Cells[5].Value.ToString();       
+                //string category = row.Cells[6].Value.ToString();   
+                //string expiryDate = row.Cells[7].Value?.ToString() ?? "";
+                //string minStock = row.Cells[8].Value.ToString();    
+
+                string id = row.Cells[0].Value?.ToString() ?? "";
+                string name = row.Cells[1].Value?.ToString() ?? "";
+                string description = row.Cells[2].Value?.ToString() ?? "";
+                string price = row.Cells[3].Value?.ToString() ?? "0.00";
+                string stock = row.Cells[4].Value?.ToString() ?? "0";
+                string category = row.Cells[5].Value?.ToString() ?? "GymItem";
+                string expiryDate = row.Cells[6].Value?.ToString() ?? "N/A";
+                string minStock = row.Cells[7].Value?.ToString() ?? "0";
 
                 formAddStoreItem editForm = new formAddStoreItem(id, name, description, price, stock, category, expiryDate, minStock);
 
    
                 editForm.btnSave.Visible = false;
                 editForm.btnUpdate.Visible = true;
-
+                editForm.label1.Text = "Edit Store Item";
                 editForm.ShowDialog();
 
                 LoadStoreItemsGrid();

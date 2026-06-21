@@ -152,6 +152,7 @@ WHERE CONCAT(ISNULL(id, ''), ISNULL(name, ''), ISNULL(dob, ''), ISNULL(address, 
 
                 userRegForm.btnSave.Visible = false;
                 userRegForm.btnUpdate.Visible = true;
+                userRegForm.label12.Text = "Edit Member";
                 userRegForm.ShowDialog();
             }
             else if (colName == "Delete")

@@ -30,8 +30,9 @@ namespace Gym_Management_System
             InitializeComponent();
             LoadExercisesToComboBox();
             LoadMembersToComboBox();
-            loadcbDay();         
-
+            loadcbDay();
+            lblCID.Text = UserSession.UserID;
+            lblCName.Text = UserSession.UserName;
         }
 
         //adding a BRAND NEW schedule
@@ -75,6 +76,9 @@ namespace Gym_Management_System
             LoadExercisesToComboBox();
             LoadMembersToComboBox();
             loadcbDay();
+
+            lblCID.Text = UserSession.UserID;
+            lblCName.Text = UserSession.UserName;
         }
 
         private void LoadSavedExercisesToGrid(string scheduleId)

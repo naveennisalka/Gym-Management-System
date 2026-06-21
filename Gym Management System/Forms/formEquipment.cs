@@ -123,6 +123,7 @@ WHERE CONCAT(
                 string warrantyDate = row.Cells[9].Value?.ToString() ?? "";
 
                 formAddAssets editForm = new formAddAssets(id, name, brand, category, status, model, serial, price, purchaseDate, warrantyDate);
+                editForm.label1.Text = "Edit Equipment Asset";
                 editForm.btnSave.Hide();
                 editForm.ShowDialog();
 

@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formAddStoreItem));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSave = new System.Windows.Forms.Button();
@@ -63,7 +62,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -71,22 +69,12 @@
             this.panel1.Size = new System.Drawing.Size(567, 112);
             this.panel1.TabIndex = 3;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.LightGray;
-            this.label2.Location = new System.Drawing.Point(33, 64);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(230, 23);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Enter the hardware specifications.";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Poppins SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(30, 27);
+            this.label1.Location = new System.Drawing.Point(30, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(251, 37);
             this.label1.TabIndex = 14;
@@ -286,6 +274,7 @@
             this.pbItemImage.Location = new System.Drawing.Point(116, 653);
             this.pbItemImage.Name = "pbItemImage";
             this.pbItemImage.Size = new System.Drawing.Size(173, 146);
+            this.pbItemImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbItemImage.TabIndex = 88;
             this.pbItemImage.TabStop = false;
             // 
@@ -356,8 +345,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         public System.Windows.Forms.Button btnSave;
         public System.Windows.Forms.Button btnUpdate;
@@ -381,5 +368,6 @@
         private System.Windows.Forms.PictureBox pbItemImage;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Button btnChooseFile;
+        public System.Windows.Forms.Label label1;
     }
 }

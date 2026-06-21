@@ -340,7 +340,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         public System.Windows.Forms.Button btnSave;
         public System.Windows.Forms.Button btnUpdate;
@@ -363,5 +362,6 @@
         private System.Windows.Forms.DateTimePicker dtpPurchaseDate;
         private System.Windows.Forms.DateTimePicker dtpWarrantyExpiry;
         private System.Windows.Forms.TextBox txtPrice;
+        public System.Windows.Forms.Label label1;
     }
 }

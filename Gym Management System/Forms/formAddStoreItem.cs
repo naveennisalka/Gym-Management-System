@@ -44,8 +44,6 @@ namespace Gym_Management_System.Forms
             con = new SqlConnection(dbcon.connection());
             LoadCategories();
 
-           
-            
             lblID.Text = id;
             txtItemName.Text = name;
             txtDescription.Text = desc;

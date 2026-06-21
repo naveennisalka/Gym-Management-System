@@ -54,11 +54,12 @@
             // 
             // itemImg
             // 
-            this.itemImg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.itemImg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.itemImg.Image = ((System.Drawing.Image)(resources.GetObject("itemImg.Image")));
-            this.itemImg.Location = new System.Drawing.Point(16, 15);
+            this.itemImg.Location = new System.Drawing.Point(15, 15);
             this.itemImg.Name = "itemImg";
             this.itemImg.Size = new System.Drawing.Size(109, 89);
+            this.itemImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.itemImg.TabIndex = 0;
             this.itemImg.TabStop = false;
             this.itemImg.Click += new System.EventHandler(this.itemImg_Click);

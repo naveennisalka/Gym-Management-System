@@ -42,7 +42,8 @@ namespace Gym_Management_System
         private void button8_Click(object sender, EventArgs e)
         {
            
-            userRegistrationForm profileEditForm = new userRegistrationForm(true); 
+            userRegistrationForm profileEditForm = new userRegistrationForm(true);
+            profileEditForm.label12.Text = "Edit My Profile";
             profileEditForm.ShowDialog();
         }
     }
