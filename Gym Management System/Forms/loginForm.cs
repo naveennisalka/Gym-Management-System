@@ -23,6 +23,7 @@ namespace Gym_Management_System
         {
             InitializeComponent();
             con = new SqlConnection(dbcon.connection());
+            txtPassword.UseSystemPasswordChar = true;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -126,6 +127,22 @@ namespace Gym_Management_System
         private void label7_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+
+
+        private void pbShowHide_Click_1(object sender, EventArgs e)
+        {
+            if (txtPassword.UseSystemPasswordChar)
+            {
+                txtPassword.UseSystemPasswordChar = false;
+                pbShowHide.Image = Properties.Resources.eye_open; 
+            }
+            else
+            {
+                txtPassword.UseSystemPasswordChar = true;
+                pbShowHide.Image = Properties.Resources.eye_closed; 
+            }
         }
     }
 }

@@ -40,7 +40,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.pbShowHide = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbShowHide)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -174,6 +176,16 @@
             this.label7.Text = "Cancel";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
+            // pbShowHide
+            // 
+            this.pbShowHide.Image = ((System.Drawing.Image)(resources.GetObject("pbShowHide.Image")));
+            this.pbShowHide.Location = new System.Drawing.Point(706, 254);
+            this.pbShowHide.Name = "pbShowHide";
+            this.pbShowHide.Size = new System.Drawing.Size(20, 18);
+            this.pbShowHide.TabIndex = 13;
+            this.pbShowHide.TabStop = false;
+            this.pbShowHide.Click += new System.EventHandler(this.pbShowHide_Click_1);
+            // 
             // loginForm
             // 
             this.AcceptButton = this.btnLogin;
@@ -181,6 +193,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(804, 509);
+            this.Controls.Add(this.pbShowHide);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -200,6 +213,7 @@
             this.Text = "loginForm";
             this.Load += new System.EventHandler(this.loginForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbShowHide)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -218,5 +232,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox pbShowHide;
     }
 }

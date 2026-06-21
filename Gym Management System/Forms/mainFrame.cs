@@ -179,5 +179,10 @@ namespace Gym_Management_System
         {
             OpenChildForm(new formEquipment());
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            OpenChildForm(new formReports());
+        }
     }
 }

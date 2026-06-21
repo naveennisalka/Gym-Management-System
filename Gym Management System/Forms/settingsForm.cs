@@ -38,5 +38,12 @@ namespace Gym_Management_System
 
             formChangePassword.ShowDialog();
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+           
+            userRegistrationForm profileEditForm = new userRegistrationForm(true); 
+            profileEditForm.ShowDialog();
+        }
     }
 }

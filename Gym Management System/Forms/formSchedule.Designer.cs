@@ -119,12 +119,12 @@
             this.btnLogin.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnLogin.Image = ((System.Drawing.Image)(resources.GetObject("btnLogin.Image")));
-            this.btnLogin.Location = new System.Drawing.Point(925, 112);
+            this.btnLogin.Location = new System.Drawing.Point(911, 112);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnLogin.Size = new System.Drawing.Size(194, 39);
+            this.btnLogin.Size = new System.Drawing.Size(208, 39);
             this.btnLogin.TabIndex = 12;
-            this.btnLogin.Text = "      Add New Asset\r\n";
+            this.btnLogin.Text = "      Add New Schedule";
             this.btnLogin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLogin.UseMnemonic = false;
             this.btnLogin.UseVisualStyleBackColor = false;

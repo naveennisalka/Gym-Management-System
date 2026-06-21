@@ -26,11 +26,93 @@ namespace Gym_Management_System.Forms
         
         public string selectedUserID { get; set; }
 
+
+        
+        public userRegistrationForm(bool isSelfEditMode)
+        {
+            InitializeComponent();
+            con = new SqlConnection(dbcon.connection());
+            membersForm = null;
+
+            if (isSelfEditMode)
+            {
+                
+                this.selectedUserID = UserSession.UserID;
+
+                
+                btnSave.Visible = false;
+                btnUpdate.Visible = true;
+
+               
+                cbRole.Enabled = false;
+                cbStatus.Enabled = false;
+
+                
+                LoadCurrentUserData();
+            }
+        }
+
+        private void LoadCurrentUserData()
+        {
+            try
+            {
+                string query = "SELECT name, email, dob, address, phone, gender, role, status FROM users WHERE id = @id";
+                using (SqlCommand loadCmd = new SqlCommand(query, con))
+                {
+                    loadCmd.Parameters.AddWithValue("@id", this.selectedUserID);
+                    if (con.State == ConnectionState.Closed) con.Open();
+
+                    using (SqlDataReader rdr = loadCmd.ExecuteReader())
+                    {
+                        if (rdr.Read())
+                        {
+                            txtName.Text = rdr["name"].ToString();
+                            txtMail.Text = rdr["email"].ToString();
+                            txtAddress.Text = rdr["address"]?.ToString() ?? "";
+                            txtPhone.Text = rdr["phone"].ToString();
+                            cbGender.Text = rdr["gender"]?.ToString() ?? "";
+
+                            
+                            if (rdr["dob"] != DBNull.Value)
+                            {
+                                dtDob.Value = Convert.ToDateTime(rdr["dob"]);
+                            }
+
+                            
+                            int roleNum = Convert.ToInt32(rdr["role"]);
+                            switch (roleNum)
+                            {
+                                case 1: cbRole.Text = "Admin"; break;
+                                case 2: cbRole.Text = "Cashier"; break;
+                                case 3: cbRole.Text = "Coach"; break; 
+                                default: cbRole.Text = "Member"; break;
+                            }
+
+                            int statusNum = Convert.ToInt32(rdr["status"]);
+                            if (statusNum >= 0 && statusNum < cbStatus.Items.Count)
+                            {
+                                cbStatus.SelectedIndex = statusNum;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to load profile details: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+
         public userRegistrationForm()
         {
             InitializeComponent();
             con = new SqlConnection(dbcon.connection());
-            membersForm = null; // MembersForm එකක් දැනට නැත
+            membersForm = null; 
             btnSave.Visible = true;
             btnUpdate.Visible = false;
         }

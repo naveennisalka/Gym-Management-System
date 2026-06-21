@@ -128,10 +128,14 @@
   </data>
   <data name="btnLogin.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAJZJREFUSEvt
-        lYEJgDAMBDOKoziaIziCoziCGykpiYRvFUOgIubgKYReH6pQoiT5EzMRrbJ6ibhF3GX14nIHIholjEsG
-        0NVzuaNiks0cBmUP6Oq53FGRxSh7QLdZrB9+uSjezJ6nYadVzB265xza2OJIsNimGpRhj+LXrlrp/nMp
-        WYyyB3Rvi197JBCUPUTc0GMecZPkoxyR8cFJlMpwBQAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAFeSURBVDhPxdS7Sl1REMbxH1FBtNFYBQ1YKOQJtFBI4pWoSUQbsbTIUwSMfZJnSCHeKpEQRQJC
+        ULzGFBJS+QYWaSSmCwMrcljF2fuc5vy7vZj59loz3wwN5hkeoxkTaEMvBvLAMrzBZ1zgCz7hEofYwVCe
+        UMQGXqZb/sEUPuIGR+jLE4poxz5e4yluMYsPOENrnlCGEI1nruB5heg6pvPgMsQzT/EbyxhJz99DSx5c
+        xAscoz815ifG003juztPqEY86xue4Acm0ZHO4tZxw6hrKaIJlWLhv/90YgtLFWf3LGIVDyvOqolVZRBf
+        sYATdOFVvWJBjNMVRpPQr9TNaED8YCZPKOIBtvEX83iXPPa9Xn+FJdZSx8JXc3iLazzKg8sQY3OO95lo
+        +CzqV7NoDHYMeAx6zGbU8Q5jqQSbeUIRw2kFhWjMaqym3dSog2SpmoklGcsylmZYpAk9yVKN4x/tNkhf
+        5vp2hgAAAABJRU5ErkJggg==
 </value>
   </data>
   <metadata name="No.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
