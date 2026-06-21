@@ -1,4 +1,4 @@
-# 🏋️ Maharaja Gym Management & Retail POS System
+# 🏋️ PowerFit Gym Management & Retail POS System
 
 An all-in-one desktop application designed to streamline fitness center operations, track memberships, manage trainer schedules, and process storefront retail point-of-sale (POS) transactions. Built natively using C# .NET Windows Forms and Microsoft SQL Server.
 
