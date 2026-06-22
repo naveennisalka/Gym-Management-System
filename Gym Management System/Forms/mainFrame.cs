@@ -180,5 +180,20 @@ namespace Gym_Management_System
         {
             OpenChildForm(new formReports());
         }
+
+        private void mainFrame_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Do you want to safely log out and exit the system?","Confirm Logout & Exit",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+            else
+            {
+                UserSession.ClearSession();
+                Environment.Exit(0);
+            }
+        }
     }
 }

@@ -328,6 +328,7 @@
             this.Name = "mainFrame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "POWERFIT - Gym Management System";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.mainFrame_FormClosing);
             this.Load += new System.EventHandler(this.mainFrame_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

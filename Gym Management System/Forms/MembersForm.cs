@@ -213,5 +213,10 @@ WHERE CONCAT(ISNULL(id, ''), ISNULL(name, ''), ISNULL(dob, ''), ISNULL(address, 
         {
 
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            loadMembers();
+        }
     }
 }
